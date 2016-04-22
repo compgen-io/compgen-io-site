@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+    <meta charset="utf-8">
+
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <base href="http://compgen.io/">
+    <title>compgen.io - ngsutilsj</title>
+    <link rel="canonical" href="http://compgen.io/ngsutilsj/">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="anonymous">
+
+
+
+
+
+<link rel="stylesheet/less" type="text/css" href="/css/style.less" />
+
+<script src="/js/less.min.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="/favicon.ico" />
+
+</head>
+<body lang="en">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<div class="header_wrap">
+<div class="header">
+  <div class="logo"><a href="/"><img src="/img/compgen-logo.png" alt="compgen.io"/></a></div>
+  <div class="slogan">data wrangling for<br/>computational genomics</div>
+  <ul class="links">
+      <li class="links dropdown">
+          <a href="/projects" style="padding-right: 0;"><i class="fa fa-cogs"></i>&nbsp;Projects</a>
+          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-left: 2px;" id="dropdownMenu1">
+            <span class="fa fa-sort-down"></span>
+            <span class="sr-only">Toggle Projects Dropdown</span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-header">NGS data analysis</li>
+            <li><a href="/ngsutilsj">ngsutilsj (newer)</a></li>
+            <li><a href="/ngsutils">NGSUtils (older)</a></li>
+            <li><a href="/cgsplice">cgsplice</a></li>
+            <li><a href="/sqz">SQZ</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Data analysis pipelines</li>
+            <li><a href="/cgpipe">cgpipe</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Misc. tools</li>
+            <li><a href="/basespace-download">Basespace-download</a></li>
+            
+            <li><a href="/swalign">swalign</a></li>
+            <li><a href="/tabutils">tabutils</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Programming libraries</li>
+            <li><a href="/compgen-common">compgen-common</a></li>
+            <li><a href="/compgen-cmdline">compgen-cmdline</a></li>
+          </ul>
+      </li>
+      <li class="links"><a href="/tutorials"><i class="fa fa-book"></i>&nbsp;Tutorials</a></li>
+      <li class="links"><a href="/download"><i class="fa fa-download"></i> Downloads</a></li>
+      <li class="links"><a href="/citations"><i class="fa fa-external-link-squaref"></i> Citations</a></li>
+      <li class="links"><a href="/contact"><i class="fa fa-question-circle"></i>&nbsp;Contact</a></li>
+
+
+  </ul>
+  <div class="clearing">&nbsp;</div>
+</div>
+</div>
+
+<div class="project_bar_wrap">
+  <ul class="project_bar">
+    <li class="heading"><a href="/projects">Projects</a> > ngsutilsj</li>
+    <li class="project_link"><a href="/ngsutilsj" class="active">Overview</a></li>
+  
+    <li class="project_link"><a href="/ngsutilsj/docs"><i class="fa fa-book"></i> Docs</a></li>
+  
+  
+    <li class="project_link"><a href="http://github.com/compgen-io/ngsutilsj"><i class="fa fa-github"></i> GitHub project</a></li>
+    <li class="project_link"><a href="http://github.com/compgen-io/ngsutilsj/issues"><i class="fa fa-bug"></i> Issues</a></li>
+
+    <li class="project_link"><a href="download?project=ngsutilsj"><i class="fa fa-download"></i> Download</a></li>
+  </ul>
+</div>
+<div class="main_wrap">
+  <section id="main">
+    <h1 id="title"><i class="fa fa-cogs"></i> ngsutilsj</h1>
+    <div>
+          <article id="content" class="tutorial">
+             <p>ngsutilsj is an updated java port of the NGSUtils toolkit. This new version is largely a Java port of the
+the most commonly used tools from NGSUtils, with some additions thrown in. It is also a library, with utility
+classes for use in other various NGS related software (such as <a href="/cgsplice">cgsplice</a>).</p>
+
+<p>Java was chosen for the ease of installation and relative speed (in comparison to the Python NGSUtils).
+The processing speed for gzipped compressed files was a major reason for the new update.</p>
+
+<p>ngsutilsj is distributed as a self-executing fat-JAR file. This means that for installation, all one needs is
+a working copy of Java and the <code>ngsutilsj</code> file. Unlike other JAR-file based NGS packages, ngsutilsj includes a
+shell script shim to make it executable like a traditional Unix program.</p>
+
+          </article>
+    </div>
+  </section>
+</div>
+
+<div class="footer_wrap">
+<div class="footer">
+<div>
+
+<b>compgen.io</b><br/>Copyright &copy;2015 - Marcus R. Breese
+<br/><br/>
+<a href="http://github.com/compgen-io">http://github.com/compgen-io</a><br/>
+<a href="http://github.com/mbreese">http://github.com/mbreese</a><br/>
+<a href="http://github.com/ngsutils">http://github.com/ngsutils</a><br/>
+</div>
+</div>
+</div>
+
+</body>
