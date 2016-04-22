@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+    <meta charset="utf-8">
+
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <base href="http://compgen.io/">
+    <title>compgen.io - file formats</title>
+    <link rel="canonical" href="http://compgen.io/tutorials/formats/">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="anonymous">
+
+
+
+
+
+<link rel="stylesheet/less" type="text/css" href="/css/style.less" />
+
+<script src="/js/less.min.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="/favicon.ico" />
+
+</head>
+<body lang="en">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<div class="header_wrap">
+<div class="header">
+  <div class="logo"><a href="/"><img src="/img/compgen-logo.png" alt="compgen.io"/></a></div>
+  <div class="slogan">data wrangling for<br/>computational genomics</div>
+  <ul class="links">
+      <li class="links dropdown">
+          <a href="/projects" style="padding-right: 0;"><i class="fa fa-cogs"></i>&nbsp;Projects</a>
+          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-left: 2px;" id="dropdownMenu1">
+            <span class="fa fa-sort-down"></span>
+            <span class="sr-only">Toggle Projects Dropdown</span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-header">NGS data analysis</li>
+            <li><a href="/ngsutilsj">ngsutilsj (newer)</a></li>
+            <li><a href="/ngsutils">NGSUtils (older)</a></li>
+            <li><a href="/cgsplice">cgsplice</a></li>
+            <li><a href="/sqz">SQZ</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Data analysis pipelines</li>
+            <li><a href="/cgpipe">cgpipe</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Misc. tools</li>
+            <li><a href="/basespace-download">Basespace-download</a></li>
+            
+            <li><a href="/swalign">swalign</a></li>
+            <li><a href="/tabutils">tabutils</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Programming libraries</li>
+            <li><a href="/compgen-common">compgen-common</a></li>
+            <li><a href="/compgen-cmdline">compgen-cmdline</a></li>
+          </ul>
+      </li>
+      <li class="links"><a href="/tutorials"><i class="fa fa-book"></i>&nbsp;Tutorials</a></li>
+      <li class="links"><a href="/download"><i class="fa fa-download"></i> Downloads</a></li>
+      <li class="links"><a href="/citations"><i class="fa fa-external-link-squaref"></i> Citations</a></li>
+      <li class="links"><a href="/contact"><i class="fa fa-question-circle"></i>&nbsp;Contact</a></li>
+
+
+  </ul>
+  <div class="clearing">&nbsp;</div>
+</div>
+</div>
+
+<div class="main_wrap">
+  <section id="main">
+  <div class="breadcrumbs">
+      <a href="/tutorials">Back to tutorials...</a>
+  </div>
+    <h1 id="title">File formats</h1>
+    <div>
+          <article id="content" class="tutorial">
+             
+
+<h2 id="sequencing-formats:e863fee43a2d970cdaf6bcd21442137d">Sequencing formats</h2>
+
+<p><a name="fasta"></a></p>
+
+<h3 id="fasta-tutorials-formats-fasta:e863fee43a2d970cdaf6bcd21442137d">FASTA <a href="/tutorials/formats#fasta">#</a></h3>
+
+<p>FASTA [<em>fast-ay</em>] files are the de-facto standard for storing and sharing DNA/RNA/amino acid
+sequences. It is a text-file format with a header line followed by one or more lines of sequence.
+The header line starts with a &lsquo;&gt;&rsquo; character, which may be used for parsing the file. The remainder
+of the header line consists of a name, optionally followed by a comment. The name and comment are
+separated by whitespace. The name must not contain a whitespace (<code> </code>, or <code>\t</code>) character.</p>
+
+<p>The remaining lines consist of DNA, RNA, or amino acid sequences using IUPAC notation. There are no
+technical specifications for line length or wrapping, but it is common practice for long sequences
+(genes/genomes) to be have a consistent line length. However, it is not required for the sequence to have
+any breaks. Blank lines and any whitespace in the sequence line(s) should be ignored.</p>
+
+<p>FASTA is the most common format for distributing reference genome sequences. Reference genomes will
+contain one sequence for each chromosome. In addition to chromosomes, some reference genomes will
+also include unplaced contigs, which are sequences known to be part of the organism&rsquo;s genome, but
+the exact position is unclear.</p>
+
+<h4 id="variations:e863fee43a2d970cdaf6bcd21442137d">Variations</h4>
+
+<p>FASTA files are commonly stored as <code>gzip</code> compressed files, due to their large size and general space inefficiency. However,
+files that need to be randomly accessed need to be stored uncompressed, or compressed with a tool like <code>bgzip</code> (although the
+latter is less common).</p>
+
+<h4 id="example:e863fee43a2d970cdaf6bcd21442137d">Example</h4>
+
+<pre><code>&gt;sequence1 This is the comment line
+ATCGATCGATCGACTACGACTACGACGACGACATCGACATCTACT
+GGCGCGCGCTAGAGCTAGCTTGAGATAAATCGACTAGCGACTGAG
+CTATCTTCTCTATATATTTAAAAAGCGCAACTACTGACTA
+&gt;seq2
+AATAGCGCGCGCGCGCTCATATATCTATATATAAAAACCTACTAC
+GACTACGACTATCGATCGATTATCGGTATCGTATCGGTATTATTA
+TTTAATGCGCGCGCGCCGACTAGCTAGCTATCGATCGATCGATCG
+ACTACGACTACGACGACGACATCGACATCTACT
+</code></pre>
+
+<h4 id="tools:e863fee43a2d970cdaf6bcd21442137d">Tools</h4>
+
+<p>FASTA files can be indexed and queried with the program <code>samtools faidx</code>. This requires a well-formatted FASTA file with
+consistent line lengths.</p>
+
+<p><a href="/ngsutilsj">ngsutilsj</a> contains a number of tools for managing FASTA files, including indexed FASTA files. These tools
+including tagging sequence names, masking regions of sequences, splitting a FASTA file by sequence name, changing the
+line wrapping for a file, or generating mock <a href="/tutorials/formats#fastq">FASTQ</a> reads.</p>
+
+<h4 id="external-links:e863fee43a2d970cdaf6bcd21442137d">External links</h4>
+
+<p><a href="https://en.wikipedia.org/wiki/FASTA_format">https://en.wikipedia.org/wiki/FASTA_format</a></p>
+
+<p><a name="fastq"></a></p>
+
+<h3 id="fastq-tutorials-formats-fastq:e863fee43a2d970cdaf6bcd21442137d">FASTQ <a href="/tutorials/formats#fastq">#</a></h3>
+
+<p>FASTQ [<em>fast-kew</em>] is the most common sequencing read format. FASTQ files are text files with a four-line record
+for each sequence. The first line starts with an &lsquo;@&rsquo; character and the unique name for the read. The
+second line is the sequence. The third line starts with the &lsquo;+&rsquo; character, and may optionally contain
+the read name again. The fourth line is the quality score for each of the basecalls in <a href="https://en.wikipedia.org/wiki/Phred_quality_score">Phred</a> scale.</p>
+
+<h4 id="variations-1:e863fee43a2d970cdaf6bcd21442137d">Variations</h4>
+
+<p>The sequence and quality lines in the FASTQ record may be word-wrapped, like FASTA files, but this is not seen very often.</p>
+
+<p>FASTQ files are almost always stored compressed, usually with <code>gzip</code>, although <code>bzip2</code> compression is sometimes
+also used. FASTQ record information can also be stored in other compressed formats, such as <a href="/tutorials/formats#unalignedbam">unaligned BAM</a> files
+or <a href="/tutorials/formats#sqz">SQZ</a> files. However, almost all publicly available data is distributed as gzip-compressed
+FASTQ files.</p>
+
+<p>Paired-end sequencing data is commonly stored as two separate FASTQ files, one for each read. But, it is also possible
+to store both reads in the same file. These are called <em>interleaved</em> FASTQ files. Many aligners support interleaved
+files out of the box for paired end data. For those that don&rsquo;t an adapter tool can be used to convert interleaved files
+to non-interleaved files using named FIFO pipes. Interleaved FASTQ files are slightly have slightly more efficient
+compression ratios when compared to using two separate FASTQ files, but the main benefit is the need to only manage
+one file per sample. Interleaved files can also be easier to filter using a tool like <a href="/ngsutilsj/fastq-filter">ngsutilsj fastq-filter</a>.</p>
+
+<h4 id="example-1:e863fee43a2d970cdaf6bcd21442137d">Example</h4>
+
+<pre><code>@seq1 This is the comment line
+ATCGATCGATCGACTACGACTACGACGACGACATCGACATCTACT
++
+BBBB,(,,7AA,&lt;((,A&lt;,,,FKAF,,,F,F7F,7,,,AA##@!@
+</code></pre>
+
+<h4 id="external-links-1:e863fee43a2d970cdaf6bcd21442137d">External links</h4>
+
+<p><a href="https://en.wikipedia.org/wiki/FASTQ_format">https://en.wikipedia.org/wiki/FASTQ_format</a></p>
+
+<p><a name="unalignedbam"></a></p>
+
+<h3 id="unaligned-bam-file-tutorials-formats-fastq:e863fee43a2d970cdaf6bcd21442137d">Unaligned BAM file <a href="/tutorials/formats#fastq">#</a></h3>
+
+<p>BAM files are typically associated with read alignments to a genome, but they can also be used to store unaligned/raw
+sequences too. Unaligned BAM files store the same read information as a FASTQ file (name, sequence, and
+quality scores) and they can also store multiple reads in the same file (like interleaved FASTQ files). Also,
+unaligned BAM files are compressed, and store quality score information in an optimized manner versus character
+encoding. Even with the extra overhead of the BAM format, these factors make this a slightly more efficient way
+to store raw sequencing reads over FASTQ files.</p>
+
+          </article>
+    </div>
+  </section>
+</div>
+
+<div class="footer_wrap">
+<div class="footer">
+<div>
+
+<b>compgen.io</b><br/>Copyright &copy;2015 - Marcus R. Breese
+<br/><br/>
+<a href="http://github.com/compgen-io">http://github.com/compgen-io</a><br/>
+<a href="http://github.com/mbreese">http://github.com/mbreese</a><br/>
+<a href="http://github.com/ngsutils">http://github.com/ngsutils</a><br/>
+</div>
+</div>
+</div>
+
+</body>
