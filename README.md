@@ -1,1 +1,3 @@
-compgen.io website source
+# compgen-io-site
+Hugo generation source for compgen.io
+
