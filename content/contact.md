@@ -23,7 +23,7 @@ Marcus R. Breese, PhD
 
 Staff Scientist - Bioinformatics  
 [Sweet-Cordero Lab](http://sweetcorderolab.stanford.edu)  
-Dept. of Pediatrics, Hematology/Oncology  
+[Dept. of Pediatrics, Div. of Hematology/Oncology](http://pedhemonc.stanford.edu/)
 [Stanford University School of Medicine](http://med.stanford.edu)  
 Stanford, California
 
