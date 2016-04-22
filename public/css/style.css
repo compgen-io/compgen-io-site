@@ -1,0 +1,45 @@
+body {
+background-color: #fff;
+margin:0;
+padding:0;
+font-family: Lato, Helvetica, sans-serif;
+}
+
+.header {
+    background-color: #b8b9ba;
+    border-bottom: 2px solid #4d4f53;
+    height: 72px;
+
+}
+
+.header .logo {
+    float:left;
+    margin-top: 4px;
+    margin-left: 32px;
+    font-size: 28pt;
+    font-weight: 300;
+    padding: 8px 0;
+    color: #eceff1;
+}
+
+.header .logo .io {
+    font-weight: 100;
+}
+
+.header .slogan {
+    margin-top: 8px;
+    float:left;
+    margin-left: 32px;
+    padding: 8px 32px;
+    border-left: 1px solid #aaa;
+    color: #717275;
+    font-weight: 300;
+    font-size: 12pt;
+}
+.header .links {
+    float:right;
+}
+.clearing {
+    clear:both;
+    height: 1px;
+}
