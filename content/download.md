@@ -7,7 +7,7 @@ title = "Downloads"
 
 <div id="registered">
 
-Please fill out the form below to download software. The form is optional, but
+Please fill out the form below before downloading software. The form is optional, but
 it helps us keep track of how many users we have and is critical for justifying future work.
 
 Registering really helps us -- Thanks!
