@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 15 Dec 2015 00:54:57 -0500</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Contact me</title>
+      <link>/contact/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>/contact/</guid>
+      <description>&lt;p&gt;&lt;div class=&#34;contact-logos&#34;&gt;
+    &lt;a href=&#34;http://ucsf.edu&#34;&gt;&lt;img src=&#34;/img/UCSF_120px.png&#34;/&gt;&lt;/a&gt;&lt;br/&gt;
+    &lt;a href=&#34;http://med.stanford.edu&#34;&gt;&lt;img src=&#34;/img/SM-logo-V-web.png&#34; height=&#34;38px&#34;/&gt;&lt;/a&gt;&lt;br/&gt;
+    &lt;a href=&#34;http://medicine.iu.edu&#34;&gt;&lt;img src=&#34;/img/logo3.gif&#34;/&gt;&lt;/a&gt;
+&lt;/div&gt;
+If you have any issues with any of the software, have a question, or an idea for a new feature &amp;ndash; please let me know!
+Pull requests on Github are also appreciated.&lt;/p&gt;
+
+&lt;p&gt;Bugs can be submitted as an issue on the individual project&amp;rsquo;s Github page.&lt;/p&gt;
+
+&lt;p&gt;You can also contact me by email here:&lt;br /&gt;
+&lt;i class=&#34;fa fa-envelope&#34; style=&#34;padding:0 4px;&#34;&gt;&lt;/i&gt; marcus.breese @ ucsf.edu&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Marcus R. Breese, PhD&lt;/p&gt;
+
+&lt;p&gt;Computational Researcher&lt;br /&gt;
+Pediatric Hematology/Oncology&lt;br /&gt;
+&lt;a href=&#34;http://sweetcorderolab.ucsf.edu&#34;&gt;Sweet-Cordero Lab&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://ucsf.edu&#34;&gt;UCSF&lt;/a&gt;&lt;br /&gt;
+San Francisco, California&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;Prior affiliations&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://pedhemonc.stanford.edu/&#34;&gt;Dept. of Pediatrics, Div. of Hematology/Oncology&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://med.stanford.edu&#34;&gt;Stanford University School of Medicine&lt;/a&gt;&lt;br /&gt;
+Stanford, California&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://faculty.washington.edu/sdmooney/&#34;&gt;Mooney Lab&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://buckinstitute.org/&#34;&gt;Buck Institute for Research on Aging&lt;/a&gt;&lt;br /&gt;
+Novato, California&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://compbio.iupui.edu/group/6/pages/about_us&#34;&gt;Liu Lab&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://medicine.iu.edu/&#34;&gt;Indiana University School of Medicine&lt;/a&gt;&lt;br /&gt;
+Indianapolis, Indiana&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://biochemistry.medicine.iu.edu/pe/primary-faculty/howard-j-edenberg-ph-d/&#34;&gt;Edenberg Lab&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://medicine.iu.edu/&#34;&gt;Indiana University School of Medicine&lt;/a&gt;&lt;br /&gt;
+Indianapolis, Indiana&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Downloads</title>
+      <link>/download/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>/download/</guid>
+      <description>&lt;div id=&#34;registered&#34;&gt;
+
+Please fill out the form below before downloading software. The form is completely optional, but
+it helps us keep track of how many users we have and is critical for justifying future work (and funding).
+
+&lt;br/&gt;
+&lt;br/&gt;
+
+This information really helps us -- Thanks!
+
+&lt;br/&gt;
+
+&lt;br/&gt;
+
+&lt;form id=&#34;download_form&#34;&gt;
+&lt;table class=&#34;download_form&#34;&gt;
+    &lt;tr&gt;&lt;td align=&#34;right&#34;&gt;&lt;b&gt;Email address:&lt;/b&gt;&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;&lt;input type=&#34;text&#34; name=&#34;email&#34; placeholder=&#34;you@example.com&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td align=&#34;right&#34;&gt;&lt;b&gt;Organization:&lt;/b&gt;&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;&lt;input type=&#34;text&#34; name=&#34;org&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td align=&#34;right&#34;&gt;&lt;b&gt;Type:&lt;/b&gt;&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;academia&#34;&gt; Research University / Academic&lt;/input&gt;&lt;br/&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;clinical&#34;&gt; Hospital / Clinical&lt;/input&gt;&lt;br/&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;institute&#34;&gt; Independent research institute&lt;/input&gt;&lt;br/&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;govt&#34;&gt; Government&lt;/input&gt;&lt;br/&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;industry&#34;&gt; Biotech / Industry&lt;/input&gt;&lt;br/&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;other&#34;&gt; Other&lt;/input&gt; &amp;nbsp; &lt;input type=&#34;text&#34; name=&#34;orgtype_other&#34; class=&#34;small_input&#34;/&gt;
+    &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td align=&#34;right&#34;&gt;&lt;b&gt;Install location:&lt;/b&gt;&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;installtype&#34; value=&#34;workstation&#34;&gt; Single-user workstation / PC&lt;/input&gt;&lt;br/&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;installtype&#34; value=&#34;server&#34;&gt; Multi-user server&lt;/input&gt;&lt;br/&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;installtype&#34; value=&#34;cluster&#34;&gt; HPC cluster&lt;/input&gt;&lt;br/&gt;
+        &lt;input type=&#34;radio&#34; name=&#34;installtype&#34; value=&#34;other&#34;&gt; Other&lt;/input&gt; &amp;nbsp; &lt;input type=&#34;text&#34; name=&#34;installtype_other&#34; class=&#34;small_input&#34;/&gt;
+    &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;input type=&#34;submit&#34; value=&#34;Submit and proceed to downloads&#34; class=&#34;btn btn-primary&#34;/&gt;&lt;/td&gt;&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;/downloads/direct&#34; class=&#34;btn&#34; id=&#34;skip_register&#34; onclick=&#34;return are_you_sure();&#34;&gt;Skip this...&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+
+&lt;br/&gt;
+
+&lt;center&gt;
+All of the software available here for download is under an open-source license.
+&lt;/center&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SBS</title>
+      <link>/sbs/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>/sbs/</guid>
+      <description>&lt;p&gt;SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for
+traditional schedulers like PBS, SGE, or SLURM. Not everyone wants to have a complete install of SGE on
+their laptop. In those cases, SBS can be a quick replacement that requires minimal overhead. SBS is a
+single file script written in Python that stores job definitions in a dedicated folder on a workstation.
+The user can then run those jobs using whatever resource restrictions are necessary.&lt;/p&gt;
+
+&lt;p&gt;SBS will run jobs in a first-available, first run basis. Meaning, the first job that fits the available
+resources that is also ready to run (has no pending dependencies) will be run. &lt;code&gt;sbs run&lt;/code&gt; does not run
+as a daemon, so it is best executed in the context of a screen or tmux session.&lt;/p&gt;
+
+&lt;p&gt;SBS is also supported by &lt;a href=&#34;/cgpipe&#34;&gt;cgpipe&lt;/a&gt; pipelines as a supported job runner. This lets you run the
+same pipelines on your local machine or a HPC cluster.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Usage: sbs {-d sbshome} command {options}
+
+Commands:
+  cancel      Cancel a job
+  cleanup     Remove all completed jobs
+  help        Help for a particular command
+  hold        Hold a job from running until released
+  release     Release a job
+  run         Start running jobs
+  shutdown    Stop running jobs (and cancel any currently running jobs)
+  status      Get the run status of a job (run state)
+  submit      Submit a new job to the queue
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Current projects</title>
+      <link>/projects/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:49 -0500</pubDate>
+      
+      <guid>/projects/</guid>
+      <description>&lt;table class=&#34;table_list&#34;&gt;
+    &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;NGS data analysis&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/ngsutilsj&#34;&gt;ngsutilsj&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Updated NGS data processing toolkit (active development)&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/ngsutils&#34;&gt;NGSUtils&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Original NGS data processing tools (maintenance only)&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/cgsplice&#34;&gt;cgsplice&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Splicing analysis toolkit&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/sqz&#34;&gt;SQZ&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Efficient and secure sequencing read file format&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;Data analysis pipelines / infrastructure&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/cgpipe&#34;&gt;cgpipe&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Language for defining and running pipelines on HPC clusters&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/sbs&#34;&gt;SBS&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Simple Batch Scheduler - Single user batch job runner for workstations&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;Misc. tools&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/basespace-download&#34;&gt;basespace-download&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Download files / samples from Illumina&#39;s BaseSpace&lt;/td&gt;&lt;td&gt;Go&lt;/td&gt;&lt;/tr&gt;
+    &lt;!--&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/sjq&#34;&gt;SJQ&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Simple job queue embedded in cgpipe&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;--&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/swalign&#34;&gt;swalign&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Smith-Waterman local alignment library/tool&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/tabutils&#34;&gt;tabutils&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Utility progams for working with tab-delimited text files&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;Programming libraries&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/compgen-common&#34;&gt;compgen-common&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Common utility classes useful for Java projects&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;/compgen-cmdline&#34;&gt;compgen-cmdline&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Framework for developing Java command-line applications that have a *nix feel&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

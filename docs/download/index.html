@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+    <meta charset="utf-8">
+
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83662616-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+    <base href="">
+    <title> - downloads</title>
+    <link rel="canonical" href="/download/">
+
+    
+</head>
+<body lang="en">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<div class="header_wrap">
+<div class="header">
+  <div class="logo"><a href="/index2"><img src="/img/compgen-logo.png" alt="compgen.io"/></a></div>
+  <div class="slogan">data wrangling for<br/>computational genomics</div>
+  <ul class="links">
+      <li class="links dropdown">
+          <a href="/projects" style="padding-right: 0;"><i class="fa fa-cogs"></i>&nbsp;Projects</a>
+          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-left: 2px;" id="dropdownMenu1">
+            <span class="fa fa-sort-down"></span>
+            <span class="sr-only">Toggle Projects Dropdown</span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-header">NGS data analysis</li>
+            <li><a href="/ngsutilsj">ngsutilsj (newer)</a></li>
+            <li><a href="/ngsutils">NGSUtils (older)</a></li>
+            <li><a href="/cgsplice">cgsplice</a></li>
+            <li><a href="/sqz">SQZ</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Data analysis pipelines</li>
+            <li><a href="/cgpipe">cgpipe</a></li>
+            <li><a href="/sbs">SBS</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Misc. tools</li>
+            <li><a href="/basespace-download">Basespace-download</a></li>
+            
+            <li><a href="/swalign">swalign</a></li>
+            <li><a href="/tabutils">tabutils</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Programming libraries</li>
+            <li><a href="/compgen-common">compgen-common</a></li>
+            <li><a href="/compgen-cmdline">compgen-cmdline</a></li>
+          </ul>
+      </li>
+      <li class="links"><a href="/tutorials"><i class="fa fa-book"></i>&nbsp;Tutorials</a></li>
+      <li class="links"><a href="/download"><i class="fa fa-download"></i> Downloads</a></li>
+      <li class="links"><a href="/citations"><i class="fa fa-external-link-squaref"></i> Citations</a></li>
+      <li class="links"><a href="/contact"><i class="fa fa-question-circle"></i>&nbsp;Contact</a></li>
+
+
+  </ul>
+  <div class="clearing">&nbsp;</div>
+</div>
+</div>
+
+
+<div class="main_wrap">
+  <section id="main">
+    <h1 id="title">Downloads</h1>
+    <div>
+          <article id="content" class="content">
+             <div id="registered">
+
+Please fill out the form below before downloading software. The form is completely optional, but
+it helps us keep track of how many users we have and is critical for justifying future work (and funding).
+
+<br/>
+<br/>
+
+This information really helps us -- Thanks!
+
+<br/>
+
+<br/>
+
+<form id="download_form">
+<table class="download_form">
+    <tr><td align="right"><b>Email address:</b></td><td colspan="2"><input type="text" name="email" placeholder="you@example.com"/></td></tr>
+    <tr><td align="right"><b>Organization:</b></td><td colspan="2"><input type="text" name="org"/></td></tr>
+    <tr><td align="right"><b>Type:</b></td><td colspan="2">
+        <input type="radio" name="orgtype" value="academia"> Research University / Academic</input><br/>
+        <input type="radio" name="orgtype" value="clinical"> Hospital / Clinical</input><br/>
+        <input type="radio" name="orgtype" value="institute"> Independent research institute</input><br/>
+        <input type="radio" name="orgtype" value="govt"> Government</input><br/>
+        <input type="radio" name="orgtype" value="industry"> Biotech / Industry</input><br/>
+        <input type="radio" name="orgtype" value="other"> Other</input> &nbsp; <input type="text" name="orgtype_other" class="small_input"/>
+    </td></tr>
+    <tr><td align="right"><b>Install location:</b></td><td colspan="2">
+        <input type="radio" name="installtype" value="workstation"> Single-user workstation / PC</input><br/>
+        <input type="radio" name="installtype" value="server"> Multi-user server</input><br/>
+        <input type="radio" name="installtype" value="cluster"> HPC cluster</input><br/>
+        <input type="radio" name="installtype" value="other"> Other</input> &nbsp; <input type="text" name="installtype_other" class="small_input"/>
+    </td></tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr><td></td><td><input type="submit" value="Submit and proceed to downloads" class="btn btn-primary"/></td><td align="right"><a href="/downloads/direct" class="btn" id="skip_register" onclick="return are_you_sure();">Skip this...</a></td></tr>
+</table>
+</form>
+
+<br/>
+
+<center>
+All of the software available here for download is under an open-source license.
+</center>
+</div>
+
+          </article>
+    </div>
+  </section>
+</div>
+
+<div class="footer_wrap">
+<div class="footer">
+<div>
+
+<b>compgen.io</b><br/>Copyright &copy;2016-2017
+<br/><br/>
+<a href="http://github.com/compgen-io">http://github.com/compgen-io</a><br/>
+<a href="http://github.com/mbreese">http://github.com/mbreese</a><br/>
+<a href="http://github.com/ngsutils">http://github.com/ngsutils</a><br/>
+</div>
+</div>
+</div>
+
+</body>
