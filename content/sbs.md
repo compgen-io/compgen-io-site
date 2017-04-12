@@ -1,9 +1,9 @@
 +++
 date = "2015-12-15T00:54:57-05:00"
 draft = true
-title = "sbs"
+title = "SBS"
 github = "compgen-io/sbs"
-project = "SBS"
+project = "sbs"
 docs = "/sbs/docs"
 type = "projects"
 icon = "sitemap fa-rotate-90"

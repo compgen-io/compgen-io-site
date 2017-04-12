@@ -9,4 +9,9 @@ fi
 
 git commit -am "$msg"
 git push origin master
-git subtree push --prefix=public git@github.com:compgen-io/compgen-io-site.git gh-pages
+cd public
+git commit -am "$msg"
+git push
+cd ..
+
+#git subtree push --prefix=public git@github.com:compgen-io/compgen-io-site.git gh-pages
