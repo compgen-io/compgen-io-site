@@ -1,0 +1,339 @@
+@basegray: #b8b9ba;
+@darkgray: darken(@basegray, 30%);
+@backgray: lighten(@basegray, 20%);
+@bluelink: #0098db;
+@white: #ffffff;
+@almostwhite: #f0f2f5;
+@codered: #c7254e;
+
+body {
+    background-color: @backgray;
+    margin:0;
+    padding:0;
+    font-family: Lato, Helvetica, sans-serif;
+    font-size: 11pt;
+}
+
+
+a { 
+    color: @bluelink;
+}
+
+a:hover { 
+    color: lighten(@bluelink, 20%);
+}
+
+
+
+h1 {
+    font-size: 24pt;
+    font-weight: 300;
+    margin-left: -24px;
+    margin-right: -24px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid lighten(@bluelink, 50%);
+}
+
+h2 {
+    font-size: 18pt;
+    font-weight: 300;
+    color: darken(@bluelink, 10%);
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 14pt;
+    font-weight: 400;
+    margin-top: 24px;
+    margin-bottom: 6px;
+}
+
+h4 {
+    font-size: 14pt;
+    font-weight: 300;
+    color: darken(@bluelink, 10%);
+    margin-top: 24px;
+    margin-bottom: 6px;
+}
+
+
+
+.header_wrap {
+    background-color: @basegray;
+    border-bottom: 2px solid @darkgray;
+
+}
+.header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1080px;
+    height: 90px;
+
+    .logo {
+        float:left;
+    }
+
+    .slogan {
+        margin-top: 16px;
+        float:left;
+        margin-left: 32px;
+        padding: 8px 32px;
+        border-left: 1px solid darken(@basegray, 10%);
+        color: @darkgray;
+        font-weight: 300;
+        font-size: 12pt;
+    }
+
+    ul.links {
+        // border: 1px solid #f00;
+        padding: 36px 0 0 0;
+        margin-right: 24px;
+        text-align:right;
+
+        li.links {
+            display: inline-block;
+            a {
+                font-size: 12pt;
+                padding: 6px 12px;
+            }
+        }
+    }
+
+    a { 
+        color: @almostwhite;
+    }
+
+    a:hover { 
+        color: @bluelink;
+        text-decoration: none;
+    }
+
+}
+
+.project_bar_wrap {
+    background-color: darken(@darkgray, 20%);
+    border-bottom: 1px solid @darkgray;
+}
+
+ul.project_bar {
+    margin: 0 auto;
+    width: 960px;
+    color: @almostwhite;
+    // text-align: right;
+
+    li.project_link {
+        list-style: none;
+        display: inline-block;
+        font-weight: 300;
+
+        a {
+            display: inline-block;
+            padding: 8px 16px;
+            color: @backgray;
+            border-bottom: 2px solid darken(@darkgray, 20%);
+
+        }
+        a.active {
+            color: lighten(@backgray, 10%);
+            background-color: darken(@darkgray, 10%);
+            text-decoration: none;
+            border-bottom: 2px solid @bluelink;
+
+        }
+
+
+        a:hover {
+            color: lighten(@backgray, 10%);
+            background-color: @darkgray;
+            text-decoration: none;
+            border-bottom: 2px solid @bluelink;
+
+        }
+    }
+    
+    li.heading {
+        list-style: none;
+        display: inline-block;
+        font-weight: 300;
+        padding: 8px 24px 8px 24px;
+        margin-left: -48px;
+        // margin-right: 24px;
+        // border-right: 1px solid darken(@darkgray, 40%);
+        // font-weight: 400;
+    }
+
+}
+
+
+.main_wrap {
+    padding: 24px 100px 120px 100px;
+    background-color: @white;
+    min-height: 400px;
+
+}
+
+#main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}
+
+.breadcrumbs {
+    margin-left: -24px;
+}
+
+.content {
+    line-height: 15pt;
+    ul {
+        margin-top:0;
+        margin-bottom: 24px;
+        padding-left: 24px;
+        li {
+            list-style: none;
+        }
+    }
+
+}
+
+.tutorial {
+    line-height: 15pt;
+    ul {
+        margin-top:0;
+        margin-bottom: 24px;
+        padding-left: 24px;
+        li {
+            // list-style: none;
+        }
+    }
+
+}
+
+.footer_wrap {
+    border-top: 1px solid @basegray;
+}
+.footer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    padding-top: 32px;
+    text-align:right;
+    color: @basegray;
+
+    a:hover {
+        color: @bluelink;
+        text-decoration: none;
+    }
+
+}
+.clearing {
+    clear:both;
+    height: 1px;
+}
+
+.contact-logos {
+    text-align: center;
+    width: 320px;
+    float: right;
+    margin-top: 80px;
+    img {
+        margin-bottom: 48px;
+        opacity: .80;
+    }
+    img:hover {
+        opacity: 1.0;
+    }
+}
+
+.compgen {
+    font-weight: bold;
+}
+
+.rightbar {
+    float: right;
+    width: 220px;
+    border-left: 1px solid lighten(@basegray, 10%);
+    padding-left: 40px; 
+    margin-top: 60px;
+
+    h2 {
+        margin-top: -24px;
+        font-size: 11pt;
+        font-weight:bold;
+
+        margin-bottom:4px;
+        // font-weight: 300;
+        color: @darkgray;
+        text-transform: uppercase;
+    }
+    ul {
+        padding:0;
+        margin:0;
+
+        li {
+            list-style: none;
+            // margin-left: 12px;
+            margin-bottom: 4px;
+            font-size: 11pt;
+        }
+    }
+}
+
+.dropdown-header {
+    text-align:left;
+    padding-left:12px;
+}
+.leftbar {
+    margin-right: 300px;
+}
+
+.table_list {
+    padding:0;
+    margin:0 auto 80px auto;
+
+    tr{
+        td:first-child {
+            white-space: nowrap;
+            padding: 8px 10px 0 20px;
+        }
+
+        td.table_heading {
+            white-space: nowrap;
+            // padding: 8px 10px 0 0px;
+            margin-top: 36px;
+            margin-bottom: 12px; 
+            // font-weight: 300;
+            color: @darkgray;
+             border-bottom: 1px solid lighten(@basegray, 20%);
+             padding: 6px 0;
+            font-size: 9pt;
+            font-weight:bold;
+            text-transform: uppercase;
+        }
+    }
+
+    td {
+        padding: 8px 10px 0 10px;
+        vertical-align: top;
+    }
+}
+
+.download_form {
+    padding:0;
+    margin:0 auto;
+    td{
+        padding: 4px 8px;
+        vertical-align: top;
+    }
+    input[type="radio"] {
+        margin-right: 8px;
+    }
+    input[type="text"].small_input {
+        width: 200px;
+    }
+
+    input[type="text"] {
+        width: 400px;
+    }
+}

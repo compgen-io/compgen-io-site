@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+    <meta charset="utf-8">
+
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83662616-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+    <base href="http://compgen.io/">
+    <title>compgen.io - cgsplice</title>
+    <link rel="canonical" href="http://compgen.io/cgsplice/">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="anonymous">
+
+
+
+
+
+<link rel="stylesheet/less" type="text/css" href="/css/style.less" />
+
+<script src="/js/less.min.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="/favicon.ico" />
+
+</head>
+<body lang="en">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<div class="header_wrap">
+<div class="header">
+  <div class="logo"><a href="/index2"><img src="/img/compgen-logo.png" alt="compgen.io"/></a></div>
+  <div class="slogan">data wrangling for<br/>computational genomics</div>
+  <ul class="links">
+      <li class="links dropdown">
+          <a href="/projects" style="padding-right: 0;"><i class="fa fa-cogs"></i>&nbsp;Projects</a>
+          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-left: 2px;" id="dropdownMenu1">
+            <span class="fa fa-sort-down"></span>
+            <span class="sr-only">Toggle Projects Dropdown</span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-header">NGS data analysis</li>
+            <li><a href="/ngsutilsj">ngsutilsj (newer)</a></li>
+            <li><a href="/ngsutils">NGSUtils (older)</a></li>
+            <li><a href="/cgsplice">cgsplice</a></li>
+            <li><a href="/sqz">SQZ</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Data analysis pipelines</li>
+            <li><a href="/cgpipe">cgpipe</a></li>
+            <li><a href="/sbs">SBS</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Misc. tools</li>
+            <li><a href="/basespace-download">Basespace-download</a></li>
+            
+            <li><a href="/swalign">swalign</a></li>
+            <li><a href="/tabutils">tabutils</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Programming libraries</li>
+            <li><a href="/compgen-common">compgen-common</a></li>
+            <li><a href="/compgen-cmdline">compgen-cmdline</a></li>
+          </ul>
+      </li>
+      <li class="links"><a href="/tutorials"><i class="fa fa-book"></i>&nbsp;Tutorials</a></li>
+      <li class="links"><a href="/download"><i class="fa fa-download"></i> Downloads</a></li>
+      <li class="links"><a href="/citations"><i class="fa fa-external-link-squaref"></i> Citations</a></li>
+      <li class="links"><a href="/contact"><i class="fa fa-question-circle"></i>&nbsp;Contact</a></li>
+
+
+  </ul>
+  <div class="clearing">&nbsp;</div>
+</div>
+</div>
+
+<div class="project_bar_wrap">
+  <ul class="project_bar">
+    <li class="heading"><a href="/projects">Projects</a> > cgsplice</li>
+    <li class="project_link"><a href="/cgsplice" class="active">Overview</a></li>
+  
+  
+    <li class="project_link"><a href="http://github.com/compgen-io/cgsplice"><i class="fa fa-github"></i> GitHub project</a></li>
+    <li class="project_link"><a href="http://github.com/compgen-io/cgsplice/issues"><i class="fa fa-bug"></i> Issues</a></li>
+
+    <li class="project_link"><a href="download?project=cgsplice"><i class="fa fa-download"></i> Download</a></li>
+  </ul>
+</div>
+<div class="main_wrap">
+  <section id="main">
+    <h1 id="title"><i class="fa fa-flask"></i> cgsplice</h1>
+    <div>
+          <article id="content" class="tutorial">
+             
+
+<p>cgsplice is a set of tools to support direct measurement of splice junctions in
+RNA-seq data. cgsplice works by finding and counting reads that span splice junctions.
+It does this by searching for reads with an &ldquo;N&rdquo; gap in their CIGAR alignment string.
+Next, for all junctions, it determines the donor and acceptor sites and tallies how
+many reads span each donor/acceptor pair. Finally, using these counts for multiple
+samples, it will calculate a permuted p-value for how likely it is that a given donor
+or acceptor had differential splicing between two conditions. Reads supporting a
+cassette exon, but that don&rsquo;t cross a junction are not included in this model.</p>
+
+<h2 id="counting-junction-spanning-reads:3e94e5809f7f6d41dc30f877167d487b">Counting junction-spanning reads</h2>
+
+<p>The <code>junction-count</code> command will count how many reads span any particular splice
+junction. Specifically, each junction is split into donor/acceptor pairs. Then for
+all junctions with a common donor or acceptor, the number of supporting reads is
+calculated. Only reads that have split-mapping (N gaps in the CIGAR string) are used.</p>
+
+<p>Counting is done in a gene model-free method, allowing for discovery of unannotated
+transcripts (if a suitable aligner is used). In addition to counting reads that span
+junctions, reads that represent retained introns can also be counted.</p>
+
+<h2 id="differential-splicing:3e94e5809f7f6d41dc30f877167d487b">Differential splicing</h2>
+
+<p>The <code>splice-diff</code> command takes a series of <code>junction-count</code> outputs and performs a
+permutation analysis to determine which splicing donor/acceptor sites exhibit differential
+splicing between two conditions. The statistical metric used is a Student&rsquo;s t-score with
+Binomial variance. Samples are permuted across different conditions to calculate a p-value
+for each donor/acceptor.</p>
+
+<h2 id="splicing-events:3e94e5809f7f6d41dc30f877167d487b">Splicing events</h2>
+
+<p>The <code>combine-events</code> command merges donor/acceptors into complete splicing events, such
+as cassette exons. Only donor/acceptor that meet certain criteria (FDR, effect-size)
+are merged.</p>
+
+<h2 id="stats:3e94e5809f7f6d41dc30f877167d487b">Stats</h2>
+
+<p>The <code>bam-stats</code> command can be used to determine how many junction-spanning reads are
+present in any given sample, among other things. These QC metrics can be used to assess
+how useful a given BAM file is for junction analysis.</p>
+
+<h2 id="installing-cgsplice:3e94e5809f7f6d41dc30f877167d487b">Installing cgsplice</h2>
+
+<p>cgsplice is implemented in Java and distributed as a self-executing fast-JAR file. This
+requires only a recent version of Java to be installed on the system. Otherwise, cgsplice
+acts as a normal command-line program.</p>
+
+          </article>
+    </div>
+  </section>
+</div>
+
+<div class="footer_wrap">
+<div class="footer">
+<div>
+
+<b>compgen.io</b><br/>Copyright &copy;2016-2017
+<br/><br/>
+<a href="http://github.com/compgen-io">http://github.com/compgen-io</a><br/>
+<a href="http://github.com/mbreese">http://github.com/mbreese</a><br/>
+<a href="http://github.com/ngsutils">http://github.com/ngsutils</a><br/>
+</div>
+</div>
+</div>
+
+</body>
