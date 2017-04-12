@@ -6,6 +6,7 @@ title = "Contact me"
 +++
 
 <div class="contact-logos">
+	<a href="http://ucsf.edu"><img src="/img/UCSF_120px.png"/></a><br/>
 	<a href="http://med.stanford.edu"><img src="/img/SM-logo-V-web.png" height="38px"/></a><br/>
 	<a href="http://medicine.iu.edu"><img src="/img/logo3.gif"/></a>
 </div>
@@ -15,21 +16,25 @@ Pull requests on Github are also appreciated.
 Bugs can be submitted as an issue on the individual project's Github page.
 
 You can also contact me by email here:  
-<i class="fa fa-envelope" style="padding:0 4px;"></i> mbreese @ stanford.edu
+<i class="fa fa-envelope" style="padding:0 4px;"></i> marcus.breese @ ucsf.edu
 
 ----
 
 Marcus R. Breese, PhD  
 
-Staff Scientist - Bioinformatics  
-[Sweet-Cordero Lab](http://sweetcorderolab.stanford.edu)  
-[Dept. of Pediatrics, Div. of Hematology/Oncology](http://pedhemonc.stanford.edu/)  
-[Stanford University School of Medicine](http://med.stanford.edu)  
-Stanford, California
+Computational Researcher  
+Pediatric Hematology/Oncology  
+[Sweet-Cordero Lab](http://sweetcorderolab.ucsf.edu)  
+[UCSF](http://ucsf.edu)  
+San Francisco, California
 
 <br/>
 
 Prior affiliations
+
+* [Dept. of Pediatrics, Div. of Hematology/Oncology](http://pedhemonc.stanford.edu/)  
+  [Stanford University School of Medicine](http://med.stanford.edu)  
+  Stanford, California
 
 * [Mooney Lab](http://faculty.washington.edu/sdmooney/)  
   [Buck Institute for Research on Aging](http://buckinstitute.org/)  
@@ -41,4 +46,5 @@ Prior affiliations
 
 * [Edenberg Lab](https://biochemistry.medicine.iu.edu/pe/primary-faculty/howard-j-edenberg-ph-d/)  
   [Indiana University School of Medicine](http://medicine.iu.edu/)  
-  Indianapolis, Indiana	
+  Indianapolis, Indiana  
+

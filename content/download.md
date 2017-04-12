@@ -7,10 +7,13 @@ title = "Downloads"
 
 <div id="registered">
 
-Please fill out the form below before downloading software. The form is optional, but
-it helps us keep track of how many users we have and is critical for justifying future work.
+Please fill out the form below before downloading software. The form is completely optional, but
+it helps us keep track of how many users we have and is critical for justifying future work (and funding).
 
-Registering really helps us -- Thanks!
+<br/>
+<br/>
+
+This information really helps us -- Thanks!
 
 <br/>
 
@@ -41,6 +44,7 @@ Registering really helps us -- Thanks!
 
 <br/>
 
+<center>
 All of the software available here for download is under an open-source license.
-
+</center>
 </div>
