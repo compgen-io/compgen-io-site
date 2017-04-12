@@ -473,6 +473,41 @@ or pulling ribosomal regions from references genomes using RepeatMasker.&lt;/p&g
     </item>
     
     <item>
+      <title>SBS</title>
+      <link>http://compgen.io/sbs/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>http://compgen.io/sbs/</guid>
+      <description>&lt;p&gt;SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for
+traditional schedulers like PBS, SGE, or SLURM. Not everyone wants to have a complete install of SGE on
+their laptop. In those cases, SBS can be a quick replacement that requires minimal overhead. SBS is a
+single file script written in Python that stores job definitions in a dedicated folder on a workstation.
+The user can then run those jobs using whatever resource restrictions are necessary.&lt;/p&gt;
+
+&lt;p&gt;SBS will run jobs in a first-available, first run basis. Meaning, the first job that fits the available
+resources that is also ready to run (has no pending dependencies) will be run. &lt;code&gt;sbs run&lt;/code&gt; does not run
+as a daemon, so it is best executed in the context of a screen or tmux session.&lt;/p&gt;
+
+&lt;p&gt;SBS is also supported by &lt;a href=&#34;http://compgen.io/cgpipe&#34;&gt;cgpipe&lt;/a&gt; pipelines as a supported job runner. This lets you run the
+same pipelines on your local machine or a HPC cluster.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Usage: sbs {-d sbshome} command {options}
+
+Commands:
+  cancel      Cancel a job
+  cleanup     Remove all completed jobs
+  help        Help for a particular command
+  hold        Hold a job from running until released
+  release     Release a job
+  run         Start running jobs
+  shutdown    Stop running jobs (and cancel any currently running jobs)
+  status      Get the run status of a job (run state)
+  submit      Submit a new job to the queue
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Tutorials</title>
       <link>http://compgen.io/tutorials/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
@@ -649,41 +684,6 @@ The processing speed for gzipped compressed files was a major reason for the new
 &lt;p&gt;ngsutilsj is distributed as a self-executing fat-JAR file. This means that for installation, all one needs is
 a working copy of Java and the &lt;code&gt;ngsutilsj&lt;/code&gt; file. Unlike other JAR-file based NGS packages, ngsutilsj includes a
 shell script shim to make it executable like a traditional Unix program.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>sbs</title>
-      <link>http://compgen.io/sbs/</link>
-      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
-      
-      <guid>http://compgen.io/sbs/</guid>
-      <description>&lt;p&gt;SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for
-traditional schedulers like PBS, SGE, or SLURM. Not everyone wants to have a complete install of SGE on
-their laptop. In those cases, SBS can be a quick replacement that requires minimal overhead. SBS is a
-single file script written in Python that stores job definitions in a dedicated folder on a workstation.
-The user can then run those jobs using whatever resource restrictions are necessary.&lt;/p&gt;
-
-&lt;p&gt;SBS will run jobs in a first-available, first run basis. Meaning, the first job that fits the available
-resources that is also ready to run (has no pending dependencies) will be run. &lt;code&gt;sbs run&lt;/code&gt; does not run
-as a daemon, so it is best executed in the context of a screen or tmux session.&lt;/p&gt;
-
-&lt;p&gt;SBS is also supported by &lt;a href=&#34;http://compgen.io/cgpipe&#34;&gt;cgpipe&lt;/a&gt; pipelines as a supported job runner. This lets you run the
-same pipelines on your local machine or a HPC cluster.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Usage: sbs {-d sbshome} command {options}
-
-Commands:
-  cancel      Cancel a job
-  cleanup     Remove all completed jobs
-  help        Help for a particular command
-  hold        Hold a job from running until released
-  release     Release a job
-  run         Start running jobs
-  shutdown    Stop running jobs (and cancel any currently running jobs)
-  status      Get the run status of a job (run state)
-  submit      Submit a new job to the queue
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
