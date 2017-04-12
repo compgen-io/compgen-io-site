@@ -1,5 +1,5 @@
 #!/bin/bash
-hugo -D -d public
+hugo -D -d docs
 
 if [ "$1" != "" ]; then
     msg="$1"
@@ -9,9 +9,5 @@ fi
 
 git commit -am "$msg"
 git push origin master
-cd public
-git commit -am "$msg"
-git push
-cd ..
 
 #git subtree push --prefix=public git@github.com:compgen-io/compgen-io-site.git gh-pages
