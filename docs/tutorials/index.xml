@@ -297,6 +297,8 @@ stored in the same file. Reads are stored in compressed blocks, such that if one
 the reads from that block are lost. Each block is an independent unit. This makes the entire file resilient to
 problems such as bit-rot. This becomes even more important if the built-in encryption is used as each block is
 independently encrypted.&lt;/p&gt;
+
+&lt;p&gt;For more information on SQZ, please see the &lt;a href=&#34;http://compgen.io/projects/sqz&#34;&gt;SQZ project page&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
