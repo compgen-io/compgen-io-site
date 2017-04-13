@@ -103,5 +103,5 @@ the reads from that block are lost. Each block is an independent unit. This make
 problems such as bit-rot. This becomes even more important if the built-in encryption is used as each block is 
 independently encrypted.
 
-For more information on SQZ, please see the [SQZ project page](/projects/sqz).
+For more information on SQZ, please see the [SQZ project page](/sqz).
 
