@@ -7,11 +7,9 @@ else
     msg="deploy site $(date)"
 fi
 
+cp -r static/* docs/
+
 git commit -am "$msg"
 git push origin master
-cd public
-git commit -am "$msg"
-git push
-cd ..
 
 #git subtree push --prefix=public git@github.com:compgen-io/compgen-io-site.git gh-pages
