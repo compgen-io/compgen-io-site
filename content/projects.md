@@ -15,7 +15,7 @@ icon = "cogs"
 	<tr><td>&nbsp;</td></tr>
 	<tr><td colspan="4" class="table_heading">Data analysis pipelines / infrastructure</td></tr>
 	<tr><td><a href="/cgpipe">cgpipe</a></td><td>Language for defining and running pipelines on HPC clusters</td><td>Java</td></tr>
-	<tr><td><a href="/sbs">SBS</a></td><td>Simple Batch Scheduler - Single user batch job runner for workstations</td><td>Python</td></tr>
+	<tr><td><a href="/sbs">SBS</a></td><td>Single user batch job scheduler for workstations</td><td>Python</td></tr>
 	<tr><td>&nbsp;</td></tr>
 	<tr><td colspan="4" class="table_heading">Misc. tools</td></tr>
 	<tr><td><a href="/basespace-download">basespace-download</a></td><td>Download files / samples from Illumina's BaseSpace</td><td>Go</td></tr>
