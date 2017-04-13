@@ -497,6 +497,11 @@ schdeuler. However, SBS is also a single file, so installation is a lot easier t
 &lt;p&gt;SBS is also supported by &lt;a href=&#34;http://compgen.io/cgpipe&#34;&gt;cgpipe&lt;/a&gt; pipelines as a supported job runner. This lets you scale the
 same pipelines from your local machine to an HPC cluster.&lt;/p&gt;
 
+&lt;h2 id=&#34;installation:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://compgen.io/download?project=sbs&#34;&gt;Download&lt;/a&gt; the &lt;code&gt;sbs&lt;/code&gt; file and put it somewhere in your &lt;code&gt;$PATH&lt;/code&gt;. No other installation
+is required.&lt;/p&gt;
+
 &lt;h2 id=&#34;usage:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Usage&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;Usage: sbs {-d sbshome} command {options}
@@ -636,6 +641,11 @@ code of &lt;code&gt;0&lt;/code&gt;, it is considered a successful execution.&lt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;h2 id=&#34;sbs-directory:ef41b7668beb33a4132901e930dd34fb&#34;&gt;SBS directory&lt;/h2&gt;
+
+&lt;p&gt;The SBS home directory (where the job queue data is stored) is by default &lt;code&gt;./.sbs&lt;/code&gt;, that is, in the current directory.
+However, this can be set as an environmental variable: &lt;code&gt;$SBSHOME&lt;/code&gt; or at the command line using &lt;code&gt;sbs -d dir command&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     

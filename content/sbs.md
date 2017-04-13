@@ -27,6 +27,13 @@ schdeuler. However, SBS is also a single file, so installation is a lot easier t
 SBS is also supported by [cgpipe](/cgpipe) pipelines as a supported job runner. This lets you scale the
 same pipelines from your local machine to an HPC cluster.
 
+
+## Installation
+
+[Download](/download?project=sbs) the `sbs` file and put it somewhere in your `$PATH`. No other installation
+is required.
+
+
 ## Usage
 
     Usage: sbs {-d sbshome} command {options}
@@ -101,3 +108,9 @@ Here are the available run options:
 -maxprocs N | The maximum number of processors to schedule (default: all processors)
 -maxmem val | The maximum amount of memory to manage (ex: 4G) (default: unlimited, not managed)
 -forever    | Keep waiting for new jobs after the job queue has completed (default: exit when all jobs are done)
+
+
+## SBS directory
+
+The SBS home directory (where the job queue data is stored) is by default `./.sbs`, that is, in the current directory.
+However, this can be set as an environmental variable: `$SBSHOME` or at the command line using `sbs -d dir command`.
