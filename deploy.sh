@@ -1,5 +1,5 @@
 #!/bin/bash
-hugo -D -d public
+hugo -D -d docs
 
 if [ "$1" != "" ]; then
     msg="$1"

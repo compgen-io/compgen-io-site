@@ -478,18 +478,26 @@ or pulling ribosomal regions from references genomes using RepeatMasker.&lt;/p&g
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/sbs/</guid>
-      <description>&lt;p&gt;SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for
+      <description>
+
+&lt;p&gt;SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for
 traditional schedulers like PBS, SGE, or SLURM. Not everyone wants to have a complete install of SGE on
 their laptop. In those cases, SBS can be a quick replacement that requires minimal overhead. SBS is a
-single file script written in Python that stores job definitions in a dedicated folder on a workstation.
-The user can then run those jobs using whatever resource restrictions are necessary.&lt;/p&gt;
+single file program written in Python that stores job definitions in a managed folder. All job state is
+stored in this folder. There is no requirement for a constantly running daemon to manage the jobs.
+The user can start running these jobs at anytime and using whatever resource restrictions are necessary (eg if you
+have 4 cores on a laptop, but only want to devote 2 cores to running background jobs, you can do that).&lt;/p&gt;
 
-&lt;p&gt;SBS will run jobs in a first-available, first run basis. Meaning, the first job that fits the available
-resources that is also ready to run (has no pending dependencies) will be run. &lt;code&gt;sbs run&lt;/code&gt; does not run
-as a daemon, so it is best executed in the context of a screen or tmux session.&lt;/p&gt;
+&lt;p&gt;SBS runs jobs in a first-available, first run basis. Meaning, the first job that fits the available
+resources that is also ready to run (has no pending dependencies) will be run. This simple scheduling
+algorithm doesn&amp;rsquo;t take into account wall-time, so it is not as efficient as a more complete backfilling
+schdeuler. However, SBS is also a single file, so installation is a lot easier than a proper scheduler!
+&lt;code&gt;sbs run&lt;/code&gt; does not run as a daemon, so it is best executed in the context of a screen or tmux session.&lt;/p&gt;
 
-&lt;p&gt;SBS is also supported by &lt;a href=&#34;http://compgen.io/cgpipe&#34;&gt;cgpipe&lt;/a&gt; pipelines as a supported job runner. This lets you run the
-same pipelines on your local machine or a HPC cluster.&lt;/p&gt;
+&lt;p&gt;SBS is also supported by &lt;a href=&#34;http://compgen.io/cgpipe&#34;&gt;cgpipe&lt;/a&gt; pipelines as a supported job runner. This lets you scale the
+same pipelines from your local machine to an HPC cluster.&lt;/p&gt;
+
+&lt;h2 id=&#34;usage:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Usage&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;Usage: sbs {-d sbshome} command {options}
 
@@ -504,6 +512,130 @@ Commands:
   status      Get the run status of a job (run state)
   submit      Submit a new job to the queue
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;example:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Example&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sbs submit job1.sh
+1
+
+$ sbs submit job2.sh
+2
+
+$ sbs status
+job-id   job-name   status   submit                start   end
+1        sbs.1      H        2017-04-12 23:41:47              
+2        sbs.2      H        2017-04-12 23:41:48              
+
+$ sbs run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;job-options:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Job options&lt;/h2&gt;
+
+&lt;p&gt;SBS job scripts support a number of configurable options. Like PBS, SGE, or SLURM,
+these values can be set as arguments at submit time or as part of the script itself.
+&lt;code&gt;sbs submit&lt;/code&gt; will read a job script from a filename or from stdin. Options can be set
+within the script if the line starts with &lt;code&gt;#SBS&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here are the available options:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-name job-name&lt;/td&gt;
+&lt;td&gt;The name of the job (easier to track than the number)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-mem val&lt;/td&gt;
+&lt;td&gt;Memory units to reserve: 2G, 200M, etc. (not enforced, just used for scheduling)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-procs N&lt;/td&gt;
+&lt;td&gt;Number of processor units to use (not enforced, just used for scheduling)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-mail email@example.com&lt;/td&gt;
+&lt;td&gt;Email when the job starts and finishes&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-hold&lt;/td&gt;
+&lt;td&gt;Set a user-hold on the job. Job will not enter the queue until released&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-stderr fname&lt;/td&gt;
+&lt;td&gt;Write stderr to this file (default: store in SBS job directory)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-stdout fname&lt;/td&gt;
+&lt;td&gt;Write stdout to this file (default: store in SBS job directory)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-wd&lt;/td&gt;
+&lt;td&gt;Working directory to use (default: current directory)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-afterok jobid1:jobid2:&amp;hellip;&lt;/td&gt;
+&lt;td&gt;Dependent jobs - don&amp;rsquo;t start this job until these jobs have finished successfully&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;example-script:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Example script&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+#SBS -name myjob
+#SBS -procs 2
+
+command-goes-here
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;run-options:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Run options&lt;/h2&gt;
+
+&lt;p&gt;Running jobs is a separate process and needs to be manually initiated.
+Each job is independently executed as a new process. If a job ends with a return
+code of &lt;code&gt;0&lt;/code&gt;, it is considered a successful execution.&lt;/p&gt;
+
+&lt;p&gt;Here are the available run options:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-maxprocs N&lt;/td&gt;
+&lt;td&gt;The maximum number of processors to schedule (default: all processors)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-maxmem val&lt;/td&gt;
+&lt;td&gt;The maximum amount of memory to manage (ex: 4G) (default: unlimited, not managed)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-forever&lt;/td&gt;
+&lt;td&gt;Keep waiting for new jobs after the job queue has completed (default: exit when all jobs are done)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
     </item>
     
@@ -702,7 +834,7 @@ shell script shim to make it executable like a traditional Unix program.&lt;/p&g
     &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
     &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;Data analysis pipelines / infrastructure&lt;/td&gt;&lt;/tr&gt;
     &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/cgpipe&#34;&gt;cgpipe&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Language for defining and running pipelines on HPC clusters&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/sbs&#34;&gt;SBS&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Simple Batch Scheduler - Single user batch job runner for workstations&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/sbs&#34;&gt;SBS&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Single user batch job scheduler for workstations&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
     &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
     &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;Misc. tools&lt;/td&gt;&lt;/tr&gt;
     &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/basespace-download&#34;&gt;basespace-download&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Download files / samples from Illumina&#39;s BaseSpace&lt;/td&gt;&lt;td&gt;Go&lt;/td&gt;&lt;/tr&gt;
