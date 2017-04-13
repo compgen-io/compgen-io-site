@@ -840,32 +840,78 @@ shell script shim to make it executable like a traditional Unix program.&lt;/p&g
     </item>
     
     <item>
-      <title>Current projects</title>
-      <link>http://compgen.io/projects/</link>
-      <pubDate>Tue, 15 Dec 2015 00:54:49 -0500</pubDate>
+      <title>swalign</title>
+      <link>http://compgen.io/swalign/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/projects/</guid>
-      <description>&lt;table class=&#34;table_list&#34;&gt;
-    &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;NGS data analysis&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/ngsutilsj&#34;&gt;ngsutilsj&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Updated NGS data processing toolkit (active development)&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/ngsutils&#34;&gt;NGSUtils&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Original NGS data processing tools (maintenance only)&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/cgsplice&#34;&gt;cgsplice&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Splicing analysis toolkit&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/sqz&#34;&gt;SQZ&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Efficient and secure sequencing read file format&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;Data analysis pipelines / infrastructure&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/cgpipe&#34;&gt;cgpipe&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Language for defining and running pipelines on HPC clusters&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/sbs&#34;&gt;SBS&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Single user batch job scheduler for workstations&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;Misc. tools&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/basespace-download&#34;&gt;basespace-download&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Download files / samples from Illumina&#39;s BaseSpace&lt;/td&gt;&lt;td&gt;Go&lt;/td&gt;&lt;/tr&gt;
-    &lt;!--&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/sjq&#34;&gt;SJQ&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Simple job queue embedded in cgpipe&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;--&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/swalign&#34;&gt;swalign&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Smith-Waterman local alignment library/tool&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/tabutils&#34;&gt;tabutils&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Utility progams for working with tab-delimited text files&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td colspan=&#34;4&#34; class=&#34;table_heading&#34;&gt;Programming libraries&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/compgen-common&#34;&gt;compgen-common&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Common utility classes useful for Java projects&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/compgen-cmdline&#34;&gt;compgen-cmdline&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Framework for developing Java command-line applications that have a *nix feel&lt;/td&gt;&lt;td&gt;Java&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
+      <guid>http://compgen.io/swalign/</guid>
+      <description>&lt;p&gt;swalign is a version of a standard Smith-Waterman local alignment algorithm written in Python. It is a useful
+example of how one might write an aligner from scratch. It is not a highly performant example, but it
+is a useful teaching tool or for quick and dirty alignment searches when building an index would be overkill.&lt;/p&gt;
+
+&lt;p&gt;The aligner can be used in a stand-alone mode or as an importable Python library.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>tabutils</title>
+      <link>http://compgen.io/tabutils/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>http://compgen.io/tabutils/</guid>
+      <description>
+
+&lt;p&gt;tabutils is a set of programs for viewing and working with tab-delimited text files. Because of
+its utility, this is usually one of the first programs I end up installing on a new system.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;The easiest way to install tabutils is to clone the Github repository and run &lt;code&gt;make&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;tabutils-filter:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;tabutils filter&lt;/h2&gt;
+
+&lt;p&gt;Allows you to view only lines that meet certain criteria.&lt;/p&gt;
+
+&lt;p&gt;tabutils filter file.txt {criteria}&lt;/p&gt;
+
+&lt;p&gt;Eg:&lt;/p&gt;
+
+&lt;p&gt;1 eq foo&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Column 1 (first column) is equal to &amp;lsquo;foo&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;1 eq foo 2 lt 3&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Column 1 (first column) is equal to &amp;lsquo;foo&amp;rsquo; and column 2 is less than 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Valid operations:
+eq
+ne
+lt
+lte
+gt
+gte
+contains&lt;/p&gt;
+
+&lt;h2 id=&#34;tabutils-merge:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;tabutils merge&lt;/h2&gt;
+
+&lt;p&gt;Merges tab-delimited files together, combining common columns and adding uncommon columns. This is very useful for
+combining data from multiple samples together into one master file.&lt;/p&gt;
+
+&lt;h2 id=&#34;tabutils-view:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;tabutils view&lt;/h2&gt;
+
+&lt;p&gt;Displays tab-delimited files, spacing columns appropriately to keep them in-line. This command is useful for viewing
+and exploring data files.&lt;/p&gt;
+
+&lt;h2 id=&#34;tabutils-combine:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;tabutils combine&lt;/h2&gt;
+
+&lt;p&gt;Combines multiple tab-delimited files together into one Excel worksheet. Remember: for data analysis, Excel is evil. But
+for those instances where you have to share data with someone who is more comfortable with Excel, this can make your
+life easier.&lt;/p&gt;
 </description>
     </item>
     
