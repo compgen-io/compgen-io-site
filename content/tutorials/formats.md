@@ -63,8 +63,8 @@ the read name again. The fourth line is the quality score for each of the baseca
 #### Variations
 The sequence and quality lines in the FASTQ record may be word-wrapped, like FASTA files, but this is not seen very often.
 
-FASTQ files are almost always stored compressed, usually with `gzip`, although `bzip2` compression is sometimes
-also used. FASTQ record information can also be stored in other compressed formats, such as [unaligned BAM](/tutorials/formats#unalignedbam) files 
+FASTQ files are almost always stored compressed, usually with `gzip`, although `bzip2` or `xz` compression can 
+also be used. FASTQ record information can also be stored in other compressed formats, such as [unaligned BAM](/tutorials/formats#unalignedbam) files 
 or [SQZ](/tutorials/formats#sqz) files. However, almost all publicly available data is distributed as gzip-compressed
 FASTQ files.
 
@@ -86,7 +86,7 @@ one file per sample. Interleaved files can also be easier to filter using a tool
 https://en.wikipedia.org/wiki/FASTQ_format
 
 <a name="unalignedbam"></a>
-### Unaligned BAM file [#](/tutorials/formats#fastq)
+### Unaligned BAM file [#](/tutorials/formats#unalignedbam)
 
 BAM files are typically associated with read alignments to a genome, but they can also be used to store unaligned/raw 
 sequences too. Unaligned BAM files store the same read information as a FASTQ file (name, sequence, and 
@@ -94,3 +94,11 @@ quality scores) and they can also store multiple reads in the same file (like in
 unaligned BAM files are compressed, and store quality score information in an optimized manner versus character
 encoding. Even with the extra overhead of the BAM format, these factors make this a slightly more efficient way 
 to store raw sequencing reads over FASTQ files.
+
+### SQZ [#](/tutorials/formats#sqz)
+
+SQZ is an experimental file format that stores FASTQ type data in an archive appropriate manner. Multiple reads are
+stored in the same file. Reads are stored in compressed blocks, such that if one block becomes corrupted, then only
+the reads from that block are lost. Each block is an independent unit. This makes the entire file resilient to 
+problems such as bit-rot. This becomes even more important if the built-in encryption is used as each block is 
+independently encrypted.

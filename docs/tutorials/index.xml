@@ -255,8 +255,8 @@ the read name again. The fourth line is the quality score for each of the baseca
 
 &lt;p&gt;The sequence and quality lines in the FASTQ record may be word-wrapped, like FASTA files, but this is not seen very often.&lt;/p&gt;
 
-&lt;p&gt;FASTQ files are almost always stored compressed, usually with &lt;code&gt;gzip&lt;/code&gt;, although &lt;code&gt;bzip2&lt;/code&gt; compression is sometimes
-also used. FASTQ record information can also be stored in other compressed formats, such as &lt;a href=&#34;http://compgen.io/tutorials/formats#unalignedbam&#34;&gt;unaligned BAM&lt;/a&gt; files
+&lt;p&gt;FASTQ files are almost always stored compressed, usually with &lt;code&gt;gzip&lt;/code&gt;, although &lt;code&gt;bzip2&lt;/code&gt; or &lt;code&gt;xz&lt;/code&gt; compression can
+also be used. FASTQ record information can also be stored in other compressed formats, such as &lt;a href=&#34;http://compgen.io/tutorials/formats#unalignedbam&#34;&gt;unaligned BAM&lt;/a&gt; files
 or &lt;a href=&#34;http://compgen.io/tutorials/formats#sqz&#34;&gt;SQZ&lt;/a&gt; files. However, almost all publicly available data is distributed as gzip-compressed
 FASTQ files.&lt;/p&gt;
 
@@ -281,7 +281,7 @@ BBBB,(,,7AA,&amp;lt;((,A&amp;lt;,,,FKAF,,,F,F7F,7,,,AA##@!@
 
 &lt;p&gt;&lt;a name=&#34;unalignedbam&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;unaligned-bam-file-tutorials-formats-fastq:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;Unaligned BAM file &lt;a href=&#34;http://compgen.io/tutorials/formats#fastq&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;unaligned-bam-file-tutorials-formats-unalignedbam:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;Unaligned BAM file &lt;a href=&#34;http://compgen.io/tutorials/formats#unalignedbam&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;BAM files are typically associated with read alignments to a genome, but they can also be used to store unaligned/raw
 sequences too. Unaligned BAM files store the same read information as a FASTQ file (name, sequence, and
@@ -289,6 +289,14 @@ quality scores) and they can also store multiple reads in the same file (like in
 unaligned BAM files are compressed, and store quality score information in an optimized manner versus character
 encoding. Even with the extra overhead of the BAM format, these factors make this a slightly more efficient way
 to store raw sequencing reads over FASTQ files.&lt;/p&gt;
+
+&lt;h3 id=&#34;sqz-tutorials-formats-sqz:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;SQZ &lt;a href=&#34;http://compgen.io/tutorials/formats#sqz&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;SQZ is an experimental file format that stores FASTQ type data in an archive appropriate manner. Multiple reads are
+stored in the same file. Reads are stored in compressed blocks, such that if one block becomes corrupted, then only
+the reads from that block are lost. Each block is an independent unit. This makes the entire file resilient to
+problems such as bit-rot. This becomes even more important if the built-in encryption is used as each block is
+independently encrypted.&lt;/p&gt;
 </description>
     </item>
     
