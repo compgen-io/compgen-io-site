@@ -316,7 +316,7 @@ data.&lt;/p&gt;
 
 &lt;h3 id=&#34;fasta-tutorials-formats-fasta:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;FASTA &lt;a href=&#34;http://compgen.io/tutorials/formats#fasta&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;FASTA [&lt;em&gt;fast-ay&lt;/em&gt;] files are the de-facto standard for storing and sharing DNA/RNA/amino acid
+&lt;p&gt;FASTA files are the de-facto standard for storing and sharing DNA/RNA/amino acid
 sequences. It is a text-file format with a header line followed by one or more lines of sequence.
 The header line starts with a &amp;lsquo;&amp;gt;&amp;rsquo; character, which may be used for parsing the file. The remainder
 of the header line consists of a name, optionally followed by a comment. The name and comment are
@@ -368,7 +368,7 @@ line wrapping for a file, or generating mock &lt;a href=&#34;http://compgen.io/t
 
 &lt;h3 id=&#34;fastq-tutorials-formats-fastq:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;FASTQ &lt;a href=&#34;http://compgen.io/tutorials/formats#fastq&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;FASTQ [&lt;em&gt;fast-kew&lt;/em&gt;] is the most common sequencing read format. FASTQ files are text files with a four-line record
+&lt;p&gt;FASTQ is the most common sequencing read format. FASTQ files are text files with a four-line record
 for each sequence. The first line starts with an &amp;lsquo;@&amp;rsquo; character and the unique name for the read. The
 second line is the sequence. The third line starts with the &amp;lsquo;+&amp;rsquo; character, and may optionally contain
 the read name again. The fourth line is the quality score for each of the basecalls in &lt;a href=&#34;https://en.wikipedia.org/wiki/Phred_quality_score&#34;&gt;Phred&lt;/a&gt; scale.&lt;/p&gt;

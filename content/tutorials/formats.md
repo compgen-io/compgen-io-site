@@ -9,7 +9,7 @@ type = "tutorials"
 <a name="fasta"></a>
 ### FASTA [#](/tutorials/formats#fasta)
 
-FASTA [_fast-ay_] files are the de-facto standard for storing and sharing DNA/RNA/amino acid
+FASTA files are the de-facto standard for storing and sharing DNA/RNA/amino acid
 sequences. It is a text-file format with a header line followed by one or more lines of sequence.
 The header line starts with a '>' character, which may be used for parsing the file. The remainder
 of the header line consists of a name, optionally followed by a comment. The name and comment are 
@@ -55,7 +55,7 @@ https://en.wikipedia.org/wiki/FASTA_format
 <a name="fastq"></a>
 ### FASTQ [#](/tutorials/formats#fastq)
 
-FASTQ [_fast-kew_] is the most common sequencing read format. FASTQ files are text files with a four-line record
+FASTQ is the most common sequencing read format. FASTQ files are text files with a four-line record
 for each sequence. The first line starts with an '@' character and the unique name for the read. The 
 second line is the sequence. The third line starts with the '+' character, and may optionally contain
 the read name again. The fourth line is the quality score for each of the basecalls in [Phred](https://en.wikipedia.org/wiki/Phred_quality_score) scale.
