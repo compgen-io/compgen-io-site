@@ -1,7 +1,7 @@
 +++
 date = "2015-12-15T00:54:57-05:00"
 draft = true
-title = "SBS"
+title = "Simple Batch Scheduler"
 github = "compgen-io/sbs"
 project = "sbs"
 docs = "/sbs/docs"
