@@ -777,13 +777,7 @@ and flow control in the setup and execution of the build-graph.&lt;/p&gt;
 &lt;p&gt;cgpipe is distributed as a self-executing fat-JAR file. This means that for installation, all one needs is
 a working copy of Java and the &lt;code&gt;cgpipe&lt;/code&gt; file.&lt;/p&gt;
 
-&lt;p&gt;For more information, please see the following documentation:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Getting started&lt;/li&gt;
-&lt;li&gt;Language syntax&lt;/li&gt;
-&lt;li&gt;Example pipelines&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;For more information, please see the following documentation: &lt;a href=&#34;https://github.com/compgen-io/cgpipe/tree/master/docs&#34;&gt;https://github.com/compgen-io/cgpipe/tree/master/docs&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

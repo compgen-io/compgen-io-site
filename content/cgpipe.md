@@ -4,7 +4,7 @@ draft = true
 title = "cgpipe"
 github = "compgen-io/cgpipe"
 project = "cgpipe"
-docs = "/cgpipe/docs"
+docs = "https://github.com/compgen-io/cgpipe/tree/master/docs"
 type = "projects"
 icon = "sitemap fa-rotate-90"
 
@@ -19,8 +19,5 @@ and flow control in the setup and execution of the build-graph.
 cgpipe is distributed as a self-executing fat-JAR file. This means that for installation, all one needs is
 a working copy of Java and the `cgpipe` file.
 
-For more information, please see the following documentation:
+For more information, please see the following documentation: https://github.com/compgen-io/cgpipe/tree/master/docs
 
-* Getting started
-* Language syntax
-* Example pipelines
