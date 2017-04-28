@@ -7,6 +7,7 @@ else
     msg="deploy site $(date)"
 fi
 
+cp docs/index2/index.html docs/
 cp -r static/* docs/
 
 git commit -am "$msg"
