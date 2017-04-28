@@ -8,6 +8,7 @@ else
 fi
 
 cp docs/index2/index.html docs/
+echo -n "compgen.io" > docs/CNAME
 cp -r static/* docs/
 
 git commit -am "$msg"
