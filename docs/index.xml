@@ -425,6 +425,16 @@ independently encrypted.&lt;/p&gt;
     </item>
     
     <item>
+      <title>NGSUtils</title>
+      <link>http://compgen.io/ngsutils/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>http://compgen.io/ngsutils/</guid>
+      <description>&lt;p&gt;For more information on the NGSUtils Python toolkit, see here: &lt;a href=&#34;http://ngsutils.org&#34;&gt;http://ngsutils.org&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>RNA-Seq workflow (with STAR)</title>
       <link>http://compgen.io/tutorials/rnaseq-star/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
@@ -842,16 +852,6 @@ acts as a normal command-line program.&lt;/p&gt;
       <description>&lt;p&gt;compgen-cmdline is a Java library that makes it easier to setup and run command-line
 (CLI) programs written in Java. All of the Java applications on compgen.io use this
 library to handle the CLI interface.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>compgen-common</title>
-      <link>http://compgen.io/compgen-common/</link>
-      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
-      
-      <guid>http://compgen.io/compgen-common/</guid>
-      <description>&lt;p&gt;compgen-common is a Java library with commonly used functions for String manipulation, progress bars, and general utility classes. These are useful building blocks that can be included in other applications.&lt;/p&gt;
 </description>
     </item>
     
