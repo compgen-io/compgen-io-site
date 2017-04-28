@@ -38,6 +38,11 @@
   </url>
   
   <url>
+    <loc>http://compgen.io/sqz/</loc>
+    <lastmod>2015-12-15T00:54:57-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://compgen.io/sbs/</loc>
     <lastmod>2015-12-15T00:54:57-05:00</lastmod>
   </url>
@@ -64,6 +69,16 @@
   
   <url>
     <loc>http://compgen.io/cgsplice/</loc>
+    <lastmod>2015-12-15T00:54:57-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://compgen.io/compgen-cmdline/</loc>
+    <lastmod>2015-12-15T00:54:57-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://compgen.io/compgen-common/</loc>
     <lastmod>2015-12-15T00:54:57-05:00</lastmod>
   </url>
   

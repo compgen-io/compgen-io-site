@@ -483,6 +483,17 @@ or pulling ribosomal regions from references genomes using RepeatMasker.&lt;/p&g
     </item>
     
     <item>
+      <title>SQZ</title>
+      <link>http://compgen.io/sqz/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>http://compgen.io/sqz/</guid>
+      <description>&lt;p&gt;SQZ is an experimental file format for sequencing data. It aims to be a more robust and flexible archival format than a
+traditional compressed FASTQ file.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Simple Batch Scheduler</title>
       <link>http://compgen.io/sbs/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
@@ -823,97 +834,24 @@ acts as a normal command-line program.&lt;/p&gt;
     </item>
     
     <item>
-      <title>ngsutilsj</title>
-      <link>http://compgen.io/ngsutilsj/</link>
+      <title>compgen-cmdline</title>
+      <link>http://compgen.io/compgen-cmdline/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/ngsutilsj/</guid>
-      <description>&lt;p&gt;ngsutilsj is an updated java port of the NGSUtils toolkit. This new version is largely a Java port of the
-the most commonly used tools from NGSUtils, with some additions thrown in. It is also a library, with utility
-classes for use in other various NGS related software (such as &lt;a href=&#34;http://compgen.io/cgsplice&#34;&gt;cgsplice&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;Java was chosen for the ease of installation and relative speed (in comparison to the Python NGSUtils).
-The processing speed for gzipped compressed files was a major reason for the new update.&lt;/p&gt;
-
-&lt;p&gt;ngsutilsj is distributed as a self-executing fat-JAR file. This means that for installation, all one needs is
-a working copy of Java and the &lt;code&gt;ngsutilsj&lt;/code&gt; file. Unlike other JAR-file based NGS packages, ngsutilsj includes a
-shell script shim to make it executable like a traditional Unix program.&lt;/p&gt;
+      <guid>http://compgen.io/compgen-cmdline/</guid>
+      <description>&lt;p&gt;compgen-cmdline is a Java library that makes it easier to setup and run command-line
+(CLI) programs written in Java. All of the Java applications on compgen.io use this
+library to handle the CLI interface.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>swalign</title>
-      <link>http://compgen.io/swalign/</link>
+      <title>compgen-common</title>
+      <link>http://compgen.io/compgen-common/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/swalign/</guid>
-      <description>&lt;p&gt;swalign is a version of a standard Smith-Waterman local alignment algorithm written in Python. It is a useful
-example of how one might write an aligner from scratch. It is not a highly performant example, but it
-is a useful teaching tool or for quick and dirty alignment searches when building an index would be overkill.&lt;/p&gt;
-
-&lt;p&gt;The aligner can be used in a stand-alone mode or as an importable Python library.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>tabutils</title>
-      <link>http://compgen.io/tabutils/</link>
-      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
-      
-      <guid>http://compgen.io/tabutils/</guid>
-      <description>
-
-&lt;p&gt;tabutils is a set of programs for viewing and working with tab-delimited text files. Because of
-its utility, this is usually one of the first programs I end up installing on a new system.&lt;/p&gt;
-
-&lt;h2 id=&#34;installation:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;The easiest way to install tabutils is to clone the Github repository and run &lt;code&gt;make&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;tabutils-filter:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;tabutils filter&lt;/h2&gt;
-
-&lt;p&gt;Allows you to view only lines that meet certain criteria.&lt;/p&gt;
-
-&lt;p&gt;tabutils filter file.txt {criteria}&lt;/p&gt;
-
-&lt;p&gt;Eg:&lt;/p&gt;
-
-&lt;p&gt;1 eq foo&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Column 1 (first column) is equal to &amp;lsquo;foo&amp;rsquo;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;1 eq foo 2 lt 3&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Column 1 (first column) is equal to &amp;lsquo;foo&amp;rsquo; and column 2 is less than 3&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Valid operations:
-eq
-ne
-lt
-lte
-gt
-gte
-contains&lt;/p&gt;
-
-&lt;h2 id=&#34;tabutils-merge:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;tabutils merge&lt;/h2&gt;
-
-&lt;p&gt;Merges tab-delimited files together, combining common columns and adding uncommon columns. This is very useful for
-combining data from multiple samples together into one master file.&lt;/p&gt;
-
-&lt;h2 id=&#34;tabutils-view:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;tabutils view&lt;/h2&gt;
-
-&lt;p&gt;Displays tab-delimited files, spacing columns appropriately to keep them in-line. This command is useful for viewing
-and exploring data files.&lt;/p&gt;
-
-&lt;h2 id=&#34;tabutils-combine:ba542d2ec7df9ca47efb521433e9c40c&#34;&gt;tabutils combine&lt;/h2&gt;
-
-&lt;p&gt;Combines multiple tab-delimited files together into one Excel worksheet. Remember: for data analysis, Excel is evil. But
-for those instances where you have to share data with someone who is more comfortable with Excel, this can make your
-life easier.&lt;/p&gt;
+      <guid>http://compgen.io/compgen-common/</guid>
+      <description>&lt;p&gt;compgen-common is a Java library with commonly used functions for String manipulation, progress bars, and general utility classes. These are useful building blocks that can be included in other applications.&lt;/p&gt;
 </description>
     </item>
     
