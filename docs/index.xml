@@ -701,8 +701,8 @@ analysis workflow/pipeline.&lt;/p&gt;
     &lt;tr&gt;&lt;td&gt;[DNA-Seq pipeline 1](/tutorials/dnaseq-cgpipe)&lt;/td&gt;&lt;td&gt;Submitting full DNA analysis pipeline to HPC scheduler with cgpipe&lt;/td&gt;&lt;td&gt;ngsutilsj, samtools, bwa, cgpipe&lt;/td&gt;&lt;/tr&gt;
     &lt;tr&gt;&lt;td&gt;[DNA-Seq pipeline 2](/tutorials/dnaseq-pipes)&lt;/td&gt;&lt;td&gt;High-performance (streaming) DNA mapping with limited disk I/O&lt;/td&gt;&lt;td&gt;ngsutilsj, samtools, bwa&lt;/td&gt;&lt;/tr&gt;
     &lt;tr&gt;&lt;td&gt;[Java CLI programs](/tutorials/java-cli)&lt;/td&gt;&lt;td&gt;Writing command-line oriented programs in Java&lt;/td&gt;&lt;td&gt;compgen-cmdline&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;[RNA-Seq workflow](/tutorials/rnaseq-star)&lt;/td&gt;&lt;td&gt;Pre-processing, rRNA filtering, alignment with STAR, mapping statistics, and gene-level read counts&lt;/td&gt;&lt;td&gt;ngsutilsj, samtools, and STAR&lt;/td&gt;&lt;/tr&gt;
 --&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/tutorials/rnaseq-star&#34;&gt;RNA-Seq workflow&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Pre-processing, rRNA filtering, alignment with STAR, mapping statistics, and gene-level read counts&lt;/td&gt;&lt;td&gt;ngsutilsj, samtools, and STAR&lt;/td&gt;&lt;/tr&gt;
   &lt;/table&gt;&lt;/p&gt;
 </description>
     </item>
