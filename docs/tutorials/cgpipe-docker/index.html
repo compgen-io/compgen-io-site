@@ -113,7 +113,7 @@ good one if your cluster supports it.</p>
 <p>Docker containers are started using the command-line <code>docker</code> command. It is out of the scope of this
 document to go into all of the ways that Docker can be started (or how to create a container image). So,
 instead we&rsquo;ll assume you&rsquo;re using the <a href="https://hub.docker.com/r/asclab/spcg-working/"><code>asclab/spcg-working</code></a>
-container. This container includes BWA, <a href="/projects/ngsutilsj">ngsutilsj</a>, STAR, bcftools,
+container. This container includes BWA, <a href="/ngsutilsj">ngsutilsj</a>, STAR, bcftools,
 and samtools. However, it doesn&rsquo;t include any reference genomes (indexed or FASTA). This is a CentOS 7 based
 image, so if your tools are expecting something else, or if you need additional binaries, you&rsquo;ll want to
 work with your own image.</p>
@@ -225,7 +225,7 @@ job.</p>
 <h2 id="putting-it-all-together">Putting it all together</h2>
 
 <p>For a trival example, lets assume you have a BAM file and you&rsquo;d like to calculate some alignment QC statistics.
-A good way to do this would be to use <a href="/projects/ngsutilsj">ngsutilsj</a> and run the following snippet:</p>
+A good way to do this would be to use <a href="/ngsutilsj">ngsutilsj</a> and run the following snippet:</p>
 
 <pre><code>ngsutilsj bam-stats input.bam &gt; output.stats.txt
 </code></pre>
