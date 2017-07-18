@@ -120,7 +120,7 @@ samples, it will calculate a permuted p-value for how likely it is that a given 
 or acceptor had differential splicing between two conditions. Reads supporting a
 cassette exon, but that don&rsquo;t cross a junction are not included in this model.</p>
 
-<h2 id="counting-junction-spanning-reads:3e94e5809f7f6d41dc30f877167d487b">Counting junction-spanning reads</h2>
+<h2 id="counting-junction-spanning-reads">Counting junction-spanning reads</h2>
 
 <p>The <code>junction-count</code> command will count how many reads span any particular splice
 junction. Specifically, each junction is split into donor/acceptor pairs. Then for
@@ -131,7 +131,7 @@ calculated. Only reads that have split-mapping (N gaps in the CIGAR string) are 
 transcripts (if a suitable aligner is used). In addition to counting reads that span
 junctions, reads that represent retained introns can also be counted.</p>
 
-<h2 id="differential-splicing:3e94e5809f7f6d41dc30f877167d487b">Differential splicing</h2>
+<h2 id="differential-splicing">Differential splicing</h2>
 
 <p>The <code>splice-diff</code> command takes a series of <code>junction-count</code> outputs and performs a
 permutation analysis to determine which splicing donor/acceptor sites exhibit differential
@@ -139,19 +139,19 @@ splicing between two conditions. The statistical metric used is a Student&rsquo;
 Binomial variance. Samples are permuted across different conditions to calculate a p-value
 for each donor/acceptor.</p>
 
-<h2 id="splicing-events:3e94e5809f7f6d41dc30f877167d487b">Splicing events</h2>
+<h2 id="splicing-events">Splicing events</h2>
 
 <p>The <code>combine-events</code> command merges donor/acceptors into complete splicing events, such
 as cassette exons. Only donor/acceptor that meet certain criteria (FDR, effect-size)
 are merged.</p>
 
-<h2 id="stats:3e94e5809f7f6d41dc30f877167d487b">Stats</h2>
+<h2 id="stats">Stats</h2>
 
 <p>The <code>bam-stats</code> command can be used to determine how many junction-spanning reads are
 present in any given sample, among other things. These QC metrics can be used to assess
 how useful a given BAM file is for junction analysis.</p>
 
-<h2 id="installing-cgsplice:3e94e5809f7f6d41dc30f877167d487b">Installing cgsplice</h2>
+<h2 id="installing-cgsplice">Installing cgsplice</h2>
 
 <p>cgsplice is implemented in Java and distributed as a self-executing fast-JAR file. This
 requires only a recent version of Java to be installed on the system. Otherwise, cgsplice

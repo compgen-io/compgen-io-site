@@ -97,11 +97,11 @@
           <article id="content" class="tutorial">
              
 
-<h2 id="sequencing-formats:e863fee43a2d970cdaf6bcd21442137d">Sequencing formats</h2>
+<h2 id="sequencing-formats">Sequencing formats</h2>
 
 <p><a name="fasta"></a></p>
 
-<h3 id="fasta-tutorials-formats-fasta:e863fee43a2d970cdaf6bcd21442137d">FASTA <a href="/tutorials/formats#fasta">#</a></h3>
+<h3 id="fasta-tutorials-formats-fasta">FASTA <a href="/tutorials/formats#fasta">#</a></h3>
 
 <p>FASTA files are the de-facto standard for storing and sharing DNA/RNA/amino acid
 sequences. It is a text-file format with a header line followed by one or more lines of sequence.
@@ -119,13 +119,13 @@ contain one sequence for each chromosome. In addition to chromosomes, some refer
 also include unplaced contigs, which are sequences known to be part of the organism&rsquo;s genome, but
 the exact position is unclear.</p>
 
-<h4 id="variations:e863fee43a2d970cdaf6bcd21442137d">Variations</h4>
+<h4 id="variations">Variations</h4>
 
 <p>FASTA files are commonly stored as <code>gzip</code> compressed files, due to their large size and general space inefficiency. However,
 files that need to be randomly accessed need to be stored uncompressed, or compressed with a tool like <code>bgzip</code> (although the
 latter is less common).</p>
 
-<h4 id="example:e863fee43a2d970cdaf6bcd21442137d">Example</h4>
+<h4 id="example">Example</h4>
 
 <pre><code>&gt;sequence1 This is the comment line
 ATCGATCGATCGACTACGACTACGACGACGACATCGACATCTACT
@@ -138,7 +138,7 @@ TTTAATGCGCGCGCGCCGACTAGCTAGCTATCGATCGATCGATCG
 ACTACGACTACGACGACGACATCGACATCTACT
 </code></pre>
 
-<h4 id="tools:e863fee43a2d970cdaf6bcd21442137d">Tools</h4>
+<h4 id="tools">Tools</h4>
 
 <p>FASTA files can be indexed and queried with the program <code>samtools faidx</code>. This requires a well-formatted FASTA file with
 consistent line lengths.</p>
@@ -147,20 +147,20 @@ consistent line lengths.</p>
 including tagging sequence names, masking regions of sequences, splitting a FASTA file by sequence name, changing the
 line wrapping for a file, or generating mock <a href="/tutorials/formats#fastq">FASTQ</a> reads.</p>
 
-<h4 id="external-links:e863fee43a2d970cdaf6bcd21442137d">External links</h4>
+<h4 id="external-links">External links</h4>
 
 <p><a href="https://en.wikipedia.org/wiki/FASTA_format">https://en.wikipedia.org/wiki/FASTA_format</a></p>
 
 <p><a name="fastq"></a></p>
 
-<h3 id="fastq-tutorials-formats-fastq:e863fee43a2d970cdaf6bcd21442137d">FASTQ <a href="/tutorials/formats#fastq">#</a></h3>
+<h3 id="fastq-tutorials-formats-fastq">FASTQ <a href="/tutorials/formats#fastq">#</a></h3>
 
 <p>FASTQ is the most common sequencing read format. FASTQ files are text files with a four-line record
 for each sequence. The first line starts with an &lsquo;@&rsquo; character and the unique name for the read. The
 second line is the sequence. The third line starts with the &lsquo;+&rsquo; character, and may optionally contain
 the read name again. The fourth line is the quality score for each of the basecalls in <a href="https://en.wikipedia.org/wiki/Phred_quality_score">Phred</a> scale.</p>
 
-<h4 id="variations-1:e863fee43a2d970cdaf6bcd21442137d">Variations</h4>
+<h4 id="variations-1">Variations</h4>
 
 <p>The sequence and quality lines in the FASTQ record may be word-wrapped, like FASTA files, but this is not seen very often.</p>
 
@@ -176,7 +176,7 @@ to non-interleaved files using named FIFO pipes. Interleaved FASTQ files are sli
 compression ratios when compared to using two separate FASTQ files, but the main benefit is the need to only manage
 one file per sample. Interleaved files can also be easier to filter using a tool like <a href="/ngsutilsj/fastq-filter">ngsutilsj fastq-filter</a>.</p>
 
-<h4 id="example-1:e863fee43a2d970cdaf6bcd21442137d">Example</h4>
+<h4 id="example-1">Example</h4>
 
 <pre><code>@seq1 This is the comment line
 ATCGATCGATCGACTACGACTACGACGACGACATCGACATCTACT
@@ -184,13 +184,13 @@ ATCGATCGATCGACTACGACTACGACGACGACATCGACATCTACT
 BBBB,(,,7AA,&lt;((,A&lt;,,,FKAF,,,F,F7F,7,,,AA##@!@
 </code></pre>
 
-<h4 id="external-links-1:e863fee43a2d970cdaf6bcd21442137d">External links</h4>
+<h4 id="external-links-1">External links</h4>
 
 <p><a href="https://en.wikipedia.org/wiki/FASTQ_format">https://en.wikipedia.org/wiki/FASTQ_format</a></p>
 
 <p><a name="unalignedbam"></a></p>
 
-<h3 id="unaligned-bam-file-tutorials-formats-unalignedbam:e863fee43a2d970cdaf6bcd21442137d">Unaligned BAM file <a href="/tutorials/formats#unalignedbam">#</a></h3>
+<h3 id="unaligned-bam-file-tutorials-formats-unalignedbam">Unaligned BAM file <a href="/tutorials/formats#unalignedbam">#</a></h3>
 
 <p>BAM files are typically associated with read alignments to a genome, but they can also be used to store unaligned/raw
 sequences too. Unaligned BAM files store the same read information as a FASTQ file (name, sequence, and
@@ -199,7 +199,7 @@ unaligned BAM files are compressed, and store quality score information in an op
 encoding. Even with the extra overhead of the BAM format, these factors make this a slightly more efficient way
 to store raw sequencing reads over FASTQ files.</p>
 
-<h3 id="sqz-tutorials-formats-sqz:e863fee43a2d970cdaf6bcd21442137d">SQZ <a href="/tutorials/formats#sqz">#</a></h3>
+<h3 id="sqz-tutorials-formats-sqz">SQZ <a href="/tutorials/formats#sqz">#</a></h3>
 
 <p>SQZ is an experimental file format that stores FASTQ type data in an archive appropriate manner. Multiple reads are
 stored in the same file. Reads are stored in compressed blocks, such that if one block becomes corrupted, then only

@@ -101,7 +101,7 @@
 following tutorial uses <a href="/ngsutilsj/fastq-filter">ngsutilsj fastq-filter</a> to process and filter FASTQ
 files.</p>
 
-<h2 id="sequence-qc-tools:7c1c16d52a003e021a2f64f3832428af">Sequence QC tools</h2>
+<h2 id="sequence-qc-tools">Sequence QC tools</h2>
 
 <p>It&rsquo;s important to measure certain quality control metrics with FASTQ files.
 You should run the same QC checks against the files before and after pre-
@@ -110,7 +110,7 @@ how well the pre-processing is working. QC monitoring is a critical part of NGS
 analysis that is often neglected. Without monitoring read QC, you may inadvertently
 use low-quality data, which could produce invalid analysis. (and a lot of wasted effort!)</p>
 
-<h3 id="fastqc:7c1c16d52a003e021a2f64f3832428af">FastQC</h3>
+<h3 id="fastqc">FastQC</h3>
 
 <p>One commonly used program to assess the quality of FASTQ data is <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>.
 FastQC is a good tool for assessing the initial quality of FASTQ reads and provides a number
@@ -119,7 +119,7 @@ call frequency, over-represented sequences, and adapter content. The final repor
 from FastQC can be saves as a ZIP or HTML report for use in pipelines. However,
 FastQC can take a while to run on larger files.</p>
 
-<h3 id="ngsutilsj-fastq-stats:7c1c16d52a003e021a2f64f3832428af">ngsutilsj fastq-stats</h3>
+<h3 id="ngsutilsj-fastq-stats">ngsutilsj fastq-stats</h3>
 
 <p>For high-throughput streaming workflows, where the FASTQ data is processed on-the-fly,
 it may not be possible (or practical) to save a copy of the data. In this case, you need a tool that
@@ -132,7 +132,7 @@ a raw text file that requires further processing to produce figures.</p>
 <p>Importantly, when inserted into a FASTQ pipeline, <a href="/ngsutilsj/fastq-stats">ngsutilsj fastq-stats</a> requires no extra
 processing time, and minimal memory/CPU resources.</p>
 
-<h2 id="dna-seq-filtering-methods:7c1c16d52a003e021a2f64f3832428af">DNA-seq filtering methods</h2>
+<h2 id="dna-seq-filtering-methods">DNA-seq filtering methods</h2>
 
 <p>Pre-processing DNA-seq files is more straightforward than RNA-seq, so we&rsquo;ll
 start there. For DNA-seq, the primary concern is removing low-quality bases
@@ -181,7 +181,8 @@ For Illumina sequencing, the recommended adapter trimming sequences can be set u
 
 <ul>
 <li>read1: AGATCGGAAGAGCACACGTC</li>
-<li>read2: AGATCGGAAGAGCGTCGTGT</li>
+<li>read2: AGATCGGAAGAGCGTCGTGT
+<br /></li>
 </ul></li>
 
 <li><p>Limit abiguous/wildcard (N) bases<br />
@@ -203,7 +204,7 @@ mismatches between the files.</p></li>
 <p>Note: filters are applied in the above order, so that (for example) low-quality bases at the 5&rsquo;/3&rsquo; ends can be
 trimmed away before triggering the ambiguous base call filters.</p>
 
-<h3 id="examples:7c1c16d52a003e021a2f64f3832428af">Examples</h3>
+<h3 id="examples">Examples</h3>
 
 <p>Here is one way to filter a single-end FASTQ file, or a split paired-end (not interleaved) file:</p>
 
@@ -247,7 +248,7 @@ As shown above and following *nix conventions, many of the <a href="/ngsutilsj">
 operate in streaming mode by specifying &ldquo;<code>-</code>&rdquo; as the input filename, reading input from <em>stdin</em>. <a href="/ngsutilsj/fastq-stats">ngsutilsj fastq-stats</a>
 can be coerced into passing the incoming FASTQ data through to <em>stdout</em> with the <code>--pipe</code> option.</p>
 
-<h2 id="rna-seq-filtering-methods:7c1c16d52a003e021a2f64f3832428af">RNA-seq filtering methods</h2>
+<h2 id="rna-seq-filtering-methods">RNA-seq filtering methods</h2>
 
 <p>Pre-processing RNA-seq data can be done in the same manner as DNA-seq data, with the same general
 options. But, with RNA-seq data, there is another filtering step that you should consider:

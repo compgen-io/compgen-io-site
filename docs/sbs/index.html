@@ -130,12 +130,12 @@ schdeuler. However, SBS is also a single file, so installation is a lot easier t
 <p>SBS is also supported by <a href="/cgpipe">cgpipe</a> pipelines as a supported job runner. This lets you scale the
 same pipelines from your local machine to an HPC cluster.</p>
 
-<h2 id="installation:ef41b7668beb33a4132901e930dd34fb">Installation</h2>
+<h2 id="installation">Installation</h2>
 
 <p><a href="/download?project=sbs">Download</a> the <code>sbs</code> file and put it somewhere in your <code>$PATH</code>. No other installation
 is required.</p>
 
-<h2 id="usage:ef41b7668beb33a4132901e930dd34fb">Usage</h2>
+<h2 id="usage">Usage</h2>
 
 <pre><code>Usage: sbs {-d sbshome} command {options}
 
@@ -151,7 +151,7 @@ Commands:
   submit      Submit a new job to the queue
 </code></pre>
 
-<h2 id="example:ef41b7668beb33a4132901e930dd34fb">Example</h2>
+<h2 id="example">Example</h2>
 
 <pre><code>$ sbs submit job1.sh
 1
@@ -167,7 +167,7 @@ job-id   job-name   status   submit                start   end
 $ sbs run
 </code></pre>
 
-<h2 id="job-options:ef41b7668beb33a4132901e930dd34fb">Job options</h2>
+<h2 id="job-options">Job options</h2>
 
 <p>SBS job scripts support a number of configurable options. Like PBS, SGE, or SLURM,
 these values can be set as arguments at submit time or as part of the script itself.
@@ -232,7 +232,7 @@ within the script if the line starts with <code>#SBS</code>.</p>
 </tbody>
 </table>
 
-<h3 id="example-script:ef41b7668beb33a4132901e930dd34fb">Example script</h3>
+<h3 id="example-script">Example script</h3>
 
 <pre><code>#!/bin/bash
 #SBS -name myjob
@@ -241,7 +241,7 @@ within the script if the line starts with <code>#SBS</code>.</p>
 command-goes-here
 </code></pre>
 
-<h2 id="run-options:ef41b7668beb33a4132901e930dd34fb">Run options</h2>
+<h2 id="run-options">Run options</h2>
 
 <p>Running jobs is a separate process and needs to be manually initiated.
 Each job is independently executed as a new process. If a job ends with a return
@@ -275,7 +275,7 @@ code of <code>0</code>, it is considered a successful execution.</p>
 </tbody>
 </table>
 
-<h2 id="sbs-directory:ef41b7668beb33a4132901e930dd34fb">SBS directory</h2>
+<h2 id="sbs-directory">SBS directory</h2>
 
 <p>The SBS home directory (where the job queue data is stored) is by default <code>./.sbs</code>, that is, in the current directory.
 However, this can be set as an environmental variable: <code>$SBSHOME</code> or at the command line using <code>sbs -d dir command</code>.</p>

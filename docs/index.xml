@@ -6,8 +6,20 @@
     <description>Recent content on compgen.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Dec 2015 00:54:57 -0500</lastBuildDate>
-    <atom:link href="http://compgen.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Jul 2017 13:01:00 -0500</lastBuildDate>
+    
+	<atom:link href="http://compgen.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker containers with CGPipe</title>
+      <link>http://compgen.io/tutorials/cgpipe-docker/</link>
+      <pubDate>Tue, 18 Jul 2017 13:01:00 -0500</pubDate>
+      
+      <guid>http://compgen.io/tutorials/cgpipe-docker/</guid>
+      <description>CGPipe is a powerful tool for executeing bioinformatics data analysis workflows. Much of its power derives from its inherent flexibility. In addition to supporting a variety of batch scheduling environments (SGE, SLURM, PBS), it can support different modes of executing jobs. The way we&amp;rsquo;ll explore executing jobs within Docker containers is to use the HEREDOC pattern.
+Docker Docker is a platform for running programs within a container. The container lets you build and ship programs with all of their dependencies intact.</description>
+    </item>
     
     <item>
       <title>Citations</title>
@@ -15,15 +27,11 @@
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/citations/</guid>
-      <description>&lt;p&gt;If you use NGSUtils in your research, please cite our paper:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Marcus R. Breese and Yunlong Liu&lt;br /&gt;
-NGSUtils: a software suite for analyzing and manipulating next-generation sequencing datasets&lt;br /&gt;
-Bioinformatics (2013) 29(4): 494-496&lt;br /&gt;
-&lt;a href=&#34;http://dx.doi.org/10.1093/bioinformatics/bts731&#34;&gt;10.1093/bioinformatics/bts731&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>If you use NGSUtils in your research, please cite our paper:
+ Marcus R. Breese and Yunlong Liu
+NGSUtils: a software suite for analyzing and manipulating next-generation sequencing datasets
+Bioinformatics (2013) 29(4): 494-496
+10.1093/bioinformatics/bts731  </description>
     </item>
     
     <item>
@@ -32,51 +40,14 @@ Bioinformatics (2013) 29(4): 494-496&lt;br /&gt;
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/contact/</guid>
-      <description>&lt;p&gt;&lt;div class=&#34;contact-logos&#34;&gt;
-    &lt;a href=&#34;http://ucsf.edu&#34;&gt;&lt;img src=&#34;http://compgen.io/img/UCSF_120px.png&#34;/&gt;&lt;/a&gt;&lt;br/&gt;
-    &lt;a href=&#34;http://med.stanford.edu&#34;&gt;&lt;img src=&#34;http://compgen.io/img/SM-logo-V-web.png&#34; height=&#34;38px&#34;/&gt;&lt;/a&gt;&lt;br/&gt;
-    &lt;a href=&#34;http://medicine.iu.edu&#34;&gt;&lt;img src=&#34;http://compgen.io/img/logo3.gif&#34;/&gt;&lt;/a&gt;
-&lt;/div&gt;
-If you have any issues with any of the software, have a question, or an idea for a new feature &amp;ndash; please let me know!
-Pull requests on Github are also appreciated.&lt;/p&gt;
-
-&lt;p&gt;Bugs can be submitted as an issue on the individual project&amp;rsquo;s Github page.&lt;/p&gt;
-
-&lt;p&gt;You can also contact me by email here:&lt;br /&gt;
-&lt;i class=&#34;fa fa-envelope&#34; style=&#34;padding:0 4px;&#34;&gt;&lt;/i&gt; marcus.breese @ ucsf.edu&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Marcus R. Breese, PhD&lt;/p&gt;
-
-&lt;p&gt;Computational Researcher&lt;br /&gt;
-Pediatric Hematology/Oncology&lt;br /&gt;
-&lt;a href=&#34;http://sweetcorderolab.ucsf.edu&#34;&gt;Sweet-Cordero Lab&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://ucsf.edu&#34;&gt;UCSF&lt;/a&gt;&lt;br /&gt;
-San Francisco, California&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;Prior affiliations&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://pedhemonc.stanford.edu/&#34;&gt;Dept. of Pediatrics, Div. of Hematology/Oncology&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://med.stanford.edu&#34;&gt;Stanford University School of Medicine&lt;/a&gt;&lt;br /&gt;
-Stanford, California&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://faculty.washington.edu/sdmooney/&#34;&gt;Mooney Lab&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://buckinstitute.org/&#34;&gt;Buck Institute for Research on Aging&lt;/a&gt;&lt;br /&gt;
-Novato, California&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://compbio.iupui.edu/group/6/pages/about_us&#34;&gt;Liu Lab&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://medicine.iu.edu/&#34;&gt;Indiana University School of Medicine&lt;/a&gt;&lt;br /&gt;
-Indianapolis, Indiana&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://biochemistry.medicine.iu.edu/pe/primary-faculty/howard-j-edenberg-ph-d/&#34;&gt;Edenberg Lab&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://medicine.iu.edu/&#34;&gt;Indiana University School of Medicine&lt;/a&gt;&lt;br /&gt;
-Indianapolis, Indiana&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>If you have any issues with any of the software, have a question, or an idea for a new feature &amp;ndash; please let me know! Pull requests on Github are also appreciated.
+Bugs can be submitted as an issue on the individual project&amp;rsquo;s Github page.
+You can also contact me by email here:
+ marcus.breese @ ucsf.edu
+Marcus R. Breese, PhD
+Computational Researcher
+Pediatric Hematology/Oncology
+Sweet-Cordero Lab</description>
     </item>
     
     <item>
@@ -85,50 +56,7 @@ Indianapolis, Indiana&lt;/p&gt;&lt;/li&gt;
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/download/</guid>
-      <description>&lt;div id=&#34;registered&#34;&gt;
-
-Please fill out the form below before downloading software. The form is completely optional, but
-it helps us keep track of how many users we have and is critical for justifying future work (and funding).
-
-&lt;br/&gt;
-&lt;br/&gt;
-
-This information really helps us -- Thanks!
-
-&lt;br/&gt;
-
-&lt;br/&gt;
-
-&lt;form id=&#34;download_form&#34;&gt;
-&lt;table class=&#34;download_form&#34;&gt;
-    &lt;tr&gt;&lt;td align=&#34;right&#34;&gt;&lt;b&gt;Email address:&lt;/b&gt;&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;&lt;input type=&#34;text&#34; name=&#34;email&#34; placeholder=&#34;you@example.com&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td align=&#34;right&#34;&gt;&lt;b&gt;Organization:&lt;/b&gt;&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;&lt;input type=&#34;text&#34; name=&#34;org&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td align=&#34;right&#34;&gt;&lt;b&gt;Type:&lt;/b&gt;&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;academia&#34;&gt; Research University / Academic&lt;/input&gt;&lt;br/&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;clinical&#34;&gt; Hospital / Clinical&lt;/input&gt;&lt;br/&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;institute&#34;&gt; Independent research institute&lt;/input&gt;&lt;br/&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;govt&#34;&gt; Government&lt;/input&gt;&lt;br/&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;industry&#34;&gt; Biotech / Industry&lt;/input&gt;&lt;br/&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;orgtype&#34; value=&#34;other&#34;&gt; Other&lt;/input&gt; &amp;nbsp; &lt;input type=&#34;text&#34; name=&#34;orgtype_other&#34; class=&#34;small_input&#34;/&gt;
-    &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td align=&#34;right&#34;&gt;&lt;b&gt;Install location:&lt;/b&gt;&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;installtype&#34; value=&#34;workstation&#34;&gt; Single-user workstation / PC&lt;/input&gt;&lt;br/&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;installtype&#34; value=&#34;server&#34;&gt; Multi-user server&lt;/input&gt;&lt;br/&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;installtype&#34; value=&#34;cluster&#34;&gt; HPC cluster&lt;/input&gt;&lt;br/&gt;
-        &lt;input type=&#34;radio&#34; name=&#34;installtype&#34; value=&#34;other&#34;&gt; Other&lt;/input&gt; &amp;nbsp; &lt;input type=&#34;text&#34; name=&#34;installtype_other&#34; class=&#34;small_input&#34;/&gt;
-    &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;input type=&#34;submit&#34; value=&#34;Submit and proceed to downloads&#34; class=&#34;btn btn-primary&#34;/&gt;&lt;/td&gt;&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;http://compgen.io/downloads/direct&#34; class=&#34;btn&#34; id=&#34;skip_register&#34; onclick=&#34;return are_you_sure();&#34;&gt;Skip this...&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/form&gt;
-
-&lt;br/&gt;
-
-&lt;center&gt;
-All of the software available here for download is under an open-source license.
-&lt;/center&gt;
-&lt;/div&gt;
-</description>
+      <description>Please fill out the form below before downloading software. The form is completely optional, but it helps us keep track of how many users we have and is critical for justifying future work (and funding).   This information really helps us -- Thanks!   Email address: Organization: Type:Research University / Academic Hospital / Clinical Independent research institute Government Biotech / Industry Other &amp;nbsp;  Install location:Single-user workstation / PC Multi-user server HPC cluster Other &amp;nbsp;  &amp;nbsp; Skip this.</description>
     </item>
     
     <item>
@@ -137,169 +65,8 @@ All of the software available here for download is under an open-source license.
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/tutorials/fastq-preprocessing/</guid>
-      <description>
-
-&lt;p&gt;The first step in NGS analysis is pre-processing your &lt;a href=&#34;http://compgen.io/tutorials/formats#fastq&#34;&gt;FASTQ&lt;/a&gt; files. The
-following tutorial uses &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-filter&#34;&gt;ngsutilsj fastq-filter&lt;/a&gt; to process and filter FASTQ
-files.&lt;/p&gt;
-
-&lt;h2 id=&#34;sequence-qc-tools:7c1c16d52a003e021a2f64f3832428af&#34;&gt;Sequence QC tools&lt;/h2&gt;
-
-&lt;p&gt;It&amp;rsquo;s important to measure certain quality control metrics with FASTQ files.
-You should run the same QC checks against the files before and after pre-
-processing. This will help you assess the quality of your data and measure
-how well the pre-processing is working. QC monitoring is a critical part of NGS
-analysis that is often neglected. Without monitoring read QC, you may inadvertently
-use low-quality data, which could produce invalid analysis. (and a lot of wasted effort!)&lt;/p&gt;
-
-&lt;h3 id=&#34;fastqc:7c1c16d52a003e021a2f64f3832428af&#34;&gt;FastQC&lt;/h3&gt;
-
-&lt;p&gt;One commonly used program to assess the quality of FASTQ data is &lt;a href=&#34;http://www.bioinformatics.babraham.ac.uk/projects/fastqc/&#34;&gt;FastQC&lt;/a&gt;.
-FastQC is a good tool for assessing the initial quality of FASTQ reads and provides a number
-of quality control metrics, including per-base sequence quality, GC %, per-base
-call frequency, over-represented sequences, and adapter content. The final report
-from FastQC can be saves as a ZIP or HTML report for use in pipelines. However,
-FastQC can take a while to run on larger files.&lt;/p&gt;
-
-&lt;h3 id=&#34;ngsutilsj-fastq-stats:7c1c16d52a003e021a2f64f3832428af&#34;&gt;ngsutilsj fastq-stats&lt;/h3&gt;
-
-&lt;p&gt;For high-throughput streaming workflows, where the FASTQ data is processed on-the-fly,
-it may not be possible (or practical) to save a copy of the data. In this case, you need a tool that
-can calculate QC metrics for FASTQ data that is streamed as part of a stdin/stdout pipeline. &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-stats&#34;&gt;ngsutilsj fastq-stats&lt;/a&gt;
-supports this method and calculates per-base sequence quality, GC %, per-base call
-frequencgy, and adapter content. Additionally, &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-stats&#34;&gt;ngsutilsj fastq-stats&lt;/a&gt; also support interleaved FASTQ
-files and reporting first/second read stats separately. The final report from &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-stats&#34;&gt;ngsutilsj fastq-stats&lt;/a&gt; is
-a raw text file that requires further processing to produce figures.&lt;/p&gt;
-
-&lt;p&gt;Importantly, when inserted into a FASTQ pipeline, &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-stats&#34;&gt;ngsutilsj fastq-stats&lt;/a&gt; requires no extra
-processing time, and minimal memory/CPU resources.&lt;/p&gt;
-
-&lt;h2 id=&#34;dna-seq-filtering-methods:7c1c16d52a003e021a2f64f3832428af&#34;&gt;DNA-seq filtering methods&lt;/h2&gt;
-
-&lt;p&gt;Pre-processing DNA-seq files is more straightforward than RNA-seq, so we&amp;rsquo;ll
-start there. For DNA-seq, the primary concern is removing low-quality bases
-and reads before sending them through the computationally intensive alignment
-process. The more that we clean up the data before alignment, the better the
-aligned data will be.&lt;/p&gt;
-
-&lt;p&gt;Here are some of the ways to cleanup FASTQ reads with &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-filter&#34;&gt;ngsutilsj fastq-filter&lt;/a&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Remove reads based on a name white/black list
-If you have a specific list of reads to keep or drop, they can be passed as a &lt;code&gt;--whitelist&lt;/code&gt;
-or &lt;code&gt;--blacklist&lt;/code&gt; respectively.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Fixed base count 5&amp;rsquo;/3&amp;rsquo; trim&lt;br /&gt;
-You can remove a fixed number of bases from the 5&amp;rsquo; or 3&amp;rsquo; ends of a read
-with the &lt;code&gt;--prefixtrim&lt;/code&gt; or &lt;code&gt;--suffixtrim&lt;/code&gt; options.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Remove low quality bases from the 5&amp;rsquo; and 3&amp;rsquo; ends&lt;br /&gt;
-It is common for there to be stretches of low-quality base calls at the 3&amp;rsquo;
-end of a read. It is less common to see low-quality calls at the 5&amp;rsquo; end. You
-can set a fixed threshold for minimum call quality at the 5&amp;rsquo; or 3&amp;rsquo; ends using the
-&lt;code&gt;--prefixqual&lt;/code&gt; and &lt;code&gt;--suffixqual&lt;/code&gt; options. For example, if the threshold is set at
-3, then any base with a Phred quality score less than 3 will be removed from the
-ends of the reads.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Trim adapter sequences&lt;br /&gt;
-If the fragment being sequenced is shorter than the read length, you will see adapter
-sequences as part of the read sequence. Because these are artifacts of the sequencing
-reaction and not part of the organism, it is important to remove these sequences. There are
-three options for removing adapters: &lt;code&gt;--trim-seq&lt;/code&gt;, &lt;code&gt;--trim-seq1&lt;/code&gt;, &lt;code&gt;--trim-seq2&lt;/code&gt;. The
-first option trims an adapter from all sequences in a file. The second and third options
-trim the adapter from the first and second reads, respectively (assuming an interleaved
-FASTQ file). If you have a non-interleaved file, then &lt;code&gt;--trim-seq&lt;/code&gt; and &lt;code&gt;--trim-seq1&lt;/code&gt; are
-equivalent.  As extra options for adapter trimming: &lt;code&gt;--trim-pct&lt;/code&gt; sets the required match
-percentage a the read has to have to match the adapter. The default is 0.9, or 9 out of
-10 bases must match. The second option is &lt;code&gt;--trim-overlap&lt;/code&gt;, which sets the minimum amount
-of sequence must match at the 3&amp;rsquo; end of the read to trigger trimming. The default value
-is 6 bases.&lt;br /&gt;
-&lt;br/&gt;
-Note: adapter trimming is done using a sliding window, so it is necessarily computationally
-intensive. It should only be done when you really need to do it.&lt;br /&gt;
-&lt;br/&gt;
-For Illumina sequencing, the recommended adapter trimming sequences can be set using the
-&lt;code&gt;--trim-illumina&lt;/code&gt; option. These sequences are read-specific and are shown below:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;read1: AGATCGGAAGAGCACACGTC&lt;/li&gt;
-&lt;li&gt;read2: AGATCGGAAGAGCGTCGTGT&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Limit abiguous/wildcard (N) bases&lt;br /&gt;
-Reads with too many &lt;em&gt;N&lt;/em&gt; calls can be removed using the &lt;code&gt;--wildcard&lt;/code&gt; option.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Size selection
-After all of the above trimming, the final read filter can require a certain minimum read length
-with the &lt;code&gt;--size&lt;/code&gt; option.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Required valid paired reads (requires interleaved FASTQ file)
-If you have an interleaved FASTQ file, you can use the &lt;code&gt;--paired&lt;/code&gt; option to require that both
-reads from a fragment need to pass the filters. Otherwise, you can end up with an unbalanced FASTQ
-file, which can lead to unpredictable results in the downstream analysis. However, this option
-is only available when using an interleaved FASTQ file. Processing two separate files and trying
-to merge them after the fact is computationally difficult and may require a lot of memory to resolve
-mismatches between the files.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Note: filters are applied in the above order, so that (for example) low-quality bases at the 5&amp;rsquo;/3&amp;rsquo; ends can be
-trimmed away before triggering the ambiguous base call filters.&lt;/p&gt;
-
-&lt;h3 id=&#34;examples:7c1c16d52a003e021a2f64f3832428af&#34;&gt;Examples&lt;/h3&gt;
-
-&lt;p&gt;Here is one way to filter a single-end FASTQ file, or a split paired-end (not interleaved) file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# trim 3&#39; low-quality bases
-# remove reads with more than 2 N&#39;s
-# require the final size to be at least 50bp
-
-ngsutilsj fastq-filter --size 50 --wildcard 2 --suffixqual 3 input.fastq.gz &amp;gt; filtered.fastq
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br/&gt;
-Here is a more complete set of filters, including a merging step to combine paired-end
-files into one interleaved FASTQ file first.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# trim 3&#39; low-quality bases
-# remove illumina adapters
-# remove reads with more than 2 N&#39;s
-# require the final size to be at least 50bp
-# require reads to be properly paired
-
-ngsutilsj fastq-merge input_R1.fastq.gz input_R2.fastq.gz | \
-ngsutilsj fastq-filter --size 50 --wildcard 2 --suffixqual 3 --trim-illumina --paired - | \
-gzip &amp;gt; filtered.fastq.gz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br/&gt;
-Finally, we can add &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-stats&#34;&gt;ngsutilsj fastq-stats&lt;/a&gt; into the mix to calculate some
-summary statistics on the fly for both the raw FASTQ reads and the post-filtering reads.
-By merging the paired FASTQ files and using &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-stats&#34;&gt;ngsutilsj fastq-stats&lt;/a&gt;,
-we can efficiently pre-process the FASTQ reads in one pipeline and limit unnecessary disk I/O.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ngsutilsj fastq-merge input_R1.fastq.gz input_R2.fastq.gz | \
-ngsutilsj fastq-stats --pipe -o raw.stats.txt - | \
-ngsutilsj fastq-filter --size 50 --wildcard 2 --suffixqual 3 --trim-illumina --paired - | \
-ngsutilsj fastq-stats --pipe -o filtered.stats.txt - | \
-gzip &amp;gt; filtered.fastq.gz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br/&gt;
-As shown above and following *nix conventions, many of the &lt;a href=&#34;http://compgen.io/ngsutilsj&#34;&gt;ngsutilsj&lt;/a&gt; tools can
-operate in streaming mode by specifying &amp;ldquo;&lt;code&gt;-&lt;/code&gt;&amp;rdquo; as the input filename, reading input from &lt;em&gt;stdin&lt;/em&gt;. &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-stats&#34;&gt;ngsutilsj fastq-stats&lt;/a&gt;
-can be coerced into passing the incoming FASTQ data through to &lt;em&gt;stdout&lt;/em&gt; with the &lt;code&gt;--pipe&lt;/code&gt; option.&lt;/p&gt;
-
-&lt;h2 id=&#34;rna-seq-filtering-methods:7c1c16d52a003e021a2f64f3832428af&#34;&gt;RNA-seq filtering methods&lt;/h2&gt;
-
-&lt;p&gt;Pre-processing RNA-seq data can be done in the same manner as DNA-seq data, with the same general
-options. But, with RNA-seq data, there is another filtering step that you should consider:
-ribosomal sequence filtering. A good library prep will remove the majority of rRNA sequences
-before they are sequenced. If this depletion fails, then many of reads will be from
-rRNAs. This makes tracking the abundance of rRNAs an important QC metric to ensure consistent
-data.&lt;/p&gt;
-
-&lt;p&gt;Filtering out rRNA reads is covered in-depth in the &lt;a href=&#34;http://compgen.io/tutorials/rnaseq-star&#34;&gt;RNA-Seq workflow&lt;/a&gt; tutorial.&lt;/p&gt;
-</description>
+      <description>The first step in NGS analysis is pre-processing your FASTQ files. The following tutorial uses ngsutilsj fastq-filter to process and filter FASTQ files.
+Sequence QC tools It&amp;rsquo;s important to measure certain quality control metrics with FASTQ files. You should run the same QC checks against the files before and after pre- processing. This will help you assess the quality of your data and measure how well the pre-processing is working.</description>
     </item>
     
     <item>
@@ -308,120 +75,8 @@ data.&lt;/p&gt;
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/tutorials/formats/</guid>
-      <description>
-
-&lt;h2 id=&#34;sequencing-formats:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;Sequencing formats&lt;/h2&gt;
-
-&lt;p&gt;&lt;a name=&#34;fasta&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;fasta-tutorials-formats-fasta:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;FASTA &lt;a href=&#34;http://compgen.io/tutorials/formats#fasta&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;FASTA files are the de-facto standard for storing and sharing DNA/RNA/amino acid
-sequences. It is a text-file format with a header line followed by one or more lines of sequence.
-The header line starts with a &amp;lsquo;&amp;gt;&amp;rsquo; character, which may be used for parsing the file. The remainder
-of the header line consists of a name, optionally followed by a comment. The name and comment are
-separated by whitespace. The name must not contain a whitespace (&lt;code&gt; &lt;/code&gt;, or &lt;code&gt;\t&lt;/code&gt;) character.&lt;/p&gt;
-
-&lt;p&gt;The remaining lines consist of DNA, RNA, or amino acid sequences using IUPAC notation. There are no
-technical specifications for line length or wrapping, but it is common practice for long sequences
-(genes/genomes) to be have a consistent line length. However, it is not required for the sequence to have
-any breaks. Blank lines and any whitespace in the sequence line(s) should be ignored.&lt;/p&gt;
-
-&lt;p&gt;FASTA is the most common format for distributing reference genome sequences. Reference genomes will
-contain one sequence for each chromosome. In addition to chromosomes, some reference genomes will
-also include unplaced contigs, which are sequences known to be part of the organism&amp;rsquo;s genome, but
-the exact position is unclear.&lt;/p&gt;
-
-&lt;h4 id=&#34;variations:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;Variations&lt;/h4&gt;
-
-&lt;p&gt;FASTA files are commonly stored as &lt;code&gt;gzip&lt;/code&gt; compressed files, due to their large size and general space inefficiency. However,
-files that need to be randomly accessed need to be stored uncompressed, or compressed with a tool like &lt;code&gt;bgzip&lt;/code&gt; (although the
-latter is less common).&lt;/p&gt;
-
-&lt;h4 id=&#34;example:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;Example&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;sequence1 This is the comment line
-ATCGATCGATCGACTACGACTACGACGACGACATCGACATCTACT
-GGCGCGCGCTAGAGCTAGCTTGAGATAAATCGACTAGCGACTGAG
-CTATCTTCTCTATATATTTAAAAAGCGCAACTACTGACTA
-&amp;gt;seq2
-AATAGCGCGCGCGCGCTCATATATCTATATATAAAAACCTACTAC
-GACTACGACTATCGATCGATTATCGGTATCGTATCGGTATTATTA
-TTTAATGCGCGCGCGCCGACTAGCTAGCTATCGATCGATCGATCG
-ACTACGACTACGACGACGACATCGACATCTACT
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;tools:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;Tools&lt;/h4&gt;
-
-&lt;p&gt;FASTA files can be indexed and queried with the program &lt;code&gt;samtools faidx&lt;/code&gt;. This requires a well-formatted FASTA file with
-consistent line lengths.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://compgen.io/ngsutilsj&#34;&gt;ngsutilsj&lt;/a&gt; contains a number of tools for managing FASTA files, including indexed FASTA files. These tools
-including tagging sequence names, masking regions of sequences, splitting a FASTA file by sequence name, changing the
-line wrapping for a file, or generating mock &lt;a href=&#34;http://compgen.io/tutorials/formats#fastq&#34;&gt;FASTQ&lt;/a&gt; reads.&lt;/p&gt;
-
-&lt;h4 id=&#34;external-links:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;External links&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/FASTA_format&#34;&gt;https://en.wikipedia.org/wiki/FASTA_format&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&#34;fastq&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;fastq-tutorials-formats-fastq:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;FASTQ &lt;a href=&#34;http://compgen.io/tutorials/formats#fastq&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;FASTQ is the most common sequencing read format. FASTQ files are text files with a four-line record
-for each sequence. The first line starts with an &amp;lsquo;@&amp;rsquo; character and the unique name for the read. The
-second line is the sequence. The third line starts with the &amp;lsquo;+&amp;rsquo; character, and may optionally contain
-the read name again. The fourth line is the quality score for each of the basecalls in &lt;a href=&#34;https://en.wikipedia.org/wiki/Phred_quality_score&#34;&gt;Phred&lt;/a&gt; scale.&lt;/p&gt;
-
-&lt;h4 id=&#34;variations-1:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;Variations&lt;/h4&gt;
-
-&lt;p&gt;The sequence and quality lines in the FASTQ record may be word-wrapped, like FASTA files, but this is not seen very often.&lt;/p&gt;
-
-&lt;p&gt;FASTQ files are almost always stored compressed, usually with &lt;code&gt;gzip&lt;/code&gt;, although &lt;code&gt;bzip2&lt;/code&gt; or &lt;code&gt;xz&lt;/code&gt; compression can
-also be used. FASTQ record information can also be stored in other compressed formats, such as &lt;a href=&#34;http://compgen.io/tutorials/formats#unalignedbam&#34;&gt;unaligned BAM&lt;/a&gt; files
-or &lt;a href=&#34;http://compgen.io/tutorials/formats#sqz&#34;&gt;SQZ&lt;/a&gt; files. However, almost all publicly available data is distributed as gzip-compressed
-FASTQ files.&lt;/p&gt;
-
-&lt;p&gt;Paired-end sequencing data is commonly stored as two separate FASTQ files, one for each read. But, it is also possible
-to store both reads in the same file. These are called &lt;em&gt;interleaved&lt;/em&gt; FASTQ files. Many aligners support interleaved
-files out of the box for paired end data. For those that don&amp;rsquo;t an adapter tool can be used to convert interleaved files
-to non-interleaved files using named FIFO pipes. Interleaved FASTQ files are slightly have slightly more efficient
-compression ratios when compared to using two separate FASTQ files, but the main benefit is the need to only manage
-one file per sample. Interleaved files can also be easier to filter using a tool like &lt;a href=&#34;http://compgen.io/ngsutilsj/fastq-filter&#34;&gt;ngsutilsj fastq-filter&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;example-1:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;Example&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;@seq1 This is the comment line
-ATCGATCGATCGACTACGACTACGACGACGACATCGACATCTACT
-+
-BBBB,(,,7AA,&amp;lt;((,A&amp;lt;,,,FKAF,,,F,F7F,7,,,AA##@!@
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;external-links-1:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;External links&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/FASTQ_format&#34;&gt;https://en.wikipedia.org/wiki/FASTQ_format&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&#34;unalignedbam&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;unaligned-bam-file-tutorials-formats-unalignedbam:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;Unaligned BAM file &lt;a href=&#34;http://compgen.io/tutorials/formats#unalignedbam&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;BAM files are typically associated with read alignments to a genome, but they can also be used to store unaligned/raw
-sequences too. Unaligned BAM files store the same read information as a FASTQ file (name, sequence, and
-quality scores) and they can also store multiple reads in the same file (like interleaved FASTQ files). Also,
-unaligned BAM files are compressed, and store quality score information in an optimized manner versus character
-encoding. Even with the extra overhead of the BAM format, these factors make this a slightly more efficient way
-to store raw sequencing reads over FASTQ files.&lt;/p&gt;
-
-&lt;h3 id=&#34;sqz-tutorials-formats-sqz:e863fee43a2d970cdaf6bcd21442137d&#34;&gt;SQZ &lt;a href=&#34;http://compgen.io/tutorials/formats#sqz&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;SQZ is an experimental file format that stores FASTQ type data in an archive appropriate manner. Multiple reads are
-stored in the same file. Reads are stored in compressed blocks, such that if one block becomes corrupted, then only
-the reads from that block are lost. Each block is an independent unit. This makes the entire file resilient to
-problems such as bit-rot. This becomes even more important if the built-in encryption is used as each block is
-independently encrypted.&lt;/p&gt;
-
-&lt;p&gt;For more information on SQZ, please see the &lt;a href=&#34;http://compgen.io/sqz&#34;&gt;SQZ project page&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Sequencing formats 
+FASTA # FASTA files are the de-facto standard for storing and sharing DNA/RNA/amino acid sequences. It is a text-file format with a header line followed by one or more lines of sequence. The header line starts with a &amp;lsquo;&amp;gt;&amp;rsquo; character, which may be used for parsing the file. The remainder of the header line consists of a name, optionally followed by a comment. The name and comment are separated by whitespace.</description>
     </item>
     
     <item>
@@ -430,8 +85,7 @@ independently encrypted.&lt;/p&gt;
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/ngsutils/</guid>
-      <description>&lt;p&gt;For more information on the NGSUtils Python toolkit, see here: &lt;a href=&#34;http://ngsutils.org&#34;&gt;http://ngsutils.org&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>For more information on the NGSUtils Python toolkit, see here: http://ngsutils.org</description>
     </item>
     
     <item>
@@ -440,56 +94,8 @@ independently encrypted.&lt;/p&gt;
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/tutorials/rnaseq-star/</guid>
-      <description>
-
-&lt;h2 id=&#34;experimental-design:84023ea70f860fd54a3045c7b4b6259f&#34;&gt;Experimental design&lt;/h2&gt;
-
-&lt;p&gt;The first step in getting good results from an RNA-Seq experiment is choosing a good experimental
-design. This means that you need to have enough replicates, with sufficient sequencing depth to
-be able to answer your research question.&lt;/p&gt;
-
-&lt;h3 id=&#34;depth:84023ea70f860fd54a3045c7b4b6259f&#34;&gt;Depth&lt;/h3&gt;
-
-&lt;p&gt;For differential gene expression, I recommend having at least 4 biological replicates for each
-condition with a minimum of 20M reads per sample (30M recommended). Additionally, we&amp;rsquo;ve found that pair-end sequencing
-produces more uniquely aligned reads than single-end sequencing. If you want to investigate
-changes in splicing, I recommend at least 40M reads per sample (50M recommended).&lt;/p&gt;
-
-&lt;h3 id=&#34;batch-effects:84023ea70f860fd54a3045c7b4b6259f&#34;&gt;Batch effects&lt;/h3&gt;
-
-&lt;p&gt;Additionally, you need to try to reduce any possible batch effects in your data. One common batch
-effect is due to a lane-effect present when samples are sequenced only on a single lane. If your
-control and experimental samples are sequenced on different lanes, there is no way to differentiate
-between a lane-effect and biological signal. A different experimental design can be used to avoid
-batch effects by pooling (and barcoding) all of your samples together. Then you can sequence that
-pool as many times as necessary to get the required sequencing depth. So, for example, if you require
-two lanes worth of data, you would sequence all samples across all lanes.&lt;/p&gt;
-
-&lt;h2 id=&#34;pre-processing:84023ea70f860fd54a3045c7b4b6259f&#34;&gt;Pre-processing&lt;/h2&gt;
-
-&lt;p&gt;RNA-Seq reads should undergo the same pre-processing/QC filtering steps that you&amp;rsquo;d use in DNA-Seq.&lt;/p&gt;
-
-&lt;p&gt;It is almost more important to measure and track QC metrics with RNA-Seq data than with DNA-Seq.
-Because RNA-Seq is most commonly used for gene expression analysis, it is important to make sure that
-each same has a similar QC profile. It isn&amp;rsquo;t necessarily important to hit exact
-QC benchmarks, but rather it is more important to make sure that all samples have a &lt;em&gt;similar&lt;/em&gt; profile.
-If one of your samples has vastly more rRNA or many more adapter truncted sequences, this could affect
-your downstream analysis. If all of the samples have a similar profile, then you can be more confident
-that your results are due to biological differences, not technical differences.&lt;/p&gt;
-
-&lt;h2 id=&#34;ribosomal-rna-filtering:84023ea70f860fd54a3045c7b4b6259f&#34;&gt;Ribosomal RNA filtering&lt;/h2&gt;
-
-&lt;p&gt;Ribosomal RNA is always a concern with RNA-Seq. rRNA is vastly more abundant in total RNA extractions
-than mRNA or other non-coding RNAs. Because of this, it is sometimes useful to remove rRNA sequences
-before mapping the remaining reads. Even if you don&amp;rsquo;t filter out rRNA reads, it is a useful QC
-metric to observe and track.&lt;/p&gt;
-
-&lt;p&gt;rRNA filtering can be done using an rRNA reference index and an alignment tool like &lt;code&gt;bwa&lt;/code&gt;. &lt;code&gt;bwa&lt;/code&gt; is
-used instead of an RNA-specific aligner because we don&amp;rsquo;t need to keep track of splicing in this
-step.  The source of a good rRNA reference varys based on the organism, but possible sources
-include searching NCBI Genbank for molecules of the type &lt;em&gt;rRNA&lt;/em&gt;, species-specific rRNA databases,
-or pulling ribosomal regions from references genomes using RepeatMasker.&lt;/p&gt;
-</description>
+      <description>Experimental design The first step in getting good results from an RNA-Seq experiment is choosing a good experimental design. This means that you need to have enough replicates, with sufficient sequencing depth to be able to answer your research question.
+Depth For differential gene expression, I recommend having at least 4 biological replicates for each condition with a minimum of 20M reads per sample (30M recommended). Additionally, we&amp;rsquo;ve found that pair-end sequencing produces more uniquely aligned reads than single-end sequencing.</description>
     </item>
     
     <item>
@@ -498,9 +104,7 @@ or pulling ribosomal regions from references genomes using RepeatMasker.&lt;/p&g
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/sqz/</guid>
-      <description>&lt;p&gt;SQZ is an experimental file format for sequencing data. It aims to be a more robust and flexible archival format than a
-traditional compressed FASTQ file.&lt;/p&gt;
-</description>
+      <description>SQZ is an experimental file format for sequencing data. It aims to be a more robust and flexible archival format than a traditional compressed FASTQ file.</description>
     </item>
     
     <item>
@@ -509,175 +113,7 @@ traditional compressed FASTQ file.&lt;/p&gt;
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/sbs/</guid>
-      <description>
-
-&lt;p&gt;SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for
-traditional schedulers like PBS, SGE, or SLURM. Not everyone wants to have a complete install of SGE on
-their laptop. In those cases, SBS can be a quick replacement that requires minimal overhead. SBS is a
-single file program written in Python that stores job definitions in a managed folder. All job state is
-stored in this folder. There is no requirement for a constantly running daemon to manage the jobs.
-The user can start running these jobs at anytime and using whatever resource restrictions are necessary (eg if you
-have 4 cores on a laptop, but only want to devote 2 cores to running background jobs, you can do that).&lt;/p&gt;
-
-&lt;p&gt;SBS runs jobs in a first-available, first run basis. Meaning, the first job that fits the available
-resources that is also ready to run (has no pending dependencies) will be run. This simple scheduling
-algorithm doesn&amp;rsquo;t take into account wall-time, so it is not as efficient as a more complete backfilling
-schdeuler. However, SBS is also a single file, so installation is a lot easier than a proper scheduler!
-&lt;code&gt;sbs run&lt;/code&gt; does not run as a daemon, so it is best executed in the context of a screen or tmux session.&lt;/p&gt;
-
-&lt;p&gt;SBS is also supported by &lt;a href=&#34;http://compgen.io/cgpipe&#34;&gt;cgpipe&lt;/a&gt; pipelines as a supported job runner. This lets you scale the
-same pipelines from your local machine to an HPC cluster.&lt;/p&gt;
-
-&lt;h2 id=&#34;installation:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://compgen.io/download?project=sbs&#34;&gt;Download&lt;/a&gt; the &lt;code&gt;sbs&lt;/code&gt; file and put it somewhere in your &lt;code&gt;$PATH&lt;/code&gt;. No other installation
-is required.&lt;/p&gt;
-
-&lt;h2 id=&#34;usage:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Usage&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;Usage: sbs {-d sbshome} command {options}
-
-Commands:
-  cancel      Cancel a job
-  cleanup     Remove all completed jobs
-  help        Help for a particular command
-  hold        Hold a job from running until released
-  release     Release a job
-  run         Start running jobs
-  shutdown    Stop running jobs (and cancel any currently running jobs)
-  status      Get the run status of a job (run state)
-  submit      Submit a new job to the queue
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;example:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Example&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sbs submit job1.sh
-1
-
-$ sbs submit job2.sh
-2
-
-$ sbs status
-job-id   job-name   status   submit                start   end
-1        sbs.1      H        2017-04-12 23:41:47              
-2        sbs.2      H        2017-04-12 23:41:48              
-
-$ sbs run
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;job-options:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Job options&lt;/h2&gt;
-
-&lt;p&gt;SBS job scripts support a number of configurable options. Like PBS, SGE, or SLURM,
-these values can be set as arguments at submit time or as part of the script itself.
-&lt;code&gt;sbs submit&lt;/code&gt; will read a job script from a filename or from stdin. Options can be set
-within the script if the line starts with &lt;code&gt;#SBS&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Here are the available options:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;-name job-name&lt;/td&gt;
-&lt;td&gt;The name of the job (easier to track than the number)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-mem val&lt;/td&gt;
-&lt;td&gt;Memory units to reserve: 2G, 200M, etc. (not enforced, just used for scheduling)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-procs N&lt;/td&gt;
-&lt;td&gt;Number of processor units to use (not enforced, just used for scheduling)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-mail email@example.com&lt;/td&gt;
-&lt;td&gt;Email when the job starts and finishes&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-hold&lt;/td&gt;
-&lt;td&gt;Set a user-hold on the job. Job will not enter the queue until released&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-stderr fname&lt;/td&gt;
-&lt;td&gt;Write stderr to this file (default: store in SBS job directory)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-stdout fname&lt;/td&gt;
-&lt;td&gt;Write stdout to this file (default: store in SBS job directory)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-wd&lt;/td&gt;
-&lt;td&gt;Working directory to use (default: current directory)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-afterok jobid1:jobid2:&amp;hellip;&lt;/td&gt;
-&lt;td&gt;Dependent jobs - don&amp;rsquo;t start this job until these jobs have finished successfully&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&#34;example-script:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Example script&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-#SBS -name myjob
-#SBS -procs 2
-
-command-goes-here
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;run-options:ef41b7668beb33a4132901e930dd34fb&#34;&gt;Run options&lt;/h2&gt;
-
-&lt;p&gt;Running jobs is a separate process and needs to be manually initiated.
-Each job is independently executed as a new process. If a job ends with a return
-code of &lt;code&gt;0&lt;/code&gt;, it is considered a successful execution.&lt;/p&gt;
-
-&lt;p&gt;Here are the available run options:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;-maxprocs N&lt;/td&gt;
-&lt;td&gt;The maximum number of processors to schedule (default: all processors)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-maxmem val&lt;/td&gt;
-&lt;td&gt;The maximum amount of memory to manage (ex: 4G) (default: unlimited, not managed)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-forever&lt;/td&gt;
-&lt;td&gt;Keep waiting for new jobs after the job queue has completed (default: exit when all jobs are done)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&#34;sbs-directory:ef41b7668beb33a4132901e930dd34fb&#34;&gt;SBS directory&lt;/h2&gt;
-
-&lt;p&gt;The SBS home directory (where the job queue data is stored) is by default &lt;code&gt;./.sbs&lt;/code&gt;, that is, in the current directory.
-However, this can be set as an environmental variable: &lt;code&gt;$SBSHOME&lt;/code&gt; or at the command line using &lt;code&gt;sbs -d dir command&lt;/code&gt;.&lt;/p&gt;
-</description>
+      <description>SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for traditional schedulers like PBS, SGE, or SLURM. Not everyone wants to have a complete install of SGE on their laptop. In those cases, SBS can be a quick replacement that requires minimal overhead. SBS is a single file program written in Python that stores job definitions in a managed folder. All job state is stored in this folder.</description>
     </item>
     
     <item>
@@ -686,25 +122,9 @@ However, this can be set as an environmental variable: &lt;code&gt;$SBSHOME&lt;/
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/tutorials/</guid>
-      <description>&lt;p&gt;These vignettes demonstrate how some of the compgen.io tools can be used for data analysis
-in practice. Often these tools are used in conjunction with other software to produce an
-analysis workflow/pipeline.&lt;/p&gt;
-
-&lt;p&gt;If you have questions or ideas for other tutorials, please &lt;a href=&#34;http://compgen.io/contact&#34;&gt;let me know&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;table class=&#34;table_list&#34;&gt;
-    &lt;tr&gt;&lt;td colspan=&#34;2&#34; class=&#34;table_heading&#34;&gt;Tutorial&lt;/td&gt;&lt;td class=&#34;table_heading&#34;&gt;Software used&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/tutorials/formats&#34;&gt;File formats&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Description of common file formats used in NGS analysis&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;&lt;a href=&#34;http://compgen.io/tutorials/fastq-preprocessing&#34;&gt;FASTQ pre-processing&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Trimming bad sequence before alignment (DNA &amp;amp; RNA)&lt;/td&gt;&lt;td&gt;ngsutilsj, bwa&lt;/td&gt;&lt;/tr&gt;
-&lt;!--
-    &lt;tr&gt;&lt;td&gt;[DNA-Seq workflow](/tutorials/dnaseq-bwa)&lt;/td&gt;&lt;td&gt;Pre-processing, alignment with BWA, and mapping statistics&lt;/td&gt;&lt;td&gt;ngsutilsj, samtools, bwa&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;[DNA-Seq pipeline 1](/tutorials/dnaseq-cgpipe)&lt;/td&gt;&lt;td&gt;Submitting full DNA analysis pipeline to HPC scheduler with cgpipe&lt;/td&gt;&lt;td&gt;ngsutilsj, samtools, bwa, cgpipe&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;[DNA-Seq pipeline 2](/tutorials/dnaseq-pipes)&lt;/td&gt;&lt;td&gt;High-performance (streaming) DNA mapping with limited disk I/O&lt;/td&gt;&lt;td&gt;ngsutilsj, samtools, bwa&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;[Java CLI programs](/tutorials/java-cli)&lt;/td&gt;&lt;td&gt;Writing command-line oriented programs in Java&lt;/td&gt;&lt;td&gt;compgen-cmdline&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;[RNA-Seq workflow](/tutorials/rnaseq-star)&lt;/td&gt;&lt;td&gt;Pre-processing, rRNA filtering, alignment with STAR, mapping statistics, and gene-level read counts&lt;/td&gt;&lt;td&gt;ngsutilsj, samtools, and STAR&lt;/td&gt;&lt;/tr&gt;
---&gt;
-  &lt;/table&gt;&lt;/p&gt;
-</description>
+      <description>These vignettes demonstrate how some of the compgen.io tools can be used for data analysis in practice. Often these tools are used in conjunction with other software to produce an analysis workflow/pipeline.
+If you have questions or ideas for other tutorials, please let me know.
+TutorialSoftware used File formatsDescription of common file formats used in NGS analysis FASTQ pre-processingTrimming bad sequence before alignment (DNA &amp;amp; RNA)ngsutilsj, bwa CGPipe DockerIntegrating Docker containers with CGPipe jobscgpipe [DNA-Seq workflow](/tutorials/dnaseq-bwa)Pre-processing, alignment with BWA, and mapping statisticsngsutilsj, samtools, bwa [DNA-Seq pipeline 1](/tutorials/dnaseq-cgpipe)Submitting full DNA analysis pipeline to HPC scheduler with cgpipengsutilsj, samtools, bwa, cgpipe [DNA-Seq pipeline 2](/tutorials/dnaseq-pipes)High-performance (streaming) DNA mapping with limited disk I/Ongsutilsj, samtools, bwa [Java CLI programs](/tutorials/java-cli)Writing command-line oriented programs in Javacompgen-cmdline [RNA-Seq workflow](/tutorials/rnaseq-star)Pre-processing, rRNA filtering, alignment with STAR, mapping statistics, and gene-level read countsngsutilsj, samtools, and STAR --</description>
     </item>
     
     <item>
@@ -722,44 +142,8 @@ analysis workflow/pipeline.&lt;/p&gt;
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/basespace-download/</guid>
-      <description>
-
-&lt;p&gt;basespace-download is a tool for downloading FASTQ files from Illumina&amp;rsquo;s BaseSpace
-cloud service. For some instruments, analysis happens (by default) in the cloud, which
-can make retrieval difficult. Thankfully, Illumina provides a good API for interacting
-with BaseSpace. This tool makes downloading files for a particular sample or project
-very simple.&lt;/p&gt;
-
-&lt;h2 id=&#34;app-token:20db887393d4fd4c06308483e0b525dc&#34;&gt;App-token&lt;/h2&gt;
-
-&lt;p&gt;You must possess a valid app-token from BaseSpace in order to use this application. This
-is your method for authenticating with BaseSpace.&lt;/p&gt;
-
-&lt;p&gt;For more information on getting an app-token, see here: &lt;a href=&#34;https://support.basespace.illumina.com/knowledgebase/articles/403618-python-run-downloader&#34;&gt;https://support.basespace.illumina.com/knowledgebase/articles/403618-python-run-downloader&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;usage:20db887393d4fd4c06308483e0b525dc&#34;&gt;Usage&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;USAGE:
-   basespace-download [arguments...]
-
-ARGUMENTS:
-   -t           Application token from BaseSpace [$BASESPACE_APP_TOKEN]
-   -s           Sample ID to download
-   -p           Project ID to download (all samples)
-   --dr         Dry-run (don&#39;t download files)
-   --help, -h       show help
-   --version, -v    print the version
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;building-from-scratch:20db887393d4fd4c06308483e0b525dc&#34;&gt;Building from scratch&lt;/h2&gt;
-
-&lt;p&gt;You need to have &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; installed first. Next, you can retrieve the Go code and build it in one step:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;go get github.com/compgen-io/basespace-download
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next, you can copy the binary from $GOPATH/bin to anywhere in your $PATH.&lt;/p&gt;
-</description>
+      <description>basespace-download is a tool for downloading FASTQ files from Illumina&amp;rsquo;s BaseSpace cloud service. For some instruments, analysis happens (by default) in the cloud, which can make retrieval difficult. Thankfully, Illumina provides a good API for interacting with BaseSpace. This tool makes downloading files for a particular sample or project very simple.
+App-token You must possess a valid app-token from BaseSpace in order to use this application. This is your method for authenticating with BaseSpace.</description>
     </item>
     
     <item>
@@ -768,17 +152,7 @@ ARGUMENTS:
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/cgpipe/</guid>
-      <description>&lt;p&gt;cgpipe is a bioinformatics pipeline development language. It is very similar in spirit (and practice) to
-the venerable Makefile, but geared towards execution in an HPC environment. Like Makefiles, cgpipe
-pipelines establish a series of build targets, their required dependencies, and a recipe (shell script)
-used to build the outputs. Unlike Makefiles, cgpipe pipelines are scripts that can incorporate logic
-and flow control in the setup and execution of the build-graph.&lt;/p&gt;
-
-&lt;p&gt;cgpipe is distributed as a self-executing fat-JAR file. This means that for installation, all one needs is
-a working copy of Java and the &lt;code&gt;cgpipe&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;For more information, please see the following documentation: &lt;a href=&#34;https://github.com/compgen-io/cgpipe/tree/master/docs&#34;&gt;https://github.com/compgen-io/cgpipe/tree/master/docs&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>CGPipe is a bioinformatics pipeline development language. It is very similar in spirit (and practice) to the venerable Makefile, but geared towards execution in an HPC environment. Like Makefiles, CGPipe pipelines establish a series of build targets, their required dependencies, and a recipe (shell script) used to build the outputs. Unlike Makefiles, CGPipe pipelines are scripts that can incorporate logic and flow control in the setup and execution of the build-graph.</description>
     </item>
     
     <item>
@@ -787,54 +161,7 @@ a working copy of Java and the &lt;code&gt;cgpipe&lt;/code&gt; file.&lt;/p&gt;
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/cgsplice/</guid>
-      <description>
-
-&lt;p&gt;cgsplice is a set of tools to support direct measurement of splice junctions in
-RNA-seq data. cgsplice works by finding and counting reads that span splice junctions.
-It does this by searching for reads with an &amp;ldquo;N&amp;rdquo; gap in their CIGAR alignment string.
-Next, for all junctions, it determines the donor and acceptor sites and tallies how
-many reads span each donor/acceptor pair. Finally, using these counts for multiple
-samples, it will calculate a permuted p-value for how likely it is that a given donor
-or acceptor had differential splicing between two conditions. Reads supporting a
-cassette exon, but that don&amp;rsquo;t cross a junction are not included in this model.&lt;/p&gt;
-
-&lt;h2 id=&#34;counting-junction-spanning-reads:3e94e5809f7f6d41dc30f877167d487b&#34;&gt;Counting junction-spanning reads&lt;/h2&gt;
-
-&lt;p&gt;The &lt;code&gt;junction-count&lt;/code&gt; command will count how many reads span any particular splice
-junction. Specifically, each junction is split into donor/acceptor pairs. Then for
-all junctions with a common donor or acceptor, the number of supporting reads is
-calculated. Only reads that have split-mapping (N gaps in the CIGAR string) are used.&lt;/p&gt;
-
-&lt;p&gt;Counting is done in a gene model-free method, allowing for discovery of unannotated
-transcripts (if a suitable aligner is used). In addition to counting reads that span
-junctions, reads that represent retained introns can also be counted.&lt;/p&gt;
-
-&lt;h2 id=&#34;differential-splicing:3e94e5809f7f6d41dc30f877167d487b&#34;&gt;Differential splicing&lt;/h2&gt;
-
-&lt;p&gt;The &lt;code&gt;splice-diff&lt;/code&gt; command takes a series of &lt;code&gt;junction-count&lt;/code&gt; outputs and performs a
-permutation analysis to determine which splicing donor/acceptor sites exhibit differential
-splicing between two conditions. The statistical metric used is a Student&amp;rsquo;s t-score with
-Binomial variance. Samples are permuted across different conditions to calculate a p-value
-for each donor/acceptor.&lt;/p&gt;
-
-&lt;h2 id=&#34;splicing-events:3e94e5809f7f6d41dc30f877167d487b&#34;&gt;Splicing events&lt;/h2&gt;
-
-&lt;p&gt;The &lt;code&gt;combine-events&lt;/code&gt; command merges donor/acceptors into complete splicing events, such
-as cassette exons. Only donor/acceptor that meet certain criteria (FDR, effect-size)
-are merged.&lt;/p&gt;
-
-&lt;h2 id=&#34;stats:3e94e5809f7f6d41dc30f877167d487b&#34;&gt;Stats&lt;/h2&gt;
-
-&lt;p&gt;The &lt;code&gt;bam-stats&lt;/code&gt; command can be used to determine how many junction-spanning reads are
-present in any given sample, among other things. These QC metrics can be used to assess
-how useful a given BAM file is for junction analysis.&lt;/p&gt;
-
-&lt;h2 id=&#34;installing-cgsplice:3e94e5809f7f6d41dc30f877167d487b&#34;&gt;Installing cgsplice&lt;/h2&gt;
-
-&lt;p&gt;cgsplice is implemented in Java and distributed as a self-executing fast-JAR file. This
-requires only a recent version of Java to be installed on the system. Otherwise, cgsplice
-acts as a normal command-line program.&lt;/p&gt;
-</description>
+      <description>cgsplice is a set of tools to support direct measurement of splice junctions in RNA-seq data. cgsplice works by finding and counting reads that span splice junctions. It does this by searching for reads with an &amp;ldquo;N&amp;rdquo; gap in their CIGAR alignment string. Next, for all junctions, it determines the donor and acceptor sites and tallies how many reads span each donor/acceptor pair. Finally, using these counts for multiple samples, it will calculate a permuted p-value for how likely it is that a given donor or acceptor had differential splicing between two conditions.</description>
     </item>
     
     <item>
@@ -843,10 +170,59 @@ acts as a normal command-line program.&lt;/p&gt;
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
       <guid>http://compgen.io/compgen-cmdline/</guid>
-      <description>&lt;p&gt;compgen-cmdline is a Java library that makes it easier to setup and run command-line
-(CLI) programs written in Java. All of the Java applications on compgen.io use this
-library to handle the CLI interface.&lt;/p&gt;
-</description>
+      <description>compgen-cmdline is a Java library that makes it easier to setup and run command-line (CLI) programs written in Java. All of the Java applications on compgen.io use this library to handle the CLI interface.</description>
+    </item>
+    
+    <item>
+      <title>compgen-common</title>
+      <link>http://compgen.io/compgen-common/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>http://compgen.io/compgen-common/</guid>
+      <description>compgen-common is a Java library with commonly used functions for String manipulation, progress bars, and general utility classes. These are useful building blocks that can be included in other applications.</description>
+    </item>
+    
+    <item>
+      <title>ngsutilsj</title>
+      <link>http://compgen.io/ngsutilsj/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>http://compgen.io/ngsutilsj/</guid>
+      <description>ngsutilsj is an updated java port of the NGSUtils toolkit. This new version is largely a Java port of the the most commonly used tools from NGSUtils, with some additions thrown in. It is also a library, with utility classes for use in other various NGS related software (such as cgsplice).
+Java was chosen for the ease of installation and relative speed (in comparison to the Python NGSUtils). The processing speed for gzipped compressed files was a major reason for the new update.</description>
+    </item>
+    
+    <item>
+      <title>swalign</title>
+      <link>http://compgen.io/swalign/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>http://compgen.io/swalign/</guid>
+      <description>swalign is a version of a standard Smith-Waterman local alignment algorithm written in Python. It is a useful example of how one might write an aligner from scratch. It is not a highly performant example, but it is a useful teaching tool or for quick and dirty alignment searches when building an index would be overkill.
+The aligner can be used in a stand-alone mode or as an importable Python library.</description>
+    </item>
+    
+    <item>
+      <title>tabutils</title>
+      <link>http://compgen.io/tabutils/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
+      
+      <guid>http://compgen.io/tabutils/</guid>
+      <description>tabutils is a set of programs for viewing and working with tab-delimited text files. Because of its utility, this is usually one of the first programs I end up installing on a new system.
+Installation The easiest way to install tabutils is to clone the Github repository and run make.
+tabutils filter Allows you to view only lines that meet certain criteria.
+tabutils filter file.txt {criteria}
+Eg:
+1 eq foo</description>
+    </item>
+    
+    <item>
+      <title>Current projects</title>
+      <link>http://compgen.io/projects/</link>
+      <pubDate>Tue, 15 Dec 2015 00:54:49 -0500</pubDate>
+      
+      <guid>http://compgen.io/projects/</guid>
+      <description>NGS data analysis ngsutilsjUpdated NGS data processing toolkit (active development)Java NGSUtilsOriginal NGS data processing tools (maintenance only)Python cgspliceSplicing analysis toolkitJava SQZEfficient and secure sequencing read file formatJava-- &amp;nbsp; Data analysis pipelines / infrastructure cgpipeLanguage for defining and running pipelines on HPC clustersJava SBSSingle user batch job scheduler for workstationsPython &amp;nbsp; Misc. tools basespace-downloadDownload files / samples from Illumina&#39;s BaseSpaceGolang swalignSmith-Waterman local alignment library/toolPython tabutilsUtility progams for working with tab-delimited text filesPython &amp;nbsp; Programming libraries compgen-commonCommon utility classes useful for Java projectsJava compgen-cmdlineFramework for developing Java command-line applications that have a *nix feelJava  </description>
     </item>
     
   </channel>
