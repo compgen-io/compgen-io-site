@@ -65,10 +65,10 @@ Here are some alternatives to Docker containers for software versioning:
 The feature of CGPipe that will help us get our jobs running in a container are the setup/teardown/pre/post meta-targets.
 
 
-These are named `__setup__`, `__teardown__`, `__pre__`, and `__post__` and defined like any other job definition.
-`__setup__` and `__teardown__` are executed at pipeline run-time (not submitted to a scheduler) to do things like
-make a child directory or remove a temporary file. `__setup__` is run before any other jobs are submitted to the 
-scheduler and `__teardown__` is executed before CGPipe returns. However, `__pre__` and `__post__` are job-specific 
+These are named `__setup__`, `__teardown__`, `__pre__`, and `__post__` and are defined like any other job definition.
+However, **setup** and **teardown** are executed at pipeline run-time (not submitted to a scheduler) to do things like
+make a child directory or remove a temporary file. **Setup** is run before any other jobs are submitted to the 
+scheduler and **teardown** is executed before CGPipe returns. However, **pre** and **post** are job
 meta-targets that are included in the main job snippet. Crucially, they are *not* job dependencies, they are included
 in the body of the job script itself.
 
@@ -85,7 +85,7 @@ This would result in the following job script:
 
 
 As an example, this is a pretty simple pipeline that has only one task. If you wanted to write the start / finish
-times to stdout for this job, you could use the `__pre__` and `__post__` meta targets like this:
+times to stdout for this job, you could use the **pre** and **post** meta-targets like this:
 
     __pre__:
       echo "Start: \\$(date)"
@@ -103,9 +103,9 @@ This will result in a job script that looks something like this:
     ./myprog input.txt > output.txt
     echo "Done: $(date)"
 
-If you had multiple tasks, then the `__pre__` and `__post__` would be applied to each job. This makes these meta
-targets a powerful method for altering or monitoring the execution of each task in a pipeline. Some other ideas where
-the `__pre__` and `__post__` meta targets could come in handy tracking job start/finish in an external 
+If you have multiple tasks, **pre** and **post** are applied to each job. This makes these meta
+targets a powerful method for altering or monitoring the execution of each task in a pipeline. Some other examples where
+the **pre** and **post** meta-targets could come in handy tracking job start/finish in an external 
 monitoring program, downloading inputs from cloud storage (e.g. S3), uploading outputs to cloud storage, changing file
 permissions, etc...
 
@@ -121,14 +121,14 @@ like this:
 
 ## Job settings
 
-CGPipe job snippets are nothing more than shell (bash) scripts, which in combination with the `__pre__`
-and `__post__` CGPipe meta targets gives a pipeline author a lot of flexibility. It also means
-that you can adapt the pipeline to work with your system, not adapt your system to the pipeline.
+CGPipe job snippets are nothing more than shell (bash) scripts, which in combination with the **pre** and **post** meta-targets 
+gives a pipeline author a lot of flexibility. It also means that you can adapt the pipeline to work with your system, not 
+adapt your system to the pipeline.
 
 Because not all jobs will require a Docker container to execute, it is appropriate to configure the container
 settings on a job-by-job basis. Like all job settings, it is possible to set these on a per-job, per-pipeline, 
 or per-system basis. Any cgpipe variable starting with `job.` (including user-defined ones) is available within
-the job snippet context (including the `__pre__` and `__post__` meta-targets), so we will use that to set a few 
+the job snippet context (including **pre** and **post**), so we will use that to set a few 
 Docker-specific variables. Specifically, we will use `job.docker.container`. `job.docker.container` 
 will be set to the container image name to use for this job.
 
@@ -146,8 +146,8 @@ One way to do this would be to use [ngsutilsj](/ngsutilsj) and run the following
 We may not have `ngsutilsj` installed on our system, but it is available in the `asclab/spcg-working` Docker container.
 
 
-To setup the Docker container, we'll use the `__pre__` and `__post__` 
-meta targets to wrap the entire job snippet in a HEREDOC. That will then send the script to a the container's 
+To setup the Docker container, we'll use the *pre* and *post* 
+meta-targets to wrap the entire job snippet in a HEREDOC. That will then send the script to a the container's 
 entrypoint (`/bin/bash`) to execute in the context of the container.
 
 

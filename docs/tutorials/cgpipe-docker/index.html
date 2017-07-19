@@ -158,10 +158,10 @@ should be a good starting point to adapt to your system.</p>
 
 <p>The feature of CGPipe that will help us get our jobs running in a container are the setup/teardown/pre/post meta-targets.</p>
 
-<p>These are named <code>__setup__</code>, <code>__teardown__</code>, <code>__pre__</code>, and <code>__post__</code> and defined like any other job definition.
-<code>__setup__</code> and <code>__teardown__</code> are executed at pipeline run-time (not submitted to a scheduler) to do things like
-make a child directory or remove a temporary file. <code>__setup__</code> is run before any other jobs are submitted to the
-scheduler and <code>__teardown__</code> is executed before CGPipe returns. However, <code>__pre__</code> and <code>__post__</code> are job-specific
+<p>These are named <code>__setup__</code>, <code>__teardown__</code>, <code>__pre__</code>, and <code>__post__</code> and are defined like any other job definition.
+However, <strong>setup</strong> and <strong>teardown</strong> are executed at pipeline run-time (not submitted to a scheduler) to do things like
+make a child directory or remove a temporary file. <strong>Setup</strong> is run before any other jobs are submitted to the
+scheduler and <strong>teardown</strong> is executed before CGPipe returns. However, <strong>pre</strong> and <strong>post</strong> are job
 meta-targets that are included in the main job snippet. Crucially, they are <em>not</em> job dependencies, they are included
 in the body of the job script itself.</p>
 
@@ -179,7 +179,7 @@ following job definition:</p>
 </code></pre>
 
 <p>As an example, this is a pretty simple pipeline that has only one task. If you wanted to write the start / finish
-times to stdout for this job, you could use the <code>__pre__</code> and <code>__post__</code> meta targets like this:</p>
+times to stdout for this job, you could use the <strong>pre</strong> and <strong>post</strong> meta-targets like this:</p>
 
 <pre><code>__pre__:
   echo &quot;Start: \\$(date)&quot;
@@ -199,9 +199,9 @@ echo &quot;Start: $(date)&quot;
 echo &quot;Done: $(date)&quot;
 </code></pre>
 
-<p>If you had multiple tasks, then the <code>__pre__</code> and <code>__post__</code> would be applied to each job. This makes these meta
-targets a powerful method for altering or monitoring the execution of each task in a pipeline. Some other ideas where
-the <code>__pre__</code> and <code>__post__</code> meta targets could come in handy tracking job start/finish in an external
+<p>If you have multiple tasks, <strong>pre</strong> and <strong>post</strong> are applied to each job. This makes these meta
+targets a powerful method for altering or monitoring the execution of each task in a pipeline. Some other examples where
+the <strong>pre</strong> and <strong>post</strong> meta-targets could come in handy tracking job start/finish in an external
 monitoring program, downloading inputs from cloud storage (e.g. S3), uploading outputs to cloud storage, changing file
 permissions, etc&hellip;</p>
 
@@ -216,14 +216,14 @@ like this:</p>
 
 <h2 id="job-settings">Job settings</h2>
 
-<p>CGPipe job snippets are nothing more than shell (bash) scripts, which in combination with the <code>__pre__</code>
-and <code>__post__</code> CGPipe meta targets gives a pipeline author a lot of flexibility. It also means
-that you can adapt the pipeline to work with your system, not adapt your system to the pipeline.</p>
+<p>CGPipe job snippets are nothing more than shell (bash) scripts, which in combination with the <strong>pre</strong> and <strong>post</strong> meta-targets
+gives a pipeline author a lot of flexibility. It also means that you can adapt the pipeline to work with your system, not
+adapt your system to the pipeline.</p>
 
 <p>Because not all jobs will require a Docker container to execute, it is appropriate to configure the container
 settings on a job-by-job basis. Like all job settings, it is possible to set these on a per-job, per-pipeline,
 or per-system basis. Any cgpipe variable starting with <code>job.</code> (including user-defined ones) is available within
-the job snippet context (including the <code>__pre__</code> and <code>__post__</code> meta-targets), so we will use that to set a few
+the job snippet context (including <strong>pre</strong> and <strong>post</strong>), so we will use that to set a few
 Docker-specific variables. Specifically, we will use <code>job.docker.container</code>. <code>job.docker.container</code>
 will be set to the container image name to use for this job.</p>
 
@@ -240,8 +240,8 @@ One way to do this would be to use <a href="/ngsutilsj">ngsutilsj</a> and run th
 
 <p>We may not have <code>ngsutilsj</code> installed on our system, but it is available in the <code>asclab/spcg-working</code> Docker container.</p>
 
-<p>To setup the Docker container, we&rsquo;ll use the <code>__pre__</code> and <code>__post__</code>
-meta targets to wrap the entire job snippet in a HEREDOC. That will then send the script to a the container&rsquo;s
+<p>To setup the Docker container, we&rsquo;ll use the <em>pre</em> and <em>post</em>
+meta-targets to wrap the entire job snippet in a HEREDOC. That will then send the script to a the container&rsquo;s
 entrypoint (<code>/bin/bash</code>) to execute in the context of the container.</p>
 
 <p>Here is what our trival example looks like as a cgpipe script:</p>
