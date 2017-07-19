@@ -17,8 +17,8 @@
       <pubDate>Tue, 18 Jul 2017 13:01:00 -0500</pubDate>
       
       <guid>http://compgen.io/tutorials/cgpipe-docker/</guid>
-      <description>CGPipe is a powerful tool for executeing bioinformatics data analysis workflows. Much of its power derives from its inherent flexibility. In addition to supporting a variety of batch scheduling environments (SGE, SLURM, PBS), it can support different modes of executing jobs. The way we&amp;rsquo;ll explore executing jobs within Docker containers is to use the HEREDOC pattern.
-Docker Docker is a platform for running programs within a container. The container lets you build and ship programs with all of their dependencies intact.</description>
+      <description>CGPipe is a powerful tool for executeing bioinformatics data analysis workflows. Much of its power derives from its inherent flexibility. In addition to supporting a variety of batch scheduling environments (SGE, SLURM, PBS), it can support different modes of executing jobs, such as in the context of a Docer container. The way we&amp;rsquo;ll explore executing jobs within a container is to use the HEREDOC pattern.
+Heredocs What are heredocs? Heredocs are a feature of shell scripts that let you send multiple lines of data as stdin to a program (an input-stream literal).</description>
     </item>
     
     <item>

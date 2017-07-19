@@ -100,73 +100,81 @@
 <p>CGPipe is a powerful tool for executeing bioinformatics data analysis workflows. Much
 of its power derives from its inherent flexibility. In addition to supporting a variety of batch
 scheduling environments (SGE, SLURM, PBS), it can support different modes of
-executing jobs. The way we&rsquo;ll explore executing jobs within Docker containers is to use the
-<a href="https://en.wikipedia.org/wiki/Here_document">HEREDOC pattern</a>.</p>
+executing jobs, such as in the context of a Docer container. The way we&rsquo;ll explore executing
+jobs within a container is to use the <a href="https://en.wikipedia.org/wiki/Here_document">HEREDOC pattern</a>.</p>
+
+<h2 id="heredocs">Heredocs</h2>
+
+<p>What are heredocs? Heredocs are a feature of shell scripts that let you send multiple lines of
+data as <em>stdin</em> to a program (an input-stream literal). One common way they are used is to write
+multiple lines to a file at a time.</p>
+
+<pre><code>cat &lt;&lt;HEREDOC &gt; output.txt
+line 1
+line 2
+etc...
+HEREDOC
+</code></pre>
+
+<p>You don&rsquo;t need to use the delimiter <code>HEREDOC</code>, it could be any string. Another commonly used string is <code>EOF</code>.</p>
+
+<pre><code>cat &lt;&lt;EOF &gt; output.txt
+etc...
+EOF
+</code></pre>
+
+<p>We are going to use this to have CGPipe wrap a job script and send that as <em>stdin</em> to <code>bash</code> running in a container.</p>
 
 <h2 id="docker">Docker</h2>
 
-<p><a href="https://www.docker.com/what-docker">Docker</a> is a platform for running programs within a container.
-The container lets you build and ship programs with all of their dependencies intact. This is a
-really good pattern to use for reproducible research. It&rsquo;s by far not the only pattern, but it&rsquo;s a
-good one if your cluster supports it.</p>
+<p>We&rsquo;ll assume you&rsquo;re already familiar with <a href="http://www.docker.com">Docker</a>, but briefly Docker
+a platform for running programs within a container. The container lets you build and ship programs with any needed
+dependencies intact. This results in a consistent execution environment for data analysis pipelines.</p>
 
-<p>Docker containers are started using the command-line <code>docker</code> command. It is out of the scope of this
-document to go into all of the ways that Docker can be started (or how to create a container image). So,
-instead we&rsquo;ll assume you&rsquo;re using the <a href="https://hub.docker.com/r/asclab/spcg-working/"><code>asclab/spcg-working</code></a>
-container. This container includes BWA, <a href="/ngsutilsj">ngsutilsj</a>, STAR, bcftools,
-and samtools. However, it doesn&rsquo;t include any reference genomes (indexed or FASTA). This is a CentOS 7 based
-image, so if your tools are expecting something else, or if you need additional binaries, you&rsquo;ll want to
-work with your own image.</p>
+<p>It is out of the scope of this document to go into all of the ways that Docker can be started (or how to
+create a container image). However, if your job can be started as a shell script, you can use this method
+to run your job in a container. We will use <code>docker run</code> to start our script.</p>
 
 <h3 id="job-integration">Job integration</h3>
 
 <p>In order to use the Docker container, we will mount the current working directory as <code>/data</code>
-in the Docker container. We can then use this as the working directory for the job. We will then start the
+in the Docker container. This will be the working directory for the job. We will then start the
 container and execute the given job snippet in the context of the container by using <code>/bin/bash</code> as our
-Docker entrypoint. Specifics on  how to do this will be described below.</p>
+Docker entrypoint.</p>
 
-<p>Note: This is only one way to do this and may not be the best. There is no current &ldquo;best-practice&rdquo; for this,
-merely only something that has worked for us. So please experiment and share your results!</p>
-
-<h3 id="security">Security</h3>
-
-<p>One downside of Docker is that it requires support from your execution system (HPC cluster). Specifically,
-it requires granting a user the equivalent of root-level permissions, which is obviously a security issue
-on multi-user clusters. Reducing this security exposure is an active area of work. However, if your
-cluster supports docker (or is single-user), then this is a viable solution.</p>
+<p>Note: This is only one way to do this and may not be the best solution for your environment. But this
+should be a good starting point to adapt to your system.</p>
 
 <h3 id="alternatives">Alternatives</h3>
 
-<p>Some alternatives to Docker containers are:</p>
+<p>Here are some alternatives to Docker containers for software versioning:</p>
 
 <ul>
-<li><a href="http://modules.sourceforge.net">Environment modules</a> - Old school method for managing program versions</li>
-<li><a href="http://singularity.lbl.gov/">Singularity containers</a> - Docker alternative containers from Berkeley Lab that doesn&rsquo;t require root permissions, thus compatible with existing HPC systems. This is a system that we are actively exploring and working to deploy across our HPC clusters and pipelines.</li>
+<li><a href="http://modules.sourceforge.net">Environment modules</a> - The original method for managing program versions. This (or a similar tool) is installed on most HPC clusters.</li>
+<li><a href="http://singularity.lbl.gov/">Singularity containers</a> - Docker-alternative container tool from Berkeley Lab that doesn&rsquo;t require special permissions and is compatible with existing multi-user HPC systems. The technique used here for Docker should also be applicable to Singularity containers.</li>
 </ul>
 
-<h2 id="meta-targets">Meta targets</h2>
+<h2 id="meta-targets">Meta-targets</h2>
 
-<p>Currently, CGPipe supports four different &ldquo;meta-targets&rdquo;: <code>__setup__</code>, <code>__teardown__</code>, <code>__pre__</code>, and <code>__post__</code>.</p>
+<p>The feature of CGPipe that will help us get our jobs running in a container are the setup/teardown/pre/post meta-targets.</p>
 
-<p><code>__setup__</code> and <code>__teardown__</code> are executed at pipeline run-time (not submitted to a scheduler) to do things like
+<p>These are named <code>__setup__</code>, <code>__teardown__</code>, <code>__pre__</code>, and <code>__post__</code> and defined like any other job definition.
+<code>__setup__</code> and <code>__teardown__</code> are executed at pipeline run-time (not submitted to a scheduler) to do things like
 make a child directory or remove a temporary file. <code>__setup__</code> is run before any other jobs are submitted to the
 scheduler and <code>__teardown__</code> is executed before CGPipe returns. However, <code>__pre__</code> and <code>__post__</code> are job-specific
 meta-targets that are included in the main job snippet. Crucially, they are <em>not</em> job dependencies, they are included
 in the body of the job script itself.</p>
 
-<p>One example of this would be to help track the time required for a job to start/finish.  Let&rsquo;s say you had the
+<p>How can this be helpful? One example is to track the time required for a job to start/finish.  Let&rsquo;s say you had the
 following job definition:</p>
 
 <pre><code>output.txt: input.txt
     ./myprog input.txt &gt; output.txt
 </code></pre>
 
-<p>This would result in the following job script (assuming the SBS runner):</p>
+<p>This would result in the following job script:</p>
 
 <pre><code>#!/bin/bash
-#SBS -name cgjob_output.txt
-#SBS -wd .
-set -eo pipefail
 ./myprog input.txt &gt; output.txt
 </code></pre>
 
@@ -186,9 +194,6 @@ output.txt: input.txt
 <p>This will result in a job script that looks something like this:</p>
 
 <pre><code>#!/bin/bash
-#SBS -name cgjob_output.txt
-#SBS -wd .
-set -eo pipefail
 echo &quot;Start: $(date)&quot;
 ./myprog input.txt &gt; output.txt
 echo &quot;Done: $(date)&quot;
@@ -218,19 +223,22 @@ that you can adapt the pipeline to work with your system, not adapt your system 
 <p>Because not all jobs will require a Docker container to execute, it is appropriate to configure the container
 settings on a job-by-job basis. Like all job settings, it is possible to set these on a per-job, per-pipeline,
 or per-system basis. Any cgpipe variable starting with <code>job.</code> (including user-defined ones) is available within
-the job snippet context, so we will use that to set a few Docker-specific variables. Specifically, we will use
-<code>job.docker.container</code>. <code>job.docker.container</code> will be set to the container image name to use for this
-job.</p>
+the job snippet context (including the <code>__pre__</code> and <code>__post__</code> meta-targets), so we will use that to set a few
+Docker-specific variables. Specifically, we will use <code>job.docker.container</code>. <code>job.docker.container</code>
+will be set to the container image name to use for this job.</p>
+
+<p>You can also use a similar strategy to set things like volumes or other resource requirements for the container,
+but we&rsquo;ll keep things simple for now.</p>
 
 <h2 id="putting-it-all-together">Putting it all together</h2>
 
-<p>For a trival example, lets assume you have a BAM file and you&rsquo;d like to calculate some alignment QC statistics.
-A good way to do this would be to use <a href="/ngsutilsj">ngsutilsj</a> and run the following snippet:</p>
+<p>For an example, lets assume you have a BAM file and you&rsquo;d like to calculate some alignment QC statistics.
+One way to do this would be to use <a href="/ngsutilsj">ngsutilsj</a> and run the following:</p>
 
 <pre><code>ngsutilsj bam-stats input.bam &gt; output.stats.txt
 </code></pre>
 
-<p>We may not have <code>ngsutilsj</code> installed on our cluster, but it is available in the <code>asclab/spcg-working</code> Docker container.</p>
+<p>We may not have <code>ngsutilsj</code> installed on our system, but it is available in the <code>asclab/spcg-working</code> Docker container.</p>
 
 <p>To setup the Docker container, we&rsquo;ll use the <code>__pre__</code> and <code>__post__</code>
 meta targets to wrap the entire job snippet in a HEREDOC. That will then send the script to a the container&rsquo;s
@@ -238,7 +246,8 @@ entrypoint (<code>/bin/bash</code>) to execute in the context of the container.<
 
 <p>Here is what our trival example looks like as a cgpipe script:</p>
 
-<pre><code>output.stats.txt: input.bam
+<pre><code>#!/usr/bin/env cgpipe
+output.stats.txt: input.bam
     ngsutilsj bam-stats input.bam &gt; output.stats.txt
 </code></pre>
 
@@ -247,7 +256,8 @@ is installed. <code>realpath</code> is used to get the absolute path for the cur
 required by Docker to bind local directories as volumes in the container (you can also get this with a
 Perl or Python one-liner).</p>
 
-<pre><code>__pre__:
+<pre><code>#!/usr/bin/env cgpipe
+__pre__:
     &lt;% if job.docker.container %&gt;
     docker run --rm -i \
       -v $(realpath .):/data \
@@ -270,9 +280,6 @@ output.stats.txt: input.bam
 <p>This results in the following job script:</p>
 
 <pre><code>#!/bin/bash
-#SBS -name cgjob_output.stats.txt
-#SBS -wd .
-set -eo pipefail
 docker run --rm -i \
   -v /my/path:/data \
   -w /data
@@ -284,10 +291,6 @@ HEREDOC
 <p>One thing to look out for is the whitespace surrounding the <code>HEREDOC</code> in <code>__post__</code>. This needs to end up
 as the first thing on a line without any preceeding whitespace. If you use consistent indentation, this normally
 isn&rsquo;t a problem, but it&rsquo;s something to look out for.</p>
-
-<p>Using variations on this theme, it&rsquo;s possible to do all sorts of things, like dynamically include different volumes,
-download or upload Docker images, etc. Also, this isn&rsquo;t a very generic CGPipe script, with the filenames being hard-coded,
-but it serves as an example of how to integrate Docker with CGPipe pipelines.</p>
 
           </article>
     </div>
