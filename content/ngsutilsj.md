@@ -15,10 +15,11 @@ the most commonly used tools from NGSUtils, with some additions thrown in. It is
 classes for use in other various NGS related software (such as [cgsplice](/cgsplice)).
 
 Java was chosen for the ease of installation and relative speed (in comparison to the Python NGSUtils). 
-The processing speed for gzipped compressed files was a major reason for the new update.
+The processing speed for gzipped compressed files was a major reason for the new update. This version has 
+also been optimized for working on high-memory HPC clusters and streaming data analysis (to minimize disk IO).
 
 
-##Installation
+## Installation
 
 ngsutilsj is distributed as a self-executing fat-JAR file. This means that for installation, all one needs is
 a working copy of Java and the `ngsutilsj` file. Unlike other JAR-file based NGS packages, ngsutilsj includes a
