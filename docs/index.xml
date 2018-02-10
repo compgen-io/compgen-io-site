@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>compgen.io</title>
-    <link>http://compgen.io/</link>
+    <link>https://compgen.io/</link>
     <description>Recent content on compgen.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 18 Jul 2017 13:01:00 -0500</lastBuildDate>
     
-	<atom:link href="http://compgen.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://compgen.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docker containers with CGPipe</title>
-      <link>http://compgen.io/tutorials/cgpipe-docker/</link>
+      <link>https://compgen.io/tutorials/cgpipe-docker/</link>
       <pubDate>Tue, 18 Jul 2017 13:01:00 -0500</pubDate>
       
-      <guid>http://compgen.io/tutorials/cgpipe-docker/</guid>
+      <guid>https://compgen.io/tutorials/cgpipe-docker/</guid>
       <description>CGPipe is a powerful tool for executeing bioinformatics data analysis workflows. Much of its power derives from its inherent flexibility. In addition to supporting a variety of batch scheduling environments (SGE, SLURM, PBS), it can support different modes of executing jobs, such as in the context of a Docer container. The way we&amp;rsquo;ll explore executing jobs within a container is to use the HEREDOC pattern.
 Heredocs What are heredocs? Heredocs are a feature of shell scripts that let you send multiple lines of data as stdin to a program (an input-stream literal).</description>
     </item>
     
     <item>
       <title>Citations</title>
-      <link>http://compgen.io/citations/</link>
+      <link>https://compgen.io/citations/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/citations/</guid>
+      <guid>https://compgen.io/citations/</guid>
       <description>If you use NGSUtils in your research, please cite our paper:
  Marcus R. Breese and Yunlong Liu
 NGSUtils: a software suite for analyzing and manipulating next-generation sequencing datasets
@@ -36,10 +36,10 @@ Bioinformatics (2013) 29(4): 494-496
     
     <item>
       <title>Contact me</title>
-      <link>http://compgen.io/contact/</link>
+      <link>https://compgen.io/contact/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/contact/</guid>
+      <guid>https://compgen.io/contact/</guid>
       <description>If you have any issues with any of the software, have a question, or an idea for a new feature &amp;ndash; please let me know! Pull requests on Github are also appreciated.
 Bugs can be submitted as an issue on the individual project&amp;rsquo;s Github page.
 You can also contact me by email here:
@@ -52,76 +52,77 @@ Sweet-Cordero Lab</description>
     
     <item>
       <title>Downloads</title>
-      <link>http://compgen.io/download/</link>
+      <link>https://compgen.io/download/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/download/</guid>
+      <guid>https://compgen.io/download/</guid>
       <description>Please fill out the form below before downloading software. The form is completely optional, but it helps us keep track of how many users we have and is critical for justifying future work (and funding).   This information really helps us -- Thanks!   Email address: Organization: Type:Research University / Academic Hospital / Clinical Independent research institute Government Biotech / Industry Other &amp;nbsp;  Install location:Single-user workstation / PC Multi-user server HPC cluster Other &amp;nbsp;  &amp;nbsp; Skip this.</description>
     </item>
     
     <item>
       <title>FASTQ Pre-processing</title>
-      <link>http://compgen.io/tutorials/fastq-preprocessing/</link>
+      <link>https://compgen.io/tutorials/fastq-preprocessing/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/tutorials/fastq-preprocessing/</guid>
+      <guid>https://compgen.io/tutorials/fastq-preprocessing/</guid>
       <description>The first step in NGS analysis is pre-processing your FASTQ files. The following tutorial uses ngsutilsj fastq-filter to process and filter FASTQ files.
 Sequence QC tools It&amp;rsquo;s important to measure certain quality control metrics with FASTQ files. You should run the same QC checks against the files before and after pre- processing. This will help you assess the quality of your data and measure how well the pre-processing is working.</description>
     </item>
     
     <item>
       <title>File formats</title>
-      <link>http://compgen.io/tutorials/formats/</link>
+      <link>https://compgen.io/tutorials/formats/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/tutorials/formats/</guid>
+      <guid>https://compgen.io/tutorials/formats/</guid>
       <description>Sequencing formats 
 FASTA # FASTA files are the de-facto standard for storing and sharing DNA/RNA/amino acid sequences. It is a text-file format with a header line followed by one or more lines of sequence. The header line starts with a &amp;lsquo;&amp;gt;&amp;rsquo; character, which may be used for parsing the file. The remainder of the header line consists of a name, optionally followed by a comment. The name and comment are separated by whitespace.</description>
     </item>
     
     <item>
       <title>NGSUtils</title>
-      <link>http://compgen.io/ngsutils/</link>
+      <link>https://compgen.io/ngsutils/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/ngsutils/</guid>
-      <description>For more information on the NGSUtils Python toolkit, see here: http://ngsutils.org</description>
+      <guid>https://compgen.io/ngsutils/</guid>
+      <description>For more information on the NGSUtils Python toolkit, see here: http://ngsutils.org
+NOTE: An updated version of this tool is available here: [ngsutilsj]: /ngsutilsj</description>
     </item>
     
     <item>
       <title>RNA-Seq workflow (with STAR)</title>
-      <link>http://compgen.io/tutorials/rnaseq-star/</link>
+      <link>https://compgen.io/tutorials/rnaseq-star/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/tutorials/rnaseq-star/</guid>
+      <guid>https://compgen.io/tutorials/rnaseq-star/</guid>
       <description>Experimental design The first step in getting good results from an RNA-Seq experiment is choosing a good experimental design. This means that you need to have enough replicates, with sufficient sequencing depth to be able to answer your research question.
 Depth For differential gene expression, I recommend having at least 4 biological replicates for each condition with a minimum of 20M reads per sample (30M recommended). Additionally, we&amp;rsquo;ve found that pair-end sequencing produces more uniquely aligned reads than single-end sequencing.</description>
     </item>
     
     <item>
       <title>SQZ</title>
-      <link>http://compgen.io/sqz/</link>
+      <link>https://compgen.io/sqz/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/sqz/</guid>
+      <guid>https://compgen.io/sqz/</guid>
       <description>SQZ is an experimental file format for sequencing data. It aims to be a more robust and flexible archival format than a traditional compressed FASTQ file.</description>
     </item>
     
     <item>
       <title>Simple Batch Scheduler</title>
-      <link>http://compgen.io/sbs/</link>
+      <link>https://compgen.io/sbs/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/sbs/</guid>
+      <guid>https://compgen.io/sbs/</guid>
       <description>SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for traditional schedulers like PBS, SGE, or SLURM. Not everyone wants to have a complete install of SGE on their laptop. In those cases, SBS can be a quick replacement that requires minimal overhead. SBS is a single file program written in Python that stores job definitions in a managed folder. All job state is stored in this folder.</description>
     </item>
     
     <item>
       <title>Tutorials</title>
-      <link>http://compgen.io/tutorials/</link>
+      <link>https://compgen.io/tutorials/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/tutorials/</guid>
+      <guid>https://compgen.io/tutorials/</guid>
       <description>These vignettes demonstrate how some of the compgen.io tools can be used for data analysis in practice. Often these tools are used in conjunction with other software to produce an analysis workflow/pipeline.
 If you have questions or ideas for other tutorials, please let me know.
 TutorialSoftware used File formatsDescription of common file formats used in NGS analysis FASTQ pre-processingTrimming bad sequence before alignment (DNA &amp;amp; RNA)ngsutilsj, bwa Docker with CGPipeIntegrating Docker containers with CGPipe jobscgpipe [DNA-Seq workflow](/tutorials/dnaseq-bwa)Pre-processing, alignment with BWA, and mapping statisticsngsutilsj, samtools, bwa [DNA-Seq pipeline 1](/tutorials/dnaseq-cgpipe)Submitting full DNA analysis pipeline to HPC scheduler with cgpipengsutilsj, samtools, bwa, cgpipe [DNA-Seq pipeline 2](/tutorials/dnaseq-pipes)High-performance (streaming) DNA mapping with limited disk I/Ongsutilsj, samtools, bwa [Java CLI programs](/tutorials/java-cli)Writing command-line oriented programs in Javacompgen-cmdline [RNA-Seq workflow](/tutorials/rnaseq-star)Pre-processing, rRNA filtering, alignment with STAR, mapping statistics, and gene-level read countsngsutilsj, samtools, and STAR --</description>
@@ -129,85 +130,85 @@ TutorialSoftware used File formatsDescription of common file formats used in NGS
     
     <item>
       <title>Welcome</title>
-      <link>http://compgen.io/index2/</link>
+      <link>https://compgen.io/index2/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/index2/</guid>
+      <guid>https://compgen.io/index2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>basespace-download</title>
-      <link>http://compgen.io/basespace-download/</link>
+      <link>https://compgen.io/basespace-download/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/basespace-download/</guid>
+      <guid>https://compgen.io/basespace-download/</guid>
       <description>basespace-download is a tool for downloading FASTQ files from Illumina&amp;rsquo;s BaseSpace cloud service. For some instruments, analysis happens (by default) in the cloud, which can make retrieval difficult. Thankfully, Illumina provides a good API for interacting with BaseSpace. This tool makes downloading files for a particular sample or project very simple.
 App-token You must possess a valid app-token from BaseSpace in order to use this application. This is your method for authenticating with BaseSpace.</description>
     </item>
     
     <item>
       <title>cgpipe</title>
-      <link>http://compgen.io/cgpipe/</link>
+      <link>https://compgen.io/cgpipe/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/cgpipe/</guid>
+      <guid>https://compgen.io/cgpipe/</guid>
       <description>CGPipe is a bioinformatics pipeline development language. It is very similar in spirit (and practice) to the venerable Makefile, but geared towards execution in an HPC environment. Like Makefiles, CGPipe pipelines establish a series of build targets, their required dependencies, and a recipe (shell script) used to build the outputs. Unlike Makefiles, CGPipe pipelines are scripts that can incorporate logic and flow control in the setup and execution of the build-graph.</description>
     </item>
     
     <item>
       <title>cgsplice</title>
-      <link>http://compgen.io/cgsplice/</link>
+      <link>https://compgen.io/cgsplice/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/cgsplice/</guid>
+      <guid>https://compgen.io/cgsplice/</guid>
       <description>cgsplice is a set of tools to support direct measurement of splice junctions in RNA-seq data. cgsplice works by finding and counting reads that span splice junctions. It does this by searching for reads with an &amp;ldquo;N&amp;rdquo; gap in their CIGAR alignment string. Next, for all junctions, it determines the donor and acceptor sites and tallies how many reads span each donor/acceptor pair. Finally, using these counts for multiple samples, it will calculate a permuted p-value for how likely it is that a given donor or acceptor had differential splicing between two conditions.</description>
     </item>
     
     <item>
       <title>compgen-cmdline</title>
-      <link>http://compgen.io/compgen-cmdline/</link>
+      <link>https://compgen.io/compgen-cmdline/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/compgen-cmdline/</guid>
+      <guid>https://compgen.io/compgen-cmdline/</guid>
       <description>compgen-cmdline is a Java library that makes it easier to setup and run command-line (CLI) programs written in Java. All of the Java applications on compgen.io use this library to handle the CLI interface.</description>
     </item>
     
     <item>
       <title>compgen-common</title>
-      <link>http://compgen.io/compgen-common/</link>
+      <link>https://compgen.io/compgen-common/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/compgen-common/</guid>
+      <guid>https://compgen.io/compgen-common/</guid>
       <description>compgen-common is a Java library with commonly used functions for String manipulation, progress bars, and general utility classes. These are useful building blocks that can be included in other applications.</description>
     </item>
     
     <item>
       <title>ngsutilsj</title>
-      <link>http://compgen.io/ngsutilsj/</link>
+      <link>https://compgen.io/ngsutilsj/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/ngsutilsj/</guid>
+      <guid>https://compgen.io/ngsutilsj/</guid>
       <description>ngsutilsj is an updated java port of the NGSUtils toolkit. This new version is largely a Java port of the the most commonly used tools from NGSUtils, with some additions thrown in. It is also a library, with utility classes for use in other various NGS related software (such as cgsplice).
 Java was chosen for the ease of installation and relative speed (in comparison to the Python NGSUtils). The processing speed for gzipped compressed files was a major reason for the new update.</description>
     </item>
     
     <item>
       <title>swalign</title>
-      <link>http://compgen.io/swalign/</link>
+      <link>https://compgen.io/swalign/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/swalign/</guid>
+      <guid>https://compgen.io/swalign/</guid>
       <description>swalign is a version of a standard Smith-Waterman local alignment algorithm written in Python. It is a useful example of how one might write an aligner from scratch. It is not a highly performant example, but it is a useful teaching tool or for quick and dirty alignment searches when building an index would be overkill.
 The aligner can be used in a stand-alone mode or as an importable Python library.</description>
     </item>
     
     <item>
       <title>tabutils</title>
-      <link>http://compgen.io/tabutils/</link>
+      <link>https://compgen.io/tabutils/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:57 -0500</pubDate>
       
-      <guid>http://compgen.io/tabutils/</guid>
+      <guid>https://compgen.io/tabutils/</guid>
       <description>tabutils is a set of programs for viewing and working with tab-delimited text files. Because of its utility, this is usually one of the first programs I end up installing on a new system.
 Installation The easiest way to install tabutils is to clone the Github repository and run make.
 tabutils filter Allows you to view only lines that meet certain criteria.
@@ -218,10 +219,10 @@ Eg:
     
     <item>
       <title>Current projects</title>
-      <link>http://compgen.io/projects/</link>
+      <link>https://compgen.io/projects/</link>
       <pubDate>Tue, 15 Dec 2015 00:54:49 -0500</pubDate>
       
-      <guid>http://compgen.io/projects/</guid>
+      <guid>https://compgen.io/projects/</guid>
       <description>NGS data analysis ngsutilsjUpdated NGS data processing toolkit (active development)Java NGSUtilsOriginal NGS data processing tools (maintenance only)Python cgspliceSplicing analysis toolkitJava SQZEfficient and secure sequencing read file formatJava-- &amp;nbsp; Data analysis pipelines / infrastructure cgpipeLanguage for defining and running pipelines on HPC clustersJava SBSSingle user batch job scheduler for workstationsPython &amp;nbsp; Misc. tools basespace-downloadDownload files / samples from Illumina&#39;s BaseSpaceGolang swalignSmith-Waterman local alignment library/toolPython tabutilsUtility progams for working with tab-delimited text filesPython &amp;nbsp; Programming libraries compgen-commonCommon utility classes useful for Java projectsJava compgen-cmdlineFramework for developing Java command-line applications that have a *nix feelJava  </description>
     </item>
     
