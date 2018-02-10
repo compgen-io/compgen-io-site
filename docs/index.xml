@@ -86,7 +86,7 @@ FASTA # FASTA files are the de-facto standard for storing and sharing DNA/RNA/am
       
       <guid>https://compgen.io/ngsutils/</guid>
       <description>For more information on the NGSUtils Python toolkit, see here: http://ngsutils.org
-NOTE: An updated version of this tool is available here: [ngsutilsj]: /ngsutilsj</description>
+NOTE: An updated version of this tool is available here: [ngsutilsj]:/ngsutilsj</description>
     </item>
     
     <item>
