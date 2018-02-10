@@ -13,3 +13,5 @@ nodownload = true
 
 For more information on the NGSUtils Python toolkit, see here: http://ngsutils.org
 
+NOTE: An updated version of this tool is available here: [ngsutilsj]: /ngsutilsj
+
