@@ -22,13 +22,13 @@
     <li class="project_link"><a href="{{ .Params.docs }}"><i class="fa fa-book"></i> Docs</a></li>
   {{ end }}
   {{ if isset .Params "github" }}
-    <li class="project_link"><a href="http://github.com/{{ .Params.github }}"><i class="fa fa-github"></i> GitHub project</a></li>
+    <li class="project_link"><a href="https://github.com/{{ .Params.github }}"><i class="fa fa-github"></i> GitHub project</a></li>
   {{ if not (isset .Params "noissues") }}
-    <li class="project_link"><a href="http://github.com/{{ .Params.github }}/issues"><i class="fa fa-bug"></i> Issues</a></li>
+    <li class="project_link"><a href="https://github.com/{{ .Params.github }}/issues"><i class="fa fa-bug"></i> Issues</a></li>
 {{ end }}
 {{ end }}
   {{ if not (isset .Params "nodownload") }}
-    <li class="project_link"><a href="http://github.com/{{.Params.github}}/releases"><i class="fa fa-download"></i> Download</a></li>
+    <li class="project_link"><a href="https://github.com/{{.Params.github}}/releases"><i class="fa fa-download"></i> Download</a></li>
 {{ end }}
 <!--
     <li class="project_link"><a href="download?project={{.Params.project}}"><i class="fa fa-download"></i> Download</a></li>
