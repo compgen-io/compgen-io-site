@@ -1,8 +1,0 @@
-<html>
-<head>
-    <meta http-equiv="refresh" content="1;url=https://github.com/compgen-io/cgpipe/releases" />
-</head>
-<body>
-    See here: <a href="https://github.com/compgen-io/cgpipe/releases">https://github.com/compgen-io/cgpipe/releases</a>
-</body>
-</html>
