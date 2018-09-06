@@ -108,7 +108,16 @@
   </url>
   
   <url>
+    <loc>https://compgen.io/cgpipe/</loc>
+  </url>
+  
+  <url>
     <loc>https://compgen.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://compgen.io/cgpipe/</loc>
     <priority>0</priority>
   </url>
   
