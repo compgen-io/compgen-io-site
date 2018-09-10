@@ -43,7 +43,13 @@ contains
 ## tabutils merge
 
 Merges tab-delimited files together, combining common columns and adding uncommon columns. This is very useful for
-combining data from multiple samples together into one master file.
+combining data from multiple samples together into one master file. This is useful for producing "fat" files for
+downstream analysis.
+
+## tabutils concat
+
+Combines tab-delimited files together, one after the other (concatenating). Optionally adds an additional column
+to include the original filename. This is useful for producing "skinny" input files for down-stream analysis.
 
 ## tabutils view
 
