@@ -72,5 +72,5 @@ kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
 
 
-#ga_tracking: UA-83662616-1
+ga_tracking: UA-83662616-1
 
