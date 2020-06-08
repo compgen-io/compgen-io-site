@@ -23,7 +23,7 @@ echo "compgen.io" > CNAME
 rm cgpipe.html
 mkdir cgpipe
 cd cgpipe
-cp -R ../../modules/cgpipe-docs/* .
+cp -R ../../modules/cgpipe-docs/_site/* .
 cd ..
 
 
@@ -37,7 +37,7 @@ git commit -m 'deploy'
 if [ $1 != "" ]; then
     git remote add origin https://deploy:$1@github.com/compgen-io/compgen-io-site.git
 else
-    git remote add origin git@github.com/compgen-io/compgen-io-site.git
+    git remote add origin git@github.com:compgen-io/compgen-io-site.git
 fi
 git checkout -b gh-pages
 git push --force origin gh-pages
