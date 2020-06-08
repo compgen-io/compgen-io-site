@@ -23,7 +23,7 @@ echo "compgen.io" > CNAME
 rm cgpipe.html
 mkdir cgpipe
 cd cgpipe
-cp -R ../../modules/cgpipe-docs/_site/* .
+cp -R ../modules/cgpipe-docs/_site/* .
 cd ..
 
 
