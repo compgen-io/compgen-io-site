@@ -1,7 +1,5 @@
 #!/bin/bash
 
-find .
-
 bundle update && bundle exec jekyll build
 
 if [ $TOKEN != "" ]; then
@@ -9,43 +7,19 @@ git config user.email "noreply@compgen.io"
 git config user.name "Deployment/$GITHUB_ACTOR"
 fi
 
-cat .gitmodules
-
-echo "one"
 git submodule sync --recursive
-echo "two"
 git submodule update --remote --init --force --recursive
-echo "three"
-
-find .
-echo "four"
-
 git commit -am 'submodule update'
-echo "five"
 
 cd modules/cgpipe-docs
-pwd
 bundle update && bundle exec jekyll build
-echo "six"
-ls -las
-
-ls -l _site
 
 cd ../../_site/
-pwd
-
 echo "compgen.io" > CNAME
 
 rm cgpipe.html
 mkdir cgpipe
-ls -las
-ls -las ..
-ls -las ../modules
-ls -las ../modules/cgpipe-docs
-ls -las ../modules/cgpipe-docs/_site
-
 cp -R ../modules/cgpipe-docs/_site/* cgpipe/
-cd ..
 
 
 git init
