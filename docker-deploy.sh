@@ -14,16 +14,24 @@ git submodule update --remote --init --force --recursive
 git commit -am 'submodule update'
 
 cd modules/cgpipe-docs
+pwd
 bundle update && bundle exec jekyll build
+ls -l _site
 
 cd ../../_site/
+pwd
 
 echo "compgen.io" > CNAME
 
 rm cgpipe.html
 mkdir cgpipe
-cd cgpipe
-cp -R ../modules/cgpipe-docs/_site/* .
+ls -las
+ls -las ..
+ls -las ../modules
+ls -las ../modules/cgpipe-docs
+ls -las ../modules/cgpipe-docs/_site
+
+cp -R ../modules/cgpipe-docs/_site/* cgpipe/
 cd ..
 
 
