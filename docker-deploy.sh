@@ -1,5 +1,6 @@
 #!/bin/bash
 
+find .
 
 bundle update && bundle exec jekyll build
 
@@ -8,14 +9,24 @@ git config user.email "noreply@compgen.io"
 git config user.name "Deployment/$GITHUB_ACTOR"
 fi
 
+echo "one"
 git submodule sync --recursive
+echo "two"
 git submodule update --remote --init --force --recursive
+echo "three"
+
+find .
+echo "four"
 
 git commit -am 'submodule update'
+echo "five"
 
 cd modules/cgpipe-docs
 pwd
 bundle update && bundle exec jekyll build
+echo "six"
+ls -las
+
 ls -l _site
 
 cd ../../_site/
