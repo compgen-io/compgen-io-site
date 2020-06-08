@@ -9,6 +9,8 @@ git config user.email "noreply@compgen.io"
 git config user.name "Deployment/$GITHUB_ACTOR"
 fi
 
+cat .gitmodules
+
 echo "one"
 git submodule sync --recursive
 echo "two"
