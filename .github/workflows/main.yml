@@ -27,3 +27,4 @@ jobs:
       uses: docker://compgen/jtd-docker:latest
       env:
         DEPLOY: 1
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
