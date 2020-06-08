@@ -60,6 +60,7 @@ plugins:
 
 exclude: 
     - modules/
+    - .devcontainer/
 
 aux_links:
   "GitHub":
