@@ -1,17 +1,46 @@
 #!/bin/bash
-hugo -D -d docs
 
-if [ "$1" != "" ]; then
-    msg="$1"
-else
-    msg="deploy site $(date)"
+
+bundle update && bundle exec jekyll build
+
+if [ $1 != "" ]; then
+git config user.email "noreply@compgen.io"
+git config user.name "Deployment/$GITHUB_ACTOR"
 fi
 
-cp docs/index2/index.html docs/
-echo -n "compgen.io" > docs/CNAME
-cp -r static/* docs/
+git submodule sync --recursive
+git submodule update --remote --init --force --recursive
 
-git commit -am "$msg"
-git push origin master
+git commit -am 'submodule update'
 
-#git subtree push --prefix=public git@github.com:compgen-io/compgen-io-site.git gh-pages
+cd modules/cgpipe-docs
+bundle update && bundle exec jekyll build
+
+cd ../../_site/
+
+echo "compgen.io" > CNAME
+
+rm cgpipe.html
+mkdir cgpipe
+cd cgpipe
+cp -R ../../modules/cgpipe-docs/* .
+cd ..
+
+
+git init
+if [ $1 != "" ]; then
+git config user.email "noreply@compgen.io"
+git config user.name "Deployment/$GITHUB_ACTOR"
+fi
+git add .
+git commit -m 'deploy'
+if [ $1 != "" ]; then
+    git remote add origin https://deploy:$1@github.com/compgen-io/compgen-io-site.git
+else
+    git remote add origin git@github.com/compgen-io/compgen-io-site.git
+fi
+git checkout -b gh-pages
+git push --force origin gh-pages
+cd ..
+
+
