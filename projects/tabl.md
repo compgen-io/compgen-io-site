@@ -1,6 +1,6 @@
 ---
 title: tabl
-permalink: /cgpipe
+permalink: /tabl
 layout: default
 nav_order: 5
 parent: Projects
