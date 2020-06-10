@@ -4,6 +4,7 @@ permalink: /projects/ngsutils
 layout: default
 nav_order: 21
 parent: Projects
+nav_gap: true
 ---
 
 # NGSUtils
