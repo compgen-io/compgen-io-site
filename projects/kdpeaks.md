@@ -1,16 +1,16 @@
 ---
-title: kdpeakfinder
-path: /projects/basespace-kdpeakfinder
+title: kdpeaks
+path: /projects/kdpeaks
 nav_exclude: true
 parent: Projects
 nav_order: 13
 
 ---
 
-# kdpeakfinder
-[Github](https://github.com/mbreese/kdpeakfinder)
+# kdpeaks
+[Github](https://github.com/mbreese/kdpeaks)
 
-kdpeakfinder is an R library for finding peaks in KDE density plots. If you pass the function a kernel density estimate matrix, the
+kdpeaks is an R library for finding peaks in KDE density plots. If you pass the function a kernel density estimate matrix, the
 function will find all of the peak values in the 2D matrix. 
 
 ## Installation
@@ -18,12 +18,12 @@ function will find all of the peak values in the 2D matrix.
 This package can be installed directly from the Github repository.
 
     library(devtools)
-    install_github("mbreese/kdpeakfinder")
+    install_github("mbreese/kdpeaks")
 
 
 ## Method
 
-kdpeakfinder works using a variant of an sequencing alignment dynamic programming algorithm.
+kdpeaks works using a variant of an sequencing alignment dynamic programming algorithm.
 
 Steps:
 
