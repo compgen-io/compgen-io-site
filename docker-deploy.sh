@@ -13,6 +13,7 @@ git commit -am 'submodule update'
 
 cd modules/cgpipe-docs
 bundle update && bundle exec jekyll build
+cd ../..
 
 cd modules/tabl-docs
 bundle update && bundle exec jekyll build
