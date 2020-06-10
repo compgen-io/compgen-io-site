@@ -2,7 +2,7 @@
 title: cgpipe
 permalink: /cgpipe
 layout: default
-nav_order: 3
+nav_order: 4
 nav_gap: true
 parent: Projects
 #grand_parent: Projects

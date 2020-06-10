@@ -2,7 +2,7 @@
 title: swalign
 path: /projects/swalign
 layout: default
-nav_order: 10
+nav_order: 3
 parent: Projects
 ---
 
