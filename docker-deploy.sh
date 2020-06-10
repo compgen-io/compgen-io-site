@@ -14,6 +14,9 @@ git commit -am 'submodule update'
 cd modules/cgpipe-docs
 bundle update && bundle exec jekyll build
 
+cd modules/tabl-docs
+bundle update && bundle exec jekyll build
+
 cd ../../_site/
 echo "compgen.io" > CNAME
 
