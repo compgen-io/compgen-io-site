@@ -43,6 +43,7 @@ swalign is available on PyPi and can be installed with pip.
     sw = swalign.LocalAlignment(scoring)  
     
     # Using your aligner object, calculate the alignment between 
+    # ref (first) and query (second)
     alignment = sw.align('ACACACTA','AGCACACA')
     alignment.dump()
 
