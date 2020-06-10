@@ -49,7 +49,7 @@ Here is an example KDE plot for a log2-ratio vs BAF data in whole-genome sequenc
 
 ![KDE plot](/assets/img/chr1_plot2.png)
 
-kgpeakfinder was used to find the peaks as identified by the 7 points. 1-D density plots are shown for each axis as a comparison.
+kdpeaks was used to find the peaks as identified by the 7 points. 1-D density plots are shown for each axis as a comparison.
 
 Here is how this plot was generated.
 

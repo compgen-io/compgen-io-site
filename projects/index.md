@@ -35,7 +35,7 @@ has_toc: false
 
 > ### [cgsplice](/projects/cgsplice/)
 > 
-> Splicing analysis toolkit
+> Splicing analysis toolkit. Used for finding novel splice junctions and differential splicing analysis.
 >
 > Java
 > {: .label }
@@ -83,7 +83,7 @@ has_toc: false
 > {: .label }
 {: .card}
 
-> ### [kdpeakfinder](/projects/kdpeakfinder)
+> ### [kdpeaks](/projects/kdpeaks)
 > 
 > Find peaks in kernel density estimate (KDE) matrices
 >
