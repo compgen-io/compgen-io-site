@@ -74,6 +74,15 @@ has_toc: false
 ## Misc. tools/libraries
 
 
+> ### [tabl](/tabl)
+> 
+> Program for viewing and working with tab-delimited text
+> files (and CSV).
+>
+> Go 
+> {: .label }
+{: .card}
+
 > ### [kdpeakfinder](/projects/kdpeakfinder)
 > 
 > Find peaks in kernel density estimate (KDE) matrices
