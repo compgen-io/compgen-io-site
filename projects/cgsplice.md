@@ -4,7 +4,7 @@ path: /projects/cgsplice
 parent: Projects
 #grand_parent: Projects
 #parent: NGS
-nav_order: 3
+nav_order: 2
 ---
 
 # cgsplice
