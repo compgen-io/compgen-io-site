@@ -21,6 +21,10 @@ rm cgpipe.html
 mkdir cgpipe
 cp -R ../modules/cgpipe-docs/_site/* cgpipe/
 
+rm tabl.html
+mkdir tabl
+cp -R ../modules/tabl-docs/_site/* tabl/
+
 
 git init
 if [ $TOKEN != "" ]; then

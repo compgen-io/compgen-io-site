@@ -1,3 +1,6 @@
 [submodule "modules/cgpipe-docs"]
 	path = modules/cgpipe-docs
 	url = https://github.com/compgen-io/cgpipe-docs.git
+[submodule "modules/tabl-docs"]
+	path = modules/tabl-docs
+	url = https://github.com/compgen-io/tabl-docs
