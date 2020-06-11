@@ -54,7 +54,7 @@ Results:
     Ref  : 1 A-CACACTA 8
 
     Score: 12
-    Matches: 7 (77.8%)python3 -m twine upload  dist/*
+    Matches: 7 (77.8%)
     Mismatches: 2
     CIGAR: 1M1I5M1D1M
 
