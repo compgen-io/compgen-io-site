@@ -1,0 +1,404 @@
+{"0": {
+    "doc": "basespace-download",
+    "title": "basespace-download",
+    "content": "Github . basespace-download is a tool for downloading FASTQ files from Illumina's BaseSpace cloud service. For some instruments, analysis happens (by default) in the cloud. This tool is for downloading that data for local processing and analysis. Thankfully, Illumina provides a good API for interacting with BaseSpace! . ",
+    "url": "https://compgen.io/projects/basespace-download.html",
+    "relUrl": "/projects/basespace-download.html"
+  },"1": {
+    "doc": "basespace-download",
+    "title": "App-token",
+    "content": "You must possess a valid app-token from BaseSpace in order to use this application. This is your method for authenticating with BaseSpace. For more information on getting an app-token, see here: https://support.basespace.illumina.com/knowledgebase/articles/403618-python-run-downloader . ",
+    "url": "https://compgen.io/projects/basespace-download.html#app-token",
+    "relUrl": "/projects/basespace-download.html#app-token"
+  },"2": {
+    "doc": "basespace-download",
+    "title": "Usage",
+    "content": "USAGE: basespace-download [arguments...] ARGUMENTS: -t Application token from BaseSpace [$BASESPACE_APP_TOKEN] -s Sample ID to download -p Project ID to download (all samples) --dr Dry-run (don't download files) --help, -h show help --version, -v print the version . ",
+    "url": "https://compgen.io/projects/basespace-download.html#usage",
+    "relUrl": "/projects/basespace-download.html#usage"
+  },"3": {
+    "doc": "basespace-download",
+    "title": "Building from scratch",
+    "content": "You need to have Go installed first. Next, you can retrieve the Go code and build it in one step: . go get github.com/compgen-io/basespace-download . Next, you can copy the binary from $GOPATH/bin to anywhere in your $PATH. ",
+    "url": "https://compgen.io/projects/basespace-download.html#building-from-scratch",
+    "relUrl": "/projects/basespace-download.html#building-from-scratch"
+  },"4": {
+    "doc": "Tutorial: Docker with cgpipe",
+    "title": "Tutorial: Docker with cgpipe",
+    "content": " ",
+    "url": "https://compgen.io/tutorials/docker-cgpipe",
+    "relUrl": "/tutorials/docker-cgpipe"
+  },"5": {
+    "doc": "Tutorial: Docker with cgpipe",
+    "title": "Overview",
+    "content": ". | Heredocs | Docker . | Job integration | Alternatives | . | Meta-targets | Job settings | Putting it all together | . CGpipe is a powerful tool for executing bioinformatics data analysis workflows. Much of its power derives from its inherent flexibility. In addition to supporting a variety of batch scheduling environments (SGE, SLURM, PBS), it can support different modes of executing jobs, such as in the context of a Docer container. The way we'll explore executing jobs within a container is to use the HEREDOC pattern. ",
+    "url": "https://compgen.io/tutorials/docker-cgpipe#overview",
+    "relUrl": "/tutorials/docker-cgpipe#overview"
+  },"6": {
+    "doc": "Tutorial: Docker with cgpipe",
+    "title": "Heredocs",
+    "content": "What are heredocs? Heredocs are a feature of shell scripts that let you send multiple lines of data as stdin to a program (an input-stream literal). One common way they are used is to write multiple lines to a file at a time. cat &lt;&lt;HEREDOC &gt; output.txt line 1 line 2 etc... HEREDOC . You don't need to use the delimiter HEREDOC, it could be any string. Another commonly used string is EOF. cat &lt;&lt;EOF &gt; output.txt etc... EOF . We are going to use this to have CGPipe wrap a job script and send that as stdin to bash running in a container. ",
+    "url": "https://compgen.io/tutorials/docker-cgpipe#heredocs",
+    "relUrl": "/tutorials/docker-cgpipe#heredocs"
+  },"7": {
+    "doc": "Tutorial: Docker with cgpipe",
+    "title": "Docker",
+    "content": "We'll assume you're already familiar with Docker, but briefly Docker a platform for running programs within a container. The container lets you build and ship programs with any needed dependencies intact. This results in a consistent execution environment for data analysis pipelines. It is out of the scope of this document to go into all of the ways that Docker can be started (or how to create a container image). However, if your job can be started as a shell script, you can use this method to run your job in a container. We will use docker run to start our script. Job integration . In order to use the Docker container, we will mount the current working directory as /data in the Docker container. This will be the working directory for the job. We will then start the container and execute the given job snippet in the context of the container by using /bin/bash as our Docker entrypoint. Note: This is only one way to do this and may not be the best solution for your environment. But this should be a good starting point to adapt to your system. Alternatives . Here are some alternatives to Docker containers for software versioning: . | Environment modules - The original method for managing program versions. This (or a similar tool) is installed on most HPC clusters. | Singularity containers - Docker-alternative container tool from Berkeley Lab that doesn't require special permissions and is compatible with existing multi-user HPC systems. The technique used here for Docker should also be applicable to Singularity containers. | . ",
+    "url": "https://compgen.io/tutorials/docker-cgpipe#docker",
+    "relUrl": "/tutorials/docker-cgpipe#docker"
+  },"8": {
+    "doc": "Tutorial: Docker with cgpipe",
+    "title": "Meta-targets",
+    "content": "The feature of CGPipe that will help us get our jobs running in a container are the setup/teardown/pre/post meta-targets. These are named __setup__, __teardown__, __pre__, and __post__ and are defined like any other job definition. However, setup and teardown are executed at pipeline run-time (not submitted to a scheduler) to do things like make a child directory or remove a temporary file. Setup is run before any other jobs are submitted to the scheduler and teardown is executed before CGPipe returns. However, pre and post are job meta-targets that are included in the main job snippet. Crucially, they are not job dependencies, they are included in the body of the job script itself. How can this be helpful? One example is to track the time required for a job to start/finish. Let's say you had the following job definition: . output.txt: input.txt ./myprog input.txt &gt; output.txt . This would result in the following job script: . #!/bin/bash ./myprog input.txt &gt; output.txt . As an example, this is a pretty simple pipeline that has only one task. If you wanted to write the start / finish times to stdout for this job, you could use the pre and post meta-targets like this: . __pre__: echo \"Start: \\\\$(date)\" __post__: echo \"Done: \\\\$(date)\" output.txt: input.txt ./myprog input.txt &gt; output.txt . This will result in a job script that looks something like this: . #!/bin/bash echo \"Start: $(date)\" ./myprog input.txt &gt; output.txt echo \"Done: $(date)\" . If you have multiple tasks, pre and post are applied to each job. This makes these meta targets a powerful method for altering or monitoring the execution of each task in a pipeline. Some other examples where the pre and post meta-targets could come in handy tracking job start/finish in an external monitoring program, downloading inputs from cloud storage (e.g. S3), uploading outputs to cloud storage, changing file permissions, etc… . Note the escaped \\\\$(date) above – if this wasn't escaped CGPipe would shell out to get the date at run-time. This would then show the date/time that the script was run. An alternative would be to avoid the shell escape and do something like this: . __pre__: echo -n \"Start: \" date . ",
+    "url": "https://compgen.io/tutorials/docker-cgpipe#meta-targets",
+    "relUrl": "/tutorials/docker-cgpipe#meta-targets"
+  },"9": {
+    "doc": "Tutorial: Docker with cgpipe",
+    "title": "Job settings",
+    "content": "CGPipe job snippets are nothing more than shell (bash) scripts, which in combination with the pre and post meta-targets gives a pipeline author a lot of flexibility. It also means that you can adapt the pipeline to work with your system, not adapt your system to the pipeline. Because not all jobs will require a Docker container to execute, it is appropriate to configure the container settings on a job-by-job basis. Like all job settings, it is possible to set these on a per-job, per-pipeline, or per-system basis. Any cgpipe variable starting with job. (including user-defined ones) is available within the job snippet context (including pre and post), so we will use that to set a few Docker-specific variables. Specifically, we will use job.docker.container. job.docker.container will be set to the container image name to use for this job. You can also use a similar strategy to set things like volumes or other resource requirements for the container, but we'll keep things simple for now. ",
+    "url": "https://compgen.io/tutorials/docker-cgpipe#job-settings",
+    "relUrl": "/tutorials/docker-cgpipe#job-settings"
+  },"10": {
+    "doc": "Tutorial: Docker with cgpipe",
+    "title": "Putting it all together",
+    "content": "For an example, lets assume you have a BAM file and you'd like to calculate some alignment QC statistics. One way to do this would be to use ngsutilsj and run the following: . ngsutilsj bam-stats input.bam &gt; output.stats.txt . We may not have ngsutilsj installed on our system, but it is available in the asclab/spcg-working Docker container. To setup the Docker container, we'll use the pre and post meta-targets to wrap the entire job snippet in a HEREDOC. That will then send the script to a the container's entrypoint (/bin/bash) to execute in the context of the container. Here is what our trival example looks like as a cgpipe script: . #!/usr/bin/env cgpipe output.stats.txt: input.bam ngsutilsj bam-stats input.bam &gt; output.stats.txt . Now, we can add the __pre__ and __post__ to wrap the snippet. Note: this assumes the program realpath is installed. realpath is used to get the absolute path for the current directory. Absolute paths are required by Docker to bind local directories as volumes in the container (you can also get this with a Perl or Python one-liner). #!/usr/bin/env cgpipe __pre__: &lt;% if job.docker.container %&gt; docker run --rm -i \\ -v $(realpath .):/data \\ -w /data ${job.docker.container} /bin/bash &lt;&lt;HEREDOC &lt;% endif %&gt; __post__: &lt;% if job.docker.container %&gt; HEREDOC &lt;% endif %&gt; output.stats.txt: input.bam &lt;% job.docker.container=\"asclab/spcg-working\" %&gt; ngsutilsj bam-stats input.bam &gt; output.stats.txt . This results in the following job script: . #!/bin/bash docker run --rm -i \\ -v /my/path:/data \\ -w /data asclab/spcg-working /bin/bash &lt;&lt;HEREDOC ngsutilsj bam-stats input.bam &gt; output.stats.txt HEREDOC . One thing to look out for is the whitespace surrounding the HEREDOC in __post__. This needs to end up as the first thing on a line without any preceeding whitespace. If you use consistent indentation, this normally isn't a problem, but it's something to look out for. ",
+    "url": "https://compgen.io/tutorials/docker-cgpipe#putting-it-all-together",
+    "relUrl": "/tutorials/docker-cgpipe#putting-it-all-together"
+  },"11": {
+    "doc": "cgpipe",
+    "title": "cgpipe",
+    "content": "CGpipe is a bioinformatics pipeline development language. It is very similar in spirit (and practice) to the venerable Makefile, but geared towards execution in an HPC environment. Like Makefiles, cgpipe pipelines establish a series of build targets, their required dependencies, and a recipe (shell script) used to build the outputs. Unlike Makefiles, cgpipe pipelines are scripts that can incorporate logic and flow control in the setup and execution of the build-graph. CGpipe is distributed as a self-executing fat-JAR file. This means that for installation, all one needs is a working copy of Java and the cgpipe file. For more information, please see the following documentation: https://github.com/compgen-io/cgpipe/tree/master/docs . ",
+    "url": "https://compgen.io/cgpipe",
+    "relUrl": "/cgpipe"
+  },"12": {
+    "doc": "cgsplice",
+    "title": "cgsplice",
+    "content": "Github . cgsplice is a set of tools to support direct measurement of splice junctions in RNA-seq data. cgsplice works by finding and counting reads that span splice junctions. It does this by searching for reads with an \"N\" gap in their CIGAR alignment string. Next, for all junctions, it determines the donor and acceptor sites and tallies how many reads span each donor/acceptor pair. Finally, using these counts for multiple samples, it will calculate a permuted p-value for how likely it is that a given donor or acceptor had differential splicing between two conditions. Reads supporting a cassette exon, but that don't cross a junction are not included in this model. ",
+    "url": "https://compgen.io/projects/cgsplice.html",
+    "relUrl": "/projects/cgsplice.html"
+  },"13": {
+    "doc": "cgsplice",
+    "title": "Counting junction-spanning reads",
+    "content": "The junction-count command will count how many reads span any particular splice junction. Specifically, each junction is split into donor/acceptor pairs. Then for all junctions with a common donor or acceptor, the number of supporting reads is calculated. Only reads that have split-mapping (N gaps in the CIGAR string) are used. Counting is done in a gene model-free method, allowing for discovery of unannotated transcripts (if a suitable aligner is used). In addition to counting reads that span junctions, reads that represent retained introns can also be counted. ",
+    "url": "https://compgen.io/projects/cgsplice.html#counting-junction-spanning-reads",
+    "relUrl": "/projects/cgsplice.html#counting-junction-spanning-reads"
+  },"14": {
+    "doc": "cgsplice",
+    "title": "Differential splicing",
+    "content": "The splice-diff command takes a series of junction-count outputs and performs a permutation analysis to determine which splicing donor/acceptor sites exhibit differential splicing between two conditions. The statistical metric used is a Student's t-score with Binomial variance. Samples are permuted across different conditions to calculate a p-value for each donor/acceptor. ",
+    "url": "https://compgen.io/projects/cgsplice.html#differential-splicing",
+    "relUrl": "/projects/cgsplice.html#differential-splicing"
+  },"15": {
+    "doc": "cgsplice",
+    "title": "Splicing events",
+    "content": "The combine-events command merges donor/acceptors into complete splicing events, such as cassette exons. Only donor/acceptor that meet certain criteria (FDR, effect-size) are merged. ",
+    "url": "https://compgen.io/projects/cgsplice.html#splicing-events",
+    "relUrl": "/projects/cgsplice.html#splicing-events"
+  },"16": {
+    "doc": "cgsplice",
+    "title": "Stats",
+    "content": "The bam-stats command can be used to determine how many junction-spanning reads are present in any given sample, among other things. These QC metrics can be used to assess how useful a given BAM file is for junction analysis. ",
+    "url": "https://compgen.io/projects/cgsplice.html#stats",
+    "relUrl": "/projects/cgsplice.html#stats"
+  },"17": {
+    "doc": "cgsplice",
+    "title": "Installing cgsplice",
+    "content": "cgsplice is implemented in Java and distributed as a self-executing fast-JAR file. This requires only a recent version of Java to be installed on the system. Otherwise, cgsplice acts as a normal command-line program. ",
+    "url": "https://compgen.io/projects/cgsplice.html#installing-cgsplice",
+    "relUrl": "/projects/cgsplice.html#installing-cgsplice"
+  },"18": {
+    "doc": "compgen-cmdline",
+    "title": "compgen-cmdline",
+    "content": "Github . compgen-cmdline is a Java library that makes it easier to setup and run command-line (CLI) programs written in Java. All of the Java applications on compgen.io use this library to handle the CLI interface. ",
+    "url": "https://compgen.io/projects/compgen-cmdline.html",
+    "relUrl": "/projects/compgen-cmdline.html"
+  },"19": {
+    "doc": "compgen-common",
+    "title": "compgen-cmdline",
+    "content": "Github . compgen-common is a Java library with commonly used functions for String manipulation, progress bars, and general utility classes. These are useful building blocks that can be included in other applications. ",
+    "url": "https://compgen.io/projects/compgen-common.html#compgen-cmdline",
+    "relUrl": "/projects/compgen-common.html#compgen-cmdline"
+  },"20": {
+    "doc": "compgen-common",
+    "title": "compgen-common",
+    "content": " ",
+    "url": "https://compgen.io/projects/compgen-common.html",
+    "relUrl": "/projects/compgen-common.html"
+  },"21": {
+    "doc": "Contact / Help",
+    "title": "Help!",
+    "content": "If you have any issues with any of the software, have a question, or an idea for a new feature – please let me know! Pull requests on Github are also appreciated. Bugs can be submitted as an issue on the individual project's Github page. You can also contact me by email here: . Marcus R. Breese, PhD marcus.breese at ucsf.edu . Pediatric Cancer Genomics Computational Services Director Pediatric Hematology/Oncology Sweet-Cordero Lab UCSF San Francisco, California . Github code repositories . | compgen-io | mbreese | ngsutils | . Prior affiliations . | Dept. of Pediatrics, Div. of Hematology/Oncology Stanford University School of Medicine Stanford, California . | Mooney Lab Buck Institute for Research on Aging Novato, California . | Liu Lab Indiana University School of Medicine Indianapolis, Indiana . | Edenberg Lab Indiana University School of Medicine Indianapolis, Indiana . | . ",
+    "url": "https://compgen.io/contact#help",
+    "relUrl": "/contact#help"
+  },"22": {
+    "doc": "Contact / Help",
+    "title": "Contact / Help",
+    "content": " ",
+    "url": "https://compgen.io/contact",
+    "relUrl": "/contact"
+  },"23": {
+    "doc": "Tutorial: FASTQ Pre-processing",
+    "title": "Tutorial: FASTQ Pre-processing",
+    "content": "The first step in NGS analysis is pre-processing your FASTQ files. The following tutorial uses ngsutilsj fastq-filter to process and filter FASTQ files. ",
+    "url": "https://compgen.io/tutorials/fastq-preprocessing",
+    "relUrl": "/tutorials/fastq-preprocessing"
+  },"24": {
+    "doc": "Tutorial: FASTQ Pre-processing",
+    "title": "Overview",
+    "content": ". | Sequence QC tools . | FastQC | ngsutilsj fastq-stats | . | DNA-seq filtering methods . | Examples | . | RNA-seq filtering methods | . ",
+    "url": "https://compgen.io/tutorials/fastq-preprocessing#overview",
+    "relUrl": "/tutorials/fastq-preprocessing#overview"
+  },"25": {
+    "doc": "Tutorial: FASTQ Pre-processing",
+    "title": "Sequence QC tools",
+    "content": "It's important to measure certain quality control metrics with FASTQ files. You should run the same QC checks against the files before and after pre- processing. This will help you assess the quality of your data and measure how well the pre-processing is working. QC monitoring is a critical part of NGS analysis that is often neglected. Without monitoring read QC, you may inadvertently use low-quality data, which could produce invalid analysis. (and a lot of wasted effort!) . FastQC . One commonly used program to assess the quality of FASTQ data is FastQC. FastQC is a good tool for assessing the initial quality of FASTQ reads and provides a number of quality control metrics, including per-base sequence quality, GC %, per-base call frequency, over-represented sequences, and adapter content. The final report from FastQC can be saves as a ZIP or HTML report for use in pipelines. However, FastQC can take a while to run on larger files. ngsutilsj fastq-stats . For high-throughput streaming workflows, where the FASTQ data is processed on-the-fly, it may not be possible (or practical) to save a copy of the data. In this case, you need a tool that can calculate QC metrics for FASTQ data that is streamed as part of a stdin/stdout pipeline. ngsutilsj fastq-stats supports this method and calculates per-base sequence quality, GC %, per-base call frequencgy, and adapter content. Additionally, ngsutilsj fastq-stats also support interleaved FASTQ files and reporting first/second read stats separately. The final report from ngsutilsj fastq-stats is a raw text file that requires further processing to produce figures. Importantly, when inserted into a FASTQ pipeline, ngsutilsj fastq-stats requires no extra processing time, and minimal memory/CPU resources. ",
+    "url": "https://compgen.io/tutorials/fastq-preprocessing#sequence-qc-tools",
+    "relUrl": "/tutorials/fastq-preprocessing#sequence-qc-tools"
+  },"26": {
+    "doc": "Tutorial: FASTQ Pre-processing",
+    "title": "DNA-seq filtering methods",
+    "content": "Pre-processing DNA-seq files is more straightforward than RNA-seq, so we'll start there. For DNA-seq, the primary concern is removing low-quality bases and reads before sending them through the computationally intensive alignment process. The more that we clean up the data before alignment, the better the aligned data will be. Here are some of the ways to cleanup FASTQ reads with ngsutilsj fastq-filter: . | Remove reads based on a name include/exclude list If you have a specific list of reads to keep or drop, they can be passed as a --include or --exclude respectively. | Fixed base count 5'/3' trim You can remove a fixed number of bases from the 5' or 3' ends of a read with the --prefixtrim or --suffixtrim options. | Remove low quality bases from the 5' and 3' ends It is common for there to be stretches of low-quality base calls at the 3' end of a read. It is less common to see low-quality calls at the 5' end. You can set a fixed threshold for minimum call quality at the 5' or 3' ends using the --prefixqual and --suffixqual options. For example, if the threshold is set at 3, then any base with a Phred quality score less than 3 will be removed from the ends of the reads. | Trim adapter sequences If the fragment being sequenced is shorter than the read length, you will see adapter sequences as part of the read sequence. Because these are artifacts of the sequencing reaction and not part of the organism, it is important to remove these sequences. There are three options for removing adapters: --trim-seq, --trim-seq1, --trim-seq2. The first option trims an adapter from all sequences in a file. The second and third options trim the adapter from the first and second reads, respectively (assuming an interleaved FASTQ file). If you have a non-interleaved file, then --trim-seq and --trim-seq1 are equivalent. As extra options for adapter trimming: --trim-pct sets the required match percentage a the read has to have to match the adapter. The default is 0.9, or 9 out of 10 bases must match. The second option is --trim-overlap, which sets the minimum amount of sequence must match at the 3' end of the read to trigger trimming. The default value is 6 bases. Note: adapter trimming is done using a sliding window, so it is necessarily computationally intensive. It should only be done when you really need to do it. For Illumina sequencing, the recommended adapter trimming sequences can be set using the --trim-illumina option. These sequences are read-specific and are shown below: . | read1: AGATCGGAAGAGCACACGTC | read2: AGATCGGAAGAGCGTCGTGT | . | Limit abiguous/wildcard (N) bases Reads with too many N calls can be removed using the --wildcard option. | Size selection After all of the above trimming, the final read filter can require a certain minimum read length with the --size option. | Required valid paired reads (requires interleaved FASTQ file) If you have an interleaved FASTQ file, you can use the --paired option to require that both reads from a fragment need to pass the filters. Otherwise, you can end up with an unbalanced FASTQ file, which can lead to unpredictable results in the downstream analysis. However, this option is only available when using an interleaved FASTQ file. Processing two separate files and trying to merge them after the fact is computationally difficult and may require a lot of memory to resolve mismatches between the files. | . Note: filters are applied in the above order, so that (for example) low-quality bases at the 5'/3' ends can be trimmed away before triggering the ambiguous base call filters. Examples . Here is one way to filter a single-end FASTQ file, or a split paired-end (not interleaved) file: . # trim 3' low-quality bases # remove reads with more than 2 N's # require the final size to be at least 50bp ngsutilsj fastq-filter --size 50 --wildcard 2 --suffixqual 3 input.fastq.gz &gt; filtered.fastq . Here is a more complete set of filters, including a merging step to combine paired-end files into one interleaved FASTQ file first. # trim 3' low-quality bases # remove illumina adapters # remove reads with more than 2 N's # require the final size to be at least 50bp # require reads to be properly paired ngsutilsj fastq-merge input_R1.fastq.gz input_R2.fastq.gz | \\ ngsutilsj fastq-filter --size 50 --wildcard 2 --suffixqual 3 --trim-illumina --paired - | \\ gzip &gt; filtered.fastq.gz . Finally, we can add ngsutilsj fastq-stats into the mix to calculate some summary statistics on the fly for both the raw FASTQ reads and the post-filtering reads. By merging the paired FASTQ files and using ngsutilsj fastq-stats, we can efficiently pre-process the FASTQ reads in one pipeline and limit unnecessary disk I/O. ngsutilsj fastq-merge input_R1.fastq.gz input_R2.fastq.gz | \\ ngsutilsj fastq-stats --pipe -o raw.stats.txt - | \\ ngsutilsj fastq-filter --size 50 --wildcard 2 --suffixqual 3 --trim-illumina --paired - | \\ ngsutilsj fastq-stats --pipe -o filtered.stats.txt - | \\ gzip &gt; filtered.fastq.gz . As shown above and following nix conventions, many of the ngsutilsj tools can operate in streaming mode by specifying \"-\" as the input filename, reading input from *stdin. ngsutilsj fastq-stats can be coerced into passing the incoming FASTQ data through to stdout with the --pipe option. ",
+    "url": "https://compgen.io/tutorials/fastq-preprocessing#dna-seq-filtering-methods",
+    "relUrl": "/tutorials/fastq-preprocessing#dna-seq-filtering-methods"
+  },"27": {
+    "doc": "Tutorial: FASTQ Pre-processing",
+    "title": "RNA-seq filtering methods",
+    "content": "Pre-processing RNA-seq data can be done in the same manner as DNA-seq data, with the same general options. But, with RNA-seq data, there is another filtering step that you should consider: ribosomal sequence filtering. A good library prep will remove the majority of rRNA sequences before they are sequenced. If this depletion fails, then many of reads will be from rRNAs. This makes tracking the abundance of rRNAs an important QC metric to ensure consistent data. Filtering out rRNA reads is covered in-depth in the RNA-Seq workflow tutorial. ",
+    "url": "https://compgen.io/tutorials/fastq-preprocessing#rna-seq-filtering-methods",
+    "relUrl": "/tutorials/fastq-preprocessing#rna-seq-filtering-methods"
+  },"28": {
+    "doc": "Tutorial: File formats",
+    "title": "Tutorial: File formats",
+    "content": " ",
+    "url": "https://compgen.io/tutorials/formats",
+    "relUrl": "/tutorials/formats"
+  },"29": {
+    "doc": "Tutorial: File formats",
+    "title": "Overview",
+    "content": ". | Sequencing formats . | FASTA . | Variations | Example | Tools | External links | . | FASTQ . | Variations | Example | External links | . | Unaligned BAM file | ngsutilsj support | . | . ",
+    "url": "https://compgen.io/tutorials/formats#overview",
+    "relUrl": "/tutorials/formats#overview"
+  },"30": {
+    "doc": "Tutorial: File formats",
+    "title": "Sequencing formats",
+    "content": "FASTA . FASTA files are the de-facto standard for storing and sharing DNA/RNA/amino acid sequences. It is a text-file format with a header line followed by one or more lines of sequence. The header line starts with a '&gt;' character, which may be used for parsing the file. The remainder of the header line consists of a name, optionally followed by a comment. The name and comment are separated by whitespace. The name must not contain a whitespace ( , or \\t) character. The remaining lines consist of DNA, RNA, or amino acid sequences using IUPAC notation. There are no technical specifications for line length or wrapping, but it is common practice for long sequences (genes/genomes) to be have a consistent line length. However, it is not required for the sequence to have any breaks. Blank lines and any whitespace in the sequence line(s) should be ignored. FASTA is the most common format for distributing reference genome sequences. Reference genomes will contain one sequence for each chromosome. In addition to chromosomes, some reference genomes will also include unplaced contigs, which are sequences known to be part of the organism's genome, but the exact position is unclear. Variations . FASTA files are commonly stored as gzip compressed files, due to their large size and general space inefficiency. However, files that need to be randomly accessed need to be stored uncompressed, or compressed with a tool like bgzip (although the latter is less common). Example . &gt;sequence1 This is the comment line ATCGATCGATCGACTACGACTACGACGACGACATCGACATCTACT GGCGCGCGCTAGAGCTAGCTTGAGATAAATCGACTAGCGACTGAG CTATCTTCTCTATATATTTAAAAAGCGCAACTACTGACTA &gt;seq2 AATAGCGCGCGCGCGCTCATATATCTATATATAAAAACCTACTAC GACTACGACTATCGATCGATTATCGGTATCGTATCGGTATTATTA TTTAATGCGCGCGCGCCGACTAGCTAGCTATCGATCGATCGATCG ACTACGACTACGACGACGACATCGACATCTACT . Tools . FASTA files can be indexed and queried with the program samtools faidx. This requires a well-formatted FASTA file with consistent line lengths. ngsutilsj contains a number of tools for managing FASTA files, including indexed FASTA files. These tools including tagging sequence names, masking regions of sequences, splitting a FASTA file by sequence name, changing the line wrapping for a file, or generating mock FASTQ reads. External links . https://en.wikipedia.org/wiki/FASTA_format . FASTQ . FASTQ is the most common sequencing read format. FASTQ files are text files with a four-line record for each sequence. The first line starts with an '@' character and the unique name for the read. The second line is the sequence. The third line starts with the '+' character, and may optionally contain the read name again. The fourth line is the quality score for each of the basecalls in Phred scale. Variations . The sequence and quality lines in the FASTQ record may be word-wrapped, like FASTA files, but this is not seen very often. FASTQ files are almost always stored compressed, usually with gzip, although bzip2 or xz compression can also be used. FASTQ record information can also be stored in other compressed formats, such as unaligned BAM files. However, almost all publicly available data is distributed as gzip-compressed FASTQ files. Paired-end sequencing data is commonly stored as two separate FASTQ files, one for each read. But, it is also possible to store both reads in the same file. These are called interleaved FASTQ files. Many aligners support interleaved files out of the box for paired end data. For those that don't an adapter tool can be used to convert interleaved files to non-interleaved files using named FIFO pipes. Interleaved FASTQ files are slightly have slightly more efficient compression ratios when compared to using two separate FASTQ files, but the main benefit is the need to only manage one file per sample. Some filtering steps can be more efficient using interleaved files and some filtering steps with the ngsutilsj fastq-filter tool require interleaved files (e.g. --paired). Example . @seq1 This is the comment line ATCGATCGATCGACTACGACTACGACGACGACATCGACATCTACT + BBBB,(,,7AA,&lt;((,A&lt;,,,FKAF,,,F,F7F,7,,,AA##@!@ . External links . https://en.wikipedia.org/wiki/FASTQ_format . Unaligned BAM file . BAM files are typically associated with read alignments to a genome, but they can also be used to store unaligned/raw sequences too. Unaligned BAM files store the same read information as a FASTQ file (name, sequence, and quality scores) and they can also store multiple reads in the same file (like interleaved FASTQ files). Also, unaligned BAM files are compressed, and store quality score information in an optimized manner versus character encoding. Even with the extra overhead of the BAM format, these factors make this a slightly more efficient way to store raw sequencing reads over FASTQ files. ngsutilsj support . Both FASTQ (compressed or not) and unaligned BAM files can be used as a source for sequencing reads with ngsutilsj. Compression status is determined automatically by ngsutilsj. ",
+    "url": "https://compgen.io/tutorials/formats#sequencing-formats",
+    "relUrl": "/tutorials/formats#sequencing-formats"
+  },"31": {
+    "doc": "Projects",
+    "title": "Active projects",
+    "content": " ",
+    "url": "https://compgen.io/projects#active-projects",
+    "relUrl": "/projects#active-projects"
+  },"32": {
+    "doc": "Projects",
+    "title": "NGS data analysis",
+    "content": "ngsutilsj . Updated NGS data processing toolkit. Programs for working with FASTQ, FASTA, BAM, VCF, BED, GTF, and tab-delimited text annotation files. (active development) . Java . cgsplice . Splicing analysis toolkit. Used for finding novel splice junctions and differential splicing analysis. Java . swalign . Smith-Waterman local alignment library/tool . Python 2/3 . ",
+    "url": "https://compgen.io/projects#ngs-data-analysis",
+    "relUrl": "/projects#ngs-data-analysis"
+  },"33": {
+    "doc": "Projects",
+    "title": "Pipeline definition and execution",
+    "content": "cgpipe . Language for defining and running pipelines on HPC clusters . Java . SBS . Single user batch job scheduler for workstations . Python 2 . ",
+    "url": "https://compgen.io/projects#pipeline-definition-and-execution",
+    "relUrl": "/projects#pipeline-definition-and-execution"
+  },"34": {
+    "doc": "Projects",
+    "title": "Misc. tools/libraries",
+    "content": "tabl . Program for viewing and working with tab-delimited text files (and CSV). Go . kdpeaks . Find peaks in kernel density estimate (KDE) matrices . R . compgen-common . Common utility classes useful for Java projects . Java-library . compgen-cmdline . Framework for developing Java command-line applications that have a *nix feel . Java-library . ",
+    "url": "https://compgen.io/projects#misc-toolslibraries",
+    "relUrl": "/projects#misc-toolslibraries"
+  },"35": {
+    "doc": "Projects",
+    "title": "Older tools",
+    "content": "NGSUtils . Original NGS data processing toolkit (maintenance only) . Python 2 . tabutils . Utility progams for working with tab-delimited text files . Python 2 . basespace-download . Download files / samples from Illumina's BaseSpace . Go . ",
+    "url": "https://compgen.io/projects#older-tools",
+    "relUrl": "/projects#older-tools"
+  },"36": {
+    "doc": "Projects",
+    "title": "Projects",
+    "content": " ",
+    "url": "https://compgen.io/projects",
+    "relUrl": "/projects"
+  },"37": {
+    "doc": "Tutorials",
+    "title": "Tutorials",
+    "content": "These vignettes demonstrate how some of the compgen.io tools can be used for data analysis in practice. Often these tools are used in conjunction with other software to produce an analysis workflow/pipeline. If you have questions or ideas for other tutorials, please let me know. | File formats – Description of common file formats used in NGS analysis | FASTQ pre-processing – Trimming bad sequence before alignment (DNA &amp; RNA) . ngsutilsj . bwa . | Docker with cgpipe – Integrating Docker containers with CGPipe jobs . cgpipe . | . ",
+    "url": "https://compgen.io/tutorials",
+    "relUrl": "/tutorials"
+  },"38": {
+    "doc": "Home",
+    "title": "Welcome",
+    "content": "compgen.io is the home for a series of tools for computational genomics (next-generation sequencing analysis). Many of these tools came from programs written to support specific in-house analysis efforts. They are offered here as a resource for others to use and adapt for their own projects and workflows. Please let us know if you find any of these tools useful or if you have questions! . Projects . ",
+    "url": "https://compgen.io/#welcome",
+    "relUrl": "/#welcome"
+  },"39": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "https://compgen.io/",
+    "relUrl": "/"
+  },"40": {
+    "doc": "kdpeaks",
+    "title": "kdpeaks",
+    "content": "Github . kdpeaks is an R library for finding peaks in KDE density plots. If you pass the function a kernel density estimate matrix, the function will find all of the peak values in the 2D matrix. ",
+    "url": "https://compgen.io/projects/kdpeaks.html",
+    "relUrl": "/projects/kdpeaks.html"
+  },"41": {
+    "doc": "kdpeaks",
+    "title": "Installation",
+    "content": "This package can be installed directly from the Github repository. library(devtools) install_github(\"mbreese/kdpeaks\") . ",
+    "url": "https://compgen.io/projects/kdpeaks.html#installation",
+    "relUrl": "/projects/kdpeaks.html#installation"
+  },"42": {
+    "doc": "kdpeaks",
+    "title": "Method",
+    "content": "kdpeaks works using a variant of an sequencing alignment dynamic programming algorithm. Steps: . | For each point in the matrix, find the highest value in all adjacent cells (including itself). 1 | 2 | 3 4 | (5) | 6 7 | 8 | 9 . In this case, if we are looking at cell #5, we'd determine the maximum value between all nine of these cells. This step is repeated for all cells in the matrix. This generated a \"flow matrix\" indicating the direction of the maxima. | Peaks are identified as the cells where that are their own maxima. In the above example, if 5 is the highest peak of the adjacent cells, then 5 is it's own maxima. Each position in the matrix is then assigned to a peak based on the flow. Peaks that are adjacent to other peaks (within a set radius) are merged. | Peaks are sorted in their order of magnitude (their height). | The top peaks are calculated based on the mean and standard deviation of the peak heights. | . Data from all peaks are returned from the function, sorted by their height. ",
+    "url": "https://compgen.io/projects/kdpeaks.html#method",
+    "relUrl": "/projects/kdpeaks.html#method"
+  },"43": {
+    "doc": "kdpeaks",
+    "title": "Example",
+    "content": "Here is an example KDE plot for a log2-ratio vs BAF data in whole-genome sequencing. kdpeaks was used to find the peaks as identified by the 7 points. 1-D density plots are shown for each axis as a comparison. Here is how this plot was generated. k &lt;- kde2d(chr1.df$log2ratio, chr1.df$baf, n = 100) peaks&lt;-find_peaks(k, combine_within = 5) peaks.df &lt;- data.frame(x=peaks$x[1:peaks$top_peaks], y=peaks$y[1:peaks$top_peaks], n=as.factor(peaks$num[1:peaks$top_peaks])) . The x/y coordinates of all peaks is returned as peaks$x and peaks$y. The number of top peaks is returned in peaks$top_peaks (given the z-score, 1.65 by default). The height of the peaks is given in peaks$z. The area that each peak contains is given in peak$size. The flow matrix is returned as peak$peak.m. ",
+    "url": "https://compgen.io/projects/kdpeaks.html#example",
+    "relUrl": "/projects/kdpeaks.html#example"
+  },"44": {
+    "doc": "NGSUtils",
+    "title": "NGSUtils",
+    "content": "Github . For more information on the NGSUtils Python toolkit, see here: http://ngsutils.org. NOTE: An updated version of this tool is available here: ngsutilsj . ",
+    "url": "https://compgen.io/projects/ngsutils",
+    "relUrl": "/projects/ngsutils"
+  },"45": {
+    "doc": "ngsutilsj",
+    "title": "ngsutilsj",
+    "content": "Github . ngsutilsj is an updated java port of the NGSUtils toolkit. This new version is largely a Java port of the the most commonly used tools from NGSUtils, with some additions thrown in. It is also a library, with utility classes for use in other various NGS related software (such as cgsplice). Java was chosen for the ease of installation and relative speed (in comparison to the Python NGSUtils). The processing speed for gzipped compressed files was a major reason for the new update. This version has also been optimized for working on high-memory HPC clusters and streaming data analysis (to minimize disk IO). ",
+    "url": "https://compgen.io/ngsutilsj",
+    "relUrl": "/ngsutilsj"
+  },"46": {
+    "doc": "ngsutilsj",
+    "title": "Installation",
+    "content": "ngsutilsj is distributed as a self-executing fat-JAR file. This means that for installation, all one needs is a working copy of Java and the ngsutilsj file. Unlike other JAR-file based NGS packages, ngsutilsj includes a shell script shim to make it executable like a traditional Unix program. This means that to install the program, you need to copy the ngsutilsj file to somewhere in your $PATH. ",
+    "url": "https://compgen.io/ngsutilsj#installation",
+    "relUrl": "/ngsutilsj#installation"
+  },"47": {
+    "doc": "ngsutilsj",
+    "title": "Commands available",
+    "content": "There are many commands available. For information on an individual command, run ngsutilsj help command . ngsutilsj - Data wrangling for NGS --------------------------------------- Usage: ngsutilsj cmd [options] Available commands: [bam] bam-basecall - For a BAM file, output the basecalls (ACGTN) at each genomic position. bam-best - With reads mapped to two bam references, determine which reads mapped best to each bam-bins - Quickly count the number of reads that fall into bins (bins assigned based on 5' end of the first read) bam-check - Checks a BAM file to make sure it is valid bam-concat - Concatenates BAM files (handles @RG, @PG) bam-count - Counts the number of reads for genes (GTF), within a BED region, or by bins (--gtf, --bed, or --bins required) bam-coverage* - Scans an aligned BAM file and calculates the number of reads covering each base bam-discord - Extract all discordant reads from a BAM file bam-dups - Flags or removes duplicate reads bam-expressed - For a BAM file, output all regions with significant coverage in BED format. bam-filter - Filters out reads based upon various criteria bam-readgroup - Add a read group ID to each read in a BAM file bam-sample* - Create a whitelist of read names sampled randomly from a file bam-split - Split a BAM file into smaller files bam-stats - Stats about a BAM file and the library orientation bam-tobed* - Writes read positions to a BED6 file bam-tobedgraph - Calculate coverave for an aligned BAM file in BedGraph format. bam-tofastq - Export the read sequences from a BAM file in FASTQ format [bed] bed-clean - Cleans score entries to be an integer bed-count - Given reference and query BED files, count the number of query regions that are contained within each reference region bed-nearest - Given reference and query BED files, for each query region, find the nearest reference region bed-reduce - Merge overlaping BED regions bed-resize - Resize BED regions (extend or shrink) bed-tobed3 - Convert a BED3+ file to a strict BED3 file bed-tobed6 - Convert a BED6+ file to a strict BED6 file bed-tofasta - Extract FASTA sequences based on BED coordinates [fasta] fasta-filter - Filter out sequences from a FASTA file fasta-gc - Determine the GC% for a given region or bins fasta-genreads* - Generate mock reads from a reference FASTA file fasta-mask - Mask regions of a FASTA reference fasta-names - Display sequence names from a FASTA file fasta-split - Split a FASTA file into a new file for each sequence present fasta-subseq - Extract subsequences from a FASTA file (optionally, indexed) fasta-tag - Add prefix/suffix to FASTA sequence names fasta-wrap - Change the sequence wrapping length of a FASTA file [fastq] fastq-barcode - Given Illumina 1.8+ naming, find the lane/barcodes included fastq-check - Verify a FASTQ single, paired, or interleaved file(s) fastq-demux - Splits a FASTQ file based on lane/barcode values fastq-filter - Filters reads from a FASTQ file. fastq-merge - Merges two FASTQ files (R1/R2) into one interleaved file. fastq-separate - Splits an interleaved FASTQ file by read number. fastq-sort - Sorts a FASTQ file fastq-split - Splits an FASTQ file into smaller files fastq-stats - Statistics about a FASTQ file fastq-tobam - Converts a FASTQ file (or two paired files) into an unmapped BAM file fastq-tofasta - Convert FASTQ sequences to FASTA format [gtf] gtf-export - Export gene annotations from a GTF file as BED regions gtf-geneinfo* - Calculate information about genes (based on GTF model) [annotation] annotate-gtf - Annotate GTF gene regions (for tab-delimited text, BED, or BAM input) annotate-repeat* - Calculates Repeat masker annotations [vcf] vcf-annotate - Annotate a VCF file vcf-chrfix - Changes the reference (chrom) format (Ensembl/UCSC) vcf-export - Export information from a VCF file vcf-filter - Filter a VCF file vcf-tobed - Export allele positions from a VCF file to BED format [help] help - Help for a specific command license - Show the license * = experimental command . ",
+    "url": "https://compgen.io/ngsutilsj#commands-available",
+    "relUrl": "/ngsutilsj#commands-available"
+  },"48": {
+    "doc": "sbs",
+    "title": "SBS",
+    "content": "Github . SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for traditional schedulers like PBS, SGE, or SLURM. Not everyone wants to have a complete install of SGE on their laptop. In those cases, SBS can be a quick replacement that requires minimal overhead. SBS is a single file program written in Python that stores job definitions in a managed folder. All job state is stored in this folder. There is no requirement for a constantly running daemon to manage the jobs. The user can start running these jobs at anytime and using whatever resource restrictions are necessary (eg if you have 4 cores on a laptop, but only want to devote 2 cores to running background jobs, you can do that). SBS runs jobs in a first-available, first run basis. Meaning, the first job that fits the available resources that is also ready to run (has no pending dependencies) will be run. This simple scheduling algorithm doesn't take into account wall-time, so it is not as efficient as a more complete backfilling schdeuler. However, SBS is also a single file, so installation is a lot easier than a proper scheduler! sbs run does not run as a daemon, so it is best executed in the context of a screen or tmux session. SBS is also supported by cgpipe pipelines as a supported job runner. This lets you scale the same pipelines from your local machine to an HPC cluster. ",
+    "url": "https://compgen.io/projects/sbs#sbs",
+    "relUrl": "/projects/sbs#sbs"
+  },"49": {
+    "doc": "sbs",
+    "title": "Installation",
+    "content": "Download the sbs file and put it somewhere in your $PATH. No other installation is required. ",
+    "url": "https://compgen.io/projects/sbs#installation",
+    "relUrl": "/projects/sbs#installation"
+  },"50": {
+    "doc": "sbs",
+    "title": "Usage",
+    "content": "Usage: sbs {-d sbshome} command {options} Commands: cancel Cancel a job cleanup Remove all completed jobs help Help for a particular command hold Hold a job from running until released release Release a job run Start running jobs shutdown Stop running jobs (and cancel any currently running jobs) status Get the run status of a job (run state) submit Submit a new job to the queue . ",
+    "url": "https://compgen.io/projects/sbs#usage",
+    "relUrl": "/projects/sbs#usage"
+  },"51": {
+    "doc": "sbs",
+    "title": "Example",
+    "content": "$ sbs submit job1.sh 1 $ sbs submit job2.sh 2 $ sbs status job-id job-name status submit start end 1 sbs.1 H 2017-04-12 23:41:47 2 sbs.2 H 2017-04-12 23:41:48 $ sbs run . ",
+    "url": "https://compgen.io/projects/sbs#example",
+    "relUrl": "/projects/sbs#example"
+  },"52": {
+    "doc": "sbs",
+    "title": "Job options",
+    "content": "SBS job scripts support a number of configurable options. Like PBS, SGE, or SLURM, these values can be set as arguments at submit time or as part of the script itself. sbs submit will read a job script from a filename or from stdin. Options can be set within the script if the line starts with #SBS. Here are the available options: . |   |   | . | -name job-name | The name of the job (easier to track than the number) | . | -mem val | Memory units to reserve: 2G, 200M, etc. (not enforced, just used for scheduling) | . | -procs N | Number of processor units to use (not enforced, just used for scheduling) | . | -mail email@example.com | Email when the job starts and finishes | . | -hold | Set a user-hold on the job. Job will not enter the queue until released | . | -stderr fname | Write stderr to this file (default: store in SBS job directory) | . | -stdout fname | Write stdout to this file (default: store in SBS job directory) | . | -wd | Working directory to use (default: current directory) | . | -afterok jobid1:jobid2:… | Dependent jobs - don't start this job until these jobs have finished successfully | . Example script . #!/bin/bash #SBS -name myjob #SBS -procs 2 command-goes-here . ",
+    "url": "https://compgen.io/projects/sbs#job-options",
+    "relUrl": "/projects/sbs#job-options"
+  },"53": {
+    "doc": "sbs",
+    "title": "Run options",
+    "content": "Running jobs is a separate process and needs to be manually initiated. Each job is independently executed as a new process. If a job ends with a return code of 0, it is considered a successful execution. Here are the available run options: . |   |   | . | -maxprocs N | The maximum number of processors to schedule (default: all processors) | . | -maxmem val | The maximum amount of memory to manage (ex: 4G) (default: unlimited, not managed) | . | -forever | Keep waiting for new jobs after the job queue has completed (default: exit when all jobs are done) | . ",
+    "url": "https://compgen.io/projects/sbs#run-options",
+    "relUrl": "/projects/sbs#run-options"
+  },"54": {
+    "doc": "sbs",
+    "title": "SBS directory",
+    "content": "The SBS home directory (where the job queue data is stored) is by default ./.sbs, that is, in the current directory. However, this can be set as an environmental variable: $SBSHOME or at the command line using sbs -d dir command. ",
+    "url": "https://compgen.io/projects/sbs#sbs-directory",
+    "relUrl": "/projects/sbs#sbs-directory"
+  },"55": {
+    "doc": "sbs",
+    "title": "sbs",
+    "content": " ",
+    "url": "https://compgen.io/projects/sbs",
+    "relUrl": "/projects/sbs"
+  },"56": {
+    "doc": "swalign",
+    "title": "swalign",
+    "content": "Github . This package implements a Smith-Waterman style local alignment algorithm. It works by calculating a sequence alignment between a query sequence and a reference. The scoring functions can be based on a matrix, or simple identity. Weights can be adjusted for match/mismatch and gaps, with gap extention penalties. Additionally, the gap penalty can be subject to a decay to prioritize long gaps over minor mismatches. The input files are FASTA format files, or strings. It is a useful example of how one might write an aligner from scratch. Even though it is not optimized, it is widely used as a teaching tool or for quick alignment searches when building an index would be overkill. The aligner can be used in a stand-alone mode (bin/swalign) or as an importable Python library. ",
+    "url": "https://compgen.io/projects/swalign.html",
+    "relUrl": "/projects/swalign.html"
+  },"57": {
+    "doc": "swalign",
+    "title": "Installation",
+    "content": "swalign is available on PyPi and can be installed with pip. $ pip install swalign . ",
+    "url": "https://compgen.io/projects/swalign.html#installation",
+    "relUrl": "/projects/swalign.html#installation"
+  },"58": {
+    "doc": "swalign",
+    "title": "Example",
+    "content": "import swalign # Setup your scoring matrix # (this can also be read from a file like BLOSUM, etc) # # Or you can choose your own values. # 2 and -1 are common for an identity matrix. match = 2 mismatch = -1 scoring = swalign.NucleotideScoringMatrix(match, mismatch) # This sets up the aligner object. You must set your scoring matrix, but # you can also choose gap penalties, etc... sw = swalign.LocalAlignment(scoring) # Using your aligner object, calculate the alignment between # ref (first) and query (second) alignment = sw.align('ACACACTA','AGCACACA') alignment.dump() . Results: . Query: 1 AGCACAC-A 8 ||||| Ref : 1 A-CACACTA 8 Score: 12 Matches: 7 (77.8%) Mismatches: 2 CIGAR: 1M1I5M1D1M . ",
+    "url": "https://compgen.io/projects/swalign.html#example",
+    "relUrl": "/projects/swalign.html#example"
+  },"59": {
+    "doc": "tabl",
+    "title": "tabl",
+    "content": "Tabl is a tool for viewing and manipulating tab-delimited text files. ",
+    "url": "https://compgen.io/tabl",
+    "relUrl": "/tabl"
+  },"60": {
+    "doc": "tabutils",
+    "title": "tabutils",
+    "content": "Github . tabutils is a set of programs for viewing and working with tab-delimited text files. Because of its utility, this is usually one of the first programs I end up installing on a new system. ",
+    "url": "https://compgen.io/projects/tabutils.html",
+    "relUrl": "/projects/tabutils.html"
+  },"61": {
+    "doc": "tabutils",
+    "title": "Installation",
+    "content": "The easiest way to install tabutils is to clone the Github repository and run make. ",
+    "url": "https://compgen.io/projects/tabutils.html#installation",
+    "relUrl": "/projects/tabutils.html#installation"
+  },"62": {
+    "doc": "tabutils",
+    "title": "tabutils filter",
+    "content": "Allows you to view only lines that meet certain criteria. tabutils filter file.txt {criteria} . Eg: . 1 eq foo . | Column 1 (first column) is equal to 'foo' | . 1 eq foo 2 lt 3 . | Column 1 (first column) is equal to 'foo' and column 2 is less than 3 | . Valid operations: eq ne lt lte gt gte contains . ",
+    "url": "https://compgen.io/projects/tabutils.html#tabutils-filter",
+    "relUrl": "/projects/tabutils.html#tabutils-filter"
+  },"63": {
+    "doc": "tabutils",
+    "title": "tabutils merge",
+    "content": "Merges tab-delimited files together, combining common columns and adding uncommon columns. This is very useful for combining data from multiple samples together into one master file. This is useful for producing \"fat\" files for downstream analysis. ",
+    "url": "https://compgen.io/projects/tabutils.html#tabutils-merge",
+    "relUrl": "/projects/tabutils.html#tabutils-merge"
+  },"64": {
+    "doc": "tabutils",
+    "title": "tabutils concat",
+    "content": "Combines tab-delimited files together, one after the other (concatenating). Optionally adds an additional column to include the original filename. This is useful for producing \"skinny\" input files for down-stream analysis. ",
+    "url": "https://compgen.io/projects/tabutils.html#tabutils-concat",
+    "relUrl": "/projects/tabutils.html#tabutils-concat"
+  },"65": {
+    "doc": "tabutils",
+    "title": "tabutils view",
+    "content": "Displays tab-delimited files, spacing columns appropriately to keep them in-line. This command is useful for viewing and exploring data files. ",
+    "url": "https://compgen.io/projects/tabutils.html#tabutils-view",
+    "relUrl": "/projects/tabutils.html#tabutils-view"
+  },"66": {
+    "doc": "tabutils",
+    "title": "tabutils combine",
+    "content": "Combines multiple tab-delimited files together into one Excel worksheet. Remember: for data analysis, Excel is evil. But for those instances where you have to share data with someone who is more comfortable with Excel, this can make your life easier. ",
+    "url": "https://compgen.io/projects/tabutils.html#tabutils-combine",
+    "relUrl": "/projects/tabutils.html#tabutils-combine"
+  }
+}

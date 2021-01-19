@@ -1,0 +1,206 @@
+{"0": {
+    "doc": "tabl csv2tab",
+    "title": "tabl csv2tab",
+    "content": "Converts CSV files to tab-delimited text files. ",
+    "url": "/tabl/csv2tab",
+    "relUrl": "/csv2tab"
+  },"1": {
+    "doc": "tabl csv2tab",
+    "title": "Usage",
+    "content": "$ tabl csv2tab [filename] {options} . If filename is not given, stdin is assumed. Use - to explicitly read from stdin. ",
+    "url": "/tabl/csv2tab#usage",
+    "relUrl": "/csv2tab#usage"
+  },"2": {
+    "doc": "tabl csv2tab",
+    "title": "Common options",
+    "content": ". | --show-comments – include comments in the output | . ",
+    "url": "/tabl/csv2tab#common-options",
+    "relUrl": "/csv2tab#common-options"
+  },"3": {
+    "doc": "tabl csv2tab",
+    "title": "Example",
+    "content": "$ tabl view iris.csv | head . ",
+    "url": "/tabl/csv2tab#example",
+    "relUrl": "/csv2tab#example"
+  },"4": {
+    "doc": "tabl export",
+    "title": "tabl export",
+    "content": "This command returns only selected columns from the delimited text file. ",
+    "url": "/tabl/export",
+    "relUrl": "/export"
+  },"5": {
+    "doc": "tabl export",
+    "title": "Usage",
+    "content": "$ tabl export [columns] [filename] {options} . If filename is not given, stdin is assumed. Use - to explicitly read from stdin. columns is a comma-separated list of the columns to include. The value can be the name of the column (header value), the column number (1-based index), or a range of columns (ex 1-3). If the name of the column contains spaces, the name can be quoted as well. Extra qu . *Note: because of how the shell works with quoted arguments, column names that contain spaces will always need to be quoted, even if they aren't quoted in the input file. Column names that contains a comma or quotes in the name will likely need to be surrounded in single quotes and double quotes. * . Example of quoting for the column named \"final,header\": . bin/tabl export \"first header\",'\"final,header\"' examples/test.csv --csv . ",
+    "url": "/tabl/export#usage",
+    "relUrl": "/export#usage"
+  },"6": {
+    "doc": "tabl export",
+    "title": "Common options",
+    "content": ". | --csv – the file is a CSV file (and the output will be a CSV file) | --no-header – the file doesn't contain a header row | --header-comment – the header is the last commented line (not common, but used sometimes in bioinformatics, eg. VCF format) | --show-comments – display any comment lines in place | . ",
+    "url": "/tabl/export#common-options",
+    "relUrl": "/export#common-options"
+  },"7": {
+    "doc": "tabl export",
+    "title": "Example",
+    "content": "$ tabl export class,4-5 iris.txt | tabl view | head class | petal_length | petal_width ================+=================+================ Iris-setosa | 1.4 | 0.2 Iris-setosa | 1.4 | 0.2 Iris-setosa | 1.3 | 0.2 Iris-setosa | 1.5 | 0.2 Iris-setosa | 1.4 | 0.2 Iris-setosa | 1.7 | 0.4 Iris-setosa | 1.4 | 0.3 Iris-setosa | 1.5 | 0.2 . (piped through tabl view for visualization) . ",
+    "url": "/tabl/export#example",
+    "relUrl": "/export#example"
+  },"8": {
+    "doc": "File formats",
+    "title": "Supported file formats",
+    "content": "Tabl supports two types of delimited text files: tab-delimited and comma-separated. These are two fairly simple formats, but tabl supports a few variants of each type. ",
+    "url": "/tabl/formats#supported-file-formats",
+    "relUrl": "/formats#supported-file-formats"
+  },"9": {
+    "doc": "File formats",
+    "title": "Tab delimited",
+    "content": "Tab delimited text files are plain text files that have one record for each line. The individual data values are separated by tab characters (\\t - not spaces). This means that a cell can contain any value except for tabs (\\t), newlines (\\n), or carriage returns (\\r). Tab-delimited elements do not support quoting. There is normally a header line that describes the data each column contains. This is optional however, so tabl will support files missing this header. Another variation is where the header is actually the last commented line. This isn't terribly common, but does happen with some bioinformatics file formats. Tabl will also support these types of files. In both cases, there is a command-line flag that can be passed to let tabl know to take this variant into account. Tab-delimited text files are the default format for tabl. ",
+    "url": "/tabl/formats#tab-delimited",
+    "relUrl": "/formats#tab-delimited"
+  },"10": {
+    "doc": "File formats",
+    "title": "Comma separated (CSV)",
+    "content": "Comma-separated value files are text files where the individual data values are separated by the , character. Rows are separated by the carriage return/newline combination \\r\\n. The comma delimiter makes it easy to include whitespace (tab-characters) in the value. However, it also means that the value can not contain the , character. To get around this, CSV elements can also be quoted. If the element is surrounded by double-quotes (\"), then any extra whitespace characters (including newlines) or commas included. If a double-quote is part of the element, then it needs to be included as two double-quotes (\"\"). If used, the double-quotes must be present at the start and the end of the element. In order to tell tabl that a data files is a CSV file, you can pass the --csv flag to any of the commands. For more information, see RFC 4180. ",
+    "url": "/tabl/formats#comma-separated-csv",
+    "relUrl": "/formats#comma-separated-csv"
+  },"11": {
+    "doc": "File formats",
+    "title": "Comments",
+    "content": "All files can contain comments anywhere within their body. Comment lines are denoted by the # character. All comment lines must start with that character. These lines can be either ignored (default) or included in tabl view or tabl export with a command-line flag (--show-comments). ",
+    "url": "/tabl/formats#comments",
+    "relUrl": "/formats#comments"
+  },"12": {
+    "doc": "File formats",
+    "title": "Compression",
+    "content": "Tabl will transparently handle files that have been gzip compressed. This is determined by the file contents, not by the file extension. You still need to specify --csv for CSV files, but other than that, the compression support is automatic. Gzip is currently the only compression method that is transparently handled. Other methods can be used, but they need to be decompressed and piped to tabl through stdin. Example: . $ bunzip2 -c file.txt.bz2 | tabl view - . ",
+    "url": "/tabl/formats#compression",
+    "relUrl": "/formats#compression"
+  },"13": {
+    "doc": "File formats",
+    "title": "File formats",
+    "content": " ",
+    "url": "/tabl/formats",
+    "relUrl": "/formats"
+  },"14": {
+    "doc": "Projects: tabl",
+    "title": "tabl – wrangling tab-delimited* text files",
+    "content": "Tabl (rhymes with babble) is a set of tools for viewing and working with tab-delimited (and CSV) text files. It can automatically handle compressed or uncompressed files. ",
+    "url": "/tabl/#tabl--wrangling-tab-delimited-text-files",
+    "relUrl": "/#tabl--wrangling-tab-delimited-text-files"
+  },"15": {
+    "doc": "Projects: tabl",
+    "title": "Installation",
+    "content": "Tabl is a single binary and can be downloaded from the Github release page for Mac and Linux (x86_64/amd64). This file can be downloaded and copied to any place in your $PATH to install tabl. A Windows binary is also available, but it is untested. No other installation steps are needed. ",
+    "url": "/tabl/#installation",
+    "relUrl": "/#installation"
+  },"16": {
+    "doc": "Projects: tabl",
+    "title": "Example",
+    "content": ". ",
+    "url": "/tabl/#example",
+    "relUrl": "/#example"
+  },"17": {
+    "doc": "Projects: tabl",
+    "title": "Projects: tabl",
+    "content": " ",
+    "url": "/tabl/",
+    "relUrl": "/"
+  },"18": {
+    "doc": "tabl less",
+    "title": "tabl less",
+    "content": "This command lets you view a delimited text file in a TUI paging environment. It operates very similarly to the less command. You can scroll through rows and columns. One unique feature is that the header values are always displayed as the top line. This way, you can keep track of the meaning for column, even if you are at the end of the file. Also, when scrolling, you can also set certain columns to be \"sticky\". This means that those columns are always shown, even if you are currently looking at columns further to the right. ",
+    "url": "/tabl/less",
+    "relUrl": "/less"
+  },"19": {
+    "doc": "tabl less",
+    "title": "Usage",
+    "content": "$ tabl less [filename] {options} . If filename is not given, stdin is assumed. Use - to explicitly read from stdin. ",
+    "url": "/tabl/less#usage",
+    "relUrl": "/less#usage"
+  },"20": {
+    "doc": "tabl less",
+    "title": "Options",
+    "content": ". | --min – the minimum width for a column | --max – the maximum width for a column (by default, the width is auto determined) | . ",
+    "url": "/tabl/less#options",
+    "relUrl": "/less#options"
+  },"21": {
+    "doc": "tabl less",
+    "title": "Common options",
+    "content": ". | --csv – the file is a CSV file | --no-header – the file doesn't contain a header row | --header-comment – the header is the last commented line (not common, but used sometimes in bioinformatics, eg. VCF format) | . ",
+    "url": "/tabl/less#common-options",
+    "relUrl": "/less#common-options"
+  },"22": {
+    "doc": "tabl less",
+    "title": "Example",
+    "content": "$ tabl less iris.txt . ",
+    "url": "/tabl/less#example",
+    "relUrl": "/less#example"
+  },"23": {
+    "doc": "tabl less",
+    "title": "In-program commands",
+    "content": "? Show the help text q,Ctrl-C,ESC Quit the program / Search m,Enter Mark a line s Save marked lines to a file c Clear marked lines x Select \"sticky\" columns To select sticky columns, use arrow keys and hit space to toggle on/off. Hit ESC to exit \"sticky-select\" mode. Navigation . h,left-arrow Move left a column j,down-arrow Move down a row k,up-arrow Move up a row l,right-arrow Move right a column space Move down a page b Move up a page .   . ",
+    "url": "/tabl/less#in-program-commands",
+    "relUrl": "/less#in-program-commands"
+  },"24": {
+    "doc": "tabl sort",
+    "title": "tabl sort",
+    "content": "Sorts the given file based on the values for each column. Columns can be sorted in text mode (default) or numeric mode. The order can be ascending (default) or descending. This is implemented as a merge sort with temporary files. ",
+    "url": "/tabl/sort",
+    "relUrl": "/sort"
+  },"25": {
+    "doc": "tabl sort",
+    "title": "Usage",
+    "content": "$ tabl sort [filename] {options} . If filename is not given, stdin is assumed. Use - to explicitly read from stdin. ",
+    "url": "/tabl/sort#usage",
+    "relUrl": "/sort#usage"
+  },"26": {
+    "doc": "tabl sort",
+    "title": "Options",
+    "content": ". | -k, --key – the columns to sort by This argument can be used more than one. The value is a comma separated list of column names or indexes. A numeric column is specified by adding :n to the end of the argument. Descending sorting (reverse) is specified by adding :r to the argument. :rn does both. Examples: . -k 1-2 – sort by columns 1 and 2 . -k 1,3 – sort by columns 1 and 3 . -k \"Gene name\",3 – sort by the column named \"Gene name\" and then column 3 . -k 1:n -k 2:rn – sort first by column 1 (numeric) and then column 2 (reversed and numeric) . | . ",
+    "url": "/tabl/sort#options",
+    "relUrl": "/sort#options"
+  },"27": {
+    "doc": "tabl sort",
+    "title": "Common options",
+    "content": ". | --csv – the file is a CSV file (and the output will be a CSV file) | --no-header – the file doesn't contain a header row | --header-comment – the header is the last commented line (not common, but used sometimes in bioinformatics, eg. VCF format) | --show-comments – display any comment lines in place | . ",
+    "url": "/tabl/sort#common-options",
+    "relUrl": "/sort#common-options"
+  },"28": {
+    "doc": "tabl sort",
+    "title": "Example",
+    "content": "$ tabl sort -k 4-5:n -k class iris.txt | tabl view | head class | sepal_length | sepal_width | petal_length | petal_width ================+=================+================+=================+================ Iris-setosa | 4.6 | 3.6 | 1.0 | 0.2 Iris-setosa | 4.3 | 3.0 | 1.1 | 0.1 Iris-setosa | 5.0 | 3.2 | 1.2 | 0.2 Iris-setosa | 5.8 | 4.0 | 1.2 | 0.2 Iris-setosa | 4.4 | 3.2 | 1.3 | 0.2 Iris-setosa | 4.7 | 3.2 | 1.3 | 0.2 Iris-setosa | 4.4 | 3.0 | 1.3 | 0.2 Iris-setosa | 5.5 | 3.5 | 1.3 | 0.2 . (piped through tabl view for visualization) . ",
+    "url": "/tabl/sort#example",
+    "relUrl": "/sort#example"
+  },"29": {
+    "doc": "tabl view",
+    "title": "tabl view",
+    "content": "This command formats a tab-delimited file and displays it in equally spaced columns. ",
+    "url": "/tabl/view",
+    "relUrl": "/view"
+  },"30": {
+    "doc": "tabl view",
+    "title": "Usage",
+    "content": "$ tabl view [filename] {options} . If filename is not given, stdin is assumed. Use - to explicitly read from stdin. ",
+    "url": "/tabl/view#usage",
+    "relUrl": "/view#usage"
+  },"31": {
+    "doc": "tabl view",
+    "title": "Options",
+    "content": ". | --show-linenum – also include the line number in the output | --min – the minimum width for a column | --max – the maximum width for a column (by default, the width is auto determined) | . ",
+    "url": "/tabl/view#options",
+    "relUrl": "/view#options"
+  },"32": {
+    "doc": "tabl view",
+    "title": "Common options",
+    "content": ". | --csv – the file is a CSV file | --no-header – the file doesn't contain a header row | --header-comment – the header is the last commented line (not common, but used sometimes in bioinformatics, eg. VCF format) | --show-comments – display any comment lines in place | . ",
+    "url": "/tabl/view#common-options",
+    "relUrl": "/view#common-options"
+  },"33": {
+    "doc": "tabl view",
+    "title": "Example",
+    "content": "$ tabl view iris.txt class | sepal_length | sepal_width | petal_length | petal_width ================+=================+================+=================+================ Iris-setosa | 5.1 | 3.5 | 1.4 | 0.2 Iris-setosa | 4.9 | 3.0 | 1.4 | 0.2 Iris-setosa | 4.7 | 3.2 | 1.3 | 0.2 Iris-setosa | 4.6 | 3.1 | 1.5 | 0.2 Iris-setosa | 5.0 | 3.6 | 1.4 | 0.2 Iris-setosa | 5.4 | 3.9 | 1.7 | 0.4 Iris-setosa | 4.6 | 3.4 | 1.4 | 0.3 Iris-setosa | 5.0 | 3.4 | 1.5 | 0.2 . ",
+    "url": "/tabl/view#example",
+    "relUrl": "/view#example"
+  }
+}
