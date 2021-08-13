@@ -39,7 +39,7 @@ fi
 # force a temp redirect while troubleshooting
 echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL=https://github.com/compgen-io\" /></head></html>" > index.html
 
-git add .
+git add index.html .
 
 git commit -m 'deploy'
 if [ $TOKEN != "" ]; then
