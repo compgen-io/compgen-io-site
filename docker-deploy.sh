@@ -35,7 +35,12 @@ if [ $TOKEN != "" ]; then
 git config user.email "noreply@compgen.io"
 git config user.name "Deployment/$GITHUB_ACTOR"
 fi
+
+# force a temp redirect while troubleshooting
+echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL=https://github.com/compgen-io\" /></head></html>" > index.html
+
 git add .
+
 git commit -m 'deploy'
 if [ $TOKEN != "" ]; then
     git remote add origin https://deploy:$TOKEN@github.com/compgen-io/compgen-io-site.git
