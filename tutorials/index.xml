@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on compgen.io</title><link>https://compgen.io/tutorials/</link><description>Recent content in Tutorials on compgen.io</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://compgen.io/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorial: File formats</title><link>https://compgen.io/tutorials/formats/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/tutorials/formats/</guid><description>&lt;h1 id="tutorial-file-formats"&gt;Tutorial: File formats&lt;/h1&gt;
+&lt;h2 id="table-of-contents"&gt;Table of contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#sequencing-formats"&gt;Sequencing formats&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#fasta"&gt;FASTA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#fastq"&gt;FASTQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#unaligned-bam-file"&gt;Unaligned BAM file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ngsutilsj-support"&gt;ngsutilsj support&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="sequencing-formats"&gt;Sequencing formats&lt;/h2&gt;
+&lt;h3 id="fasta"&gt;FASTA&lt;/h3&gt;
+&lt;p&gt;FASTA files are the de-facto standard for storing and sharing DNA/RNA/amino acid
+sequences. It is a text-file format with a header line followed by one or more lines of sequence.
+The header line starts with a &amp;lsquo;&amp;gt;&amp;rsquo; character, which may be used for parsing the file. The remainder
+of the header line consists of a name, optionally followed by a comment. The name and comment are
+separated by whitespace. The name must not contain a whitespace (&lt;code&gt; &lt;/code&gt;, or &lt;code&gt;\t&lt;/code&gt;) character.&lt;/p&gt;</description></item><item><title>Tutorial: FASTQ Pre-processing</title><link>https://compgen.io/tutorials/fastq-preprocessing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/tutorials/fastq-preprocessing/</guid><description>&lt;h1 id="tutorial-fastq-pre-processing"&gt;Tutorial: FASTQ Pre-processing&lt;/h1&gt;
+&lt;p&gt;The first step in NGS analysis is pre-processing your &lt;a href="https://compgen.io/tutorials/formats/#fastq"&gt;FASTQ&lt;/a&gt; files. The
+following tutorial uses &lt;a href="https://compgen.io/projects/ngsutilsj/"&gt;ngsutilsj fastq-filter&lt;/a&gt; to process and filter FASTQ
+files.&lt;/p&gt;
+&lt;h2 id="table-of-contents"&gt;Table of contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#sequence-qc-tools"&gt;Sequence QC tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#dna-seq-filtering-methods"&gt;DNA-seq filtering methods&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rna-seq-filtering-methods"&gt;RNA-seq filtering methods&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="sequence-qc-tools"&gt;Sequence QC tools&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s important to measure certain quality control metrics with FASTQ files.
+You should run the same QC checks against the files before and after pre-
+processing. This will help you assess the quality of your data and measure
+how well the pre-processing is working. QC monitoring is a critical part of NGS
+analysis that is often neglected. Without monitoring read QC, you may inadvertently
+use low-quality data, which could produce invalid analysis. (and a lot of wasted effort!)&lt;/p&gt;</description></item><item><title>Tutorial: Docker with cgpipe</title><link>https://compgen.io/tutorials/cgpipe-docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/tutorials/cgpipe-docker/</guid><description>&lt;h1 id="tutorial-docker-with-cgpipe"&gt;Tutorial: Docker with cgpipe&lt;/h1&gt;
+&lt;h2 id="table-of-contents"&gt;Table of contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#heredocs"&gt;Heredocs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#docker"&gt;Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#meta-targets"&gt;Meta-targets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#job-settings"&gt;Job settings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#putting-it-all-together"&gt;Putting it all together&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://compgen.io/projects/cgpipe/"&gt;CGpipe&lt;/a&gt; is a powerful tool for executing bioinformatics data analysis workflows. Much
+of its power derives from its inherent flexibility. In addition to supporting a variety of batch
+scheduling environments (SGE, SLURM, PBS), it can support different modes of
+executing jobs, such as in the context of a Docker container. The way we&amp;rsquo;ll explore executing
+jobs within a container is to use the &lt;a href="https://en.wikipedia.org/wiki/Here_document"&gt;HEREDOC pattern&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

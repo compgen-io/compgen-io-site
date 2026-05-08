@@ -1,0 +1,31 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>swalign | compgen.io</title><meta name=description content="Data wrangling for computational genomics"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel=stylesheet><link rel=stylesheet href=/css/style.css><link rel=icon href=/favicon.ico sizes=any><link rel=icon href=/favicon-32x32.png type=image/png sizes=32x32><link rel=apple-touch-icon href=/apple-touch-icon.png></head><body><div class=page-wrap><aside class=side-bar id=sidebar><div class=site-header><a href=/ class=site-title><img src=/img/compgen.png alt=compgen.io class=site-logo></a></div><nav class=site-nav role=navigation aria-label="Main navigation"><ul class=nav-list><li class="nav-item active"><a href=/projects/ class="nav-link active">Projects</a><ul class=nav-child-list><li class=nav-child-item><a href=/projects/ngsutilsj/ class=nav-link>ngsutilsj</a></li><li class=nav-child-item><a href=/projects/cgsplice/ class=nav-link>cgsplice</a></li><li class="nav-child-item active"><a href=/projects/swalign/ class="nav-link active">swalign</a></li><li class=nav-child-item><a href=/projects/cgpipe/ class=nav-link>cgpipe</a></li><li class=nav-child-item><a href=/projects/sbs/ class=nav-link>sbs</a></li><li class=nav-child-item><a href=/projects/tabl/ class=nav-link>tabl</a></li><li class=nav-child-item><a href=/projects/compgen-common/ class=nav-link>compgen-common</a></li><li class=nav-child-item><a href=/projects/compgen-cmdline/ class=nav-link>compgen-cmdline</a></li><li class=nav-child-item><a href=/projects/basespace-download/ class=nav-link>basespace-download</a></li></ul></li><li class=nav-item><a href=/tutorials/ class=nav-link>Tutorials</a></li><li class=nav-item><a href=/contact/ class=nav-link>Contact</a></li></ul></nav><footer class=site-footer><a href=/ class=footer-logo-link><img src=/img/compgen-slug.png alt=compgen.io class=footer-logo></a></footer></aside><div class=main-content-wrap id=main-content-wrap><div class=main-content><header class=page-header><button class=menu-toggle id=menu-toggle aria-label="Toggle navigation">
+<span></span><span></span><span></span></button><div class=subtitle>Data wrangling for computational genomics</div><ul class=aux-nav><li><a href=https://github.com/compgen-io target=_blank rel=noopener>GitHub</a></li></ul></header><div class=page-content-wrap><nav class=breadcrumb-nav aria-label=Breadcrumb><ol class=breadcrumb-list><li class=breadcrumb-item><a href=/>Home</a></li><li class=breadcrumb-item><a href=/projects/>Projects</a></li><li class="breadcrumb-item current">swalign</li></ol></nav><main id=main-content class=page-content role=main><h1 id=swalign>swalign</h1><p><a href=https://github.com/mbreese/swalign>Github</a></p><p>This package implements a Smith-Waterman style local alignment algorithm. It works by calculating a sequence alignment between a query sequence and a reference. The scoring functions can be based on a matrix, or simple identity. Weights can be adjusted for match/mismatch and gaps, with gap extention penalties. Additionally, the gap penalty can be subject to a decay to prioritize long gaps over minor mismatches.</p><p>The input files are FASTA format files, or strings.</p><p>It is a useful example of how one might write an aligner from scratch. Even though it is not optimized, it is widely used as a teaching tool or for quick alignment searches when building an index would be overkill.</p><p>The aligner can be used in a stand-alone mode (<code>bin/swalign</code>) or as an importable Python library.</p><h2 id=installation>Installation</h2><p>swalign is available on PyPi and can be installed with pip.</p><pre><code>$ pip install swalign
+</code></pre><h2 id=example>Example</h2><pre><code>import swalign
+
+# Setup your scoring matrix
+# (this can also be read from a file like BLOSUM, etc)
+#
+# Or you can choose your own values.
+# 2 and -1 are common for an identity matrix.
+
+match = 2
+mismatch = -1
+scoring = swalign.NucleotideScoringMatrix(match, mismatch)
+
+# This sets up the aligner object. You must set your scoring matrix, but
+# you can also choose gap penalties, etc...
+sw = swalign.LocalAlignment(scoring)
+
+# Using your aligner object, calculate the alignment between
+# ref (first) and query (second)
+alignment = sw.align('ACACACTA','AGCACACA')
+alignment.dump()
+</code></pre><p>Results:</p><pre><code>Query: 1 AGCACAC-A 8
+        | ||||| |
+Ref  : 1 A-CACACTA 8
+
+Score: 12
+Matches: 7 (77.8%)
+Mismatches: 2
+CIGAR: 1M1I5M1D1M
+</code></pre></main></div></div></div></div><div class=overlay id=overlay></div><script>(function(){const n=document.getElementById("menu-toggle"),e=document.querySelector(".side-bar"),t=document.getElementById("overlay"),o=document.getElementById("main-content-wrap");function s(){e.classList.remove("open"),t.classList.remove("active"),n.classList.remove("active")}n.addEventListener("click",function(){e.classList.toggle("open"),t.classList.toggle("active"),this.classList.toggle("active")}),t.addEventListener("click",s),e.querySelectorAll("a").forEach(function(e){e.addEventListener("click",function(){window.innerWidth<800&&s()})})})()</script></body></html>

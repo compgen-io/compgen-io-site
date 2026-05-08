@@ -1,0 +1,102 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Tutorial: Docker with cgpipe | compgen.io</title><meta name=description content="Data wrangling for computational genomics"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel=stylesheet><link rel=stylesheet href=/css/style.css><link rel=icon href=/favicon.ico sizes=any><link rel=icon href=/favicon-32x32.png type=image/png sizes=32x32><link rel=apple-touch-icon href=/apple-touch-icon.png></head><body><div class=page-wrap><aside class=side-bar id=sidebar><div class=site-header><a href=/ class=site-title><img src=/img/compgen.png alt=compgen.io class=site-logo></a></div><nav class=site-nav role=navigation aria-label="Main navigation"><ul class=nav-list><li class=nav-item><a href=/projects/ class=nav-link>Projects</a><ul class=nav-child-list><li class=nav-child-item><a href=/projects/ngsutilsj/ class=nav-link>ngsutilsj</a></li><li class=nav-child-item><a href=/projects/cgsplice/ class=nav-link>cgsplice</a></li><li class=nav-child-item><a href=/projects/swalign/ class=nav-link>swalign</a></li><li class=nav-child-item><a href=/projects/cgpipe/ class=nav-link>cgpipe</a></li><li class=nav-child-item><a href=/projects/sbs/ class=nav-link>sbs</a></li><li class=nav-child-item><a href=/projects/tabl/ class=nav-link>tabl</a></li><li class=nav-child-item><a href=/projects/compgen-common/ class=nav-link>compgen-common</a></li><li class=nav-child-item><a href=/projects/compgen-cmdline/ class=nav-link>compgen-cmdline</a></li><li class=nav-child-item><a href=/projects/basespace-download/ class=nav-link>basespace-download</a></li></ul></li><li class="nav-item active"><a href=/tutorials/ class="nav-link active">Tutorials</a></li><li class=nav-item><a href=/contact/ class=nav-link>Contact</a></li></ul></nav><footer class=site-footer><a href=/ class=footer-logo-link><img src=/img/compgen-slug.png alt=compgen.io class=footer-logo></a></footer></aside><div class=main-content-wrap id=main-content-wrap><div class=main-content><header class=page-header><button class=menu-toggle id=menu-toggle aria-label="Toggle navigation">
+<span></span><span></span><span></span></button><div class=subtitle>Data wrangling for computational genomics</div><ul class=aux-nav><li><a href=https://github.com/compgen-io target=_blank rel=noopener>GitHub</a></li></ul></header><div class=page-content-wrap><nav class=breadcrumb-nav aria-label=Breadcrumb><ol class=breadcrumb-list><li class=breadcrumb-item><a href=/>Home</a></li><li class=breadcrumb-item><a href=/tutorials/>Tutorials</a></li><li class="breadcrumb-item current">Tutorial: Docker with cgpipe</li></ol></nav><main id=main-content class=page-content role=main><h1 id=tutorial-docker-with-cgpipe>Tutorial: Docker with cgpipe</h1><h2 id=table-of-contents>Table of contents</h2><ul><li><a href=#heredocs>Heredocs</a></li><li><a href=#docker>Docker</a></li><li><a href=#meta-targets>Meta-targets</a></li><li><a href=#job-settings>Job settings</a></li><li><a href=#putting-it-all-together>Putting it all together</a></li></ul><p><a href=/projects/cgpipe/>CGpipe</a> is a powerful tool for executing bioinformatics data analysis workflows. Much
+of its power derives from its inherent flexibility. In addition to supporting a variety of batch
+scheduling environments (SGE, SLURM, PBS), it can support different modes of
+executing jobs, such as in the context of a Docker container. The way we&rsquo;ll explore executing
+jobs within a container is to use the <a href=https://en.wikipedia.org/wiki/Here_document>HEREDOC pattern</a>.</p><h2 id=heredocs>Heredocs</h2><p>What are heredocs? Heredocs are a feature of shell scripts that let you send multiple lines of
+data as <em>stdin</em> to a program (an input-stream literal). One common way they are used is to write
+multiple lines to a file at a time.</p><pre><code>cat &lt;&lt;HEREDOC &gt; output.txt
+line 1
+line 2
+etc...
+HEREDOC
+</code></pre><p>You don&rsquo;t need to use the delimiter <code>HEREDOC</code>, it could be any string. Another commonly used string is <code>EOF</code>.</p><pre><code>cat &lt;&lt;EOF &gt; output.txt
+etc...
+EOF
+</code></pre><p>We are going to use this to have CGPipe wrap a job script and send that as <em>stdin</em> to <code>bash</code> running in a container.</p><h2 id=docker>Docker</h2><p>We&rsquo;ll assume you&rsquo;re already familiar with <a href=http://www.docker.com>Docker</a>, but briefly Docker
+a platform for running programs within a container. The container lets you build and ship programs with any needed
+dependencies intact. This results in a consistent execution environment for data analysis pipelines.</p><p>It is out of the scope of this document to go into all of the ways that Docker can be started (or how to
+create a container image). However, if your job can be started as a shell script, you can use this method
+to run your job in a container. We will use <code>docker run</code> to start our script.</p><h3 id=job-integration>Job integration</h3><p>In order to use the Docker container, we will mount the current working directory as <code>/data</code>
+in the Docker container. This will be the working directory for the job. We will then start the
+container and execute the given job snippet in the context of the container by using <code>/bin/bash</code> as our
+Docker entrypoint.</p><p>Note: This is only one way to do this and may not be the best solution for your environment. But this
+should be a good starting point to adapt to your system.</p><h3 id=alternatives>Alternatives</h3><p>Here are some alternatives to Docker containers for software versioning:</p><ul><li><a href=http://modules.sourceforge.net>Environment modules</a> - The original method for managing program versions. This (or a similar tool) is installed on most HPC clusters.</li><li><a href=http://singularity.lbl.gov/>Singularity containers</a> - Docker-alternative container tool from Berkeley Lab that doesn&rsquo;t require special permissions and is compatible with existing multi-user HPC systems. The technique used here for Docker should also be applicable to Singularity containers.</li></ul><h2 id=meta-targets>Meta-targets</h2><p>The feature of CGPipe that will help us get our jobs running in a container are the setup/teardown/pre/post meta-targets.</p><p>These are named <code>__setup__</code>, <code>__teardown__</code>, <code>__pre__</code>, and <code>__post__</code> and are defined like any other job definition.
+However, <strong>setup</strong> and <strong>teardown</strong> are executed at pipeline run-time (not submitted to a scheduler) to do things like
+make a child directory or remove a temporary file. <strong>Setup</strong> is run before any other jobs are submitted to the
+scheduler and <strong>teardown</strong> is executed before CGPipe returns. However, <strong>pre</strong> and <strong>post</strong> are job
+meta-targets that are included in the main job snippet. Crucially, they are <em>not</em> job dependencies, they are included
+in the body of the job script itself.</p><p>How can this be helpful? One example is to track the time required for a job to start/finish. Let&rsquo;s say you had the
+following job definition:</p><pre><code>output.txt: input.txt
+    ./myprog input.txt &gt; output.txt
+</code></pre><p>This would result in the following job script:</p><pre><code>#!/bin/bash
+./myprog input.txt &gt; output.txt
+</code></pre><p>As an example, this is a pretty simple pipeline that has only one task. If you wanted to write the start / finish
+times to stdout for this job, you could use the <strong>pre</strong> and <strong>post</strong> meta-targets like this:</p><pre><code>__pre__:
+  echo &quot;Start: \\$(date)&quot;
+
+__post__:
+  echo &quot;Done: \\$(date)&quot;
+
+output.txt: input.txt
+    ./myprog input.txt &gt; output.txt
+</code></pre><p>This will result in a job script that looks something like this:</p><pre><code>#!/bin/bash
+echo &quot;Start: $(date)&quot;
+./myprog input.txt &gt; output.txt
+echo &quot;Done: $(date)&quot;
+</code></pre><p>If you have multiple tasks, <strong>pre</strong> and <strong>post</strong> are applied to each job. This makes these meta
+targets a powerful method for altering or monitoring the execution of each task in a pipeline. Some other examples where
+the <strong>pre</strong> and <strong>post</strong> meta-targets could come in handy tracking job start/finish in an external
+monitoring program, downloading inputs from cloud storage (e.g. S3), uploading outputs to cloud storage, changing file
+permissions, etc&mldr;</p><p>Note the escaped <code>\\$(date)</code> above &ndash; if this wasn&rsquo;t escaped CGPipe would shell out to get the date at run-time. This would
+then show the date/time that the script was run. An alternative would be to avoid the shell escape and do something
+like this:</p><pre><code>__pre__:
+  echo -n &quot;Start: &quot;
+  date
+</code></pre><h2 id=job-settings>Job settings</h2><p>CGPipe job snippets are nothing more than shell (bash) scripts, which in combination with the <strong>pre</strong> and <strong>post</strong> meta-targets
+gives a pipeline author a lot of flexibility. It also means that you can adapt the pipeline to work with your system, not
+adapt your system to the pipeline.</p><p>Because not all jobs will require a Docker container to execute, it is appropriate to configure the container
+settings on a job-by-job basis. Like all job settings, it is possible to set these on a per-job, per-pipeline,
+or per-system basis. Any cgpipe variable starting with <code>job.</code> (including user-defined ones) is available within
+the job snippet context (including <strong>pre</strong> and <strong>post</strong>), so we will use that to set a few
+Docker-specific variables. Specifically, we will use <code>job.docker.container</code>. <code>job.docker.container</code>
+will be set to the container image name to use for this job.</p><p>You can also use a similar strategy to set things like volumes or other resource requirements for the container,
+but we&rsquo;ll keep things simple for now.</p><h2 id=putting-it-all-together>Putting it all together</h2><p>For an example, lets assume you have a BAM file and you&rsquo;d like to calculate some alignment QC statistics.
+One way to do this would be to use <a href=/projects/ngsutilsj/>ngsutilsj</a> and run the following:</p><pre><code>ngsutilsj bam-stats input.bam &gt; output.stats.txt
+</code></pre><p>We may not have <code>ngsutilsj</code> installed on our system, but it is available in the <code>asclab/spcg-working</code> Docker container.</p><p>To setup the Docker container, we&rsquo;ll use the <em>pre</em> and <em>post</em>
+meta-targets to wrap the entire job snippet in a HEREDOC. That will then send the script to a the container&rsquo;s
+entrypoint (<code>/bin/bash</code>) to execute in the context of the container.</p><p>Here is what our trivial example looks like as a cgpipe script:</p><pre><code>#!/usr/bin/env cgpipe
+output.stats.txt: input.bam
+    ngsutilsj bam-stats input.bam &gt; output.stats.txt
+</code></pre><p>Now, we can add the <code>__pre__</code> and <code>__post__</code> to wrap the snippet. Note: this assumes the program <code>realpath</code>
+is installed. <code>realpath</code> is used to get the absolute path for the current directory. Absolute paths are
+required by Docker to bind local directories as volumes in the container (you can also get this with a
+Perl or Python one-liner).</p><pre><code>#!/usr/bin/env cgpipe
+__pre__:
+    &lt;% if job.docker.container %&gt;
+    docker run --rm -i \
+      -v $(realpath .):/data \
+      -w /data
+      ${job.docker.container} /bin/bash &lt;&lt;HEREDOC
+    &lt;% endif %&gt;
+
+__post__:
+    &lt;% if job.docker.container %&gt;
+    HEREDOC
+    &lt;% endif %&gt;
+
+output.stats.txt: input.bam
+    &lt;%
+      job.docker.container=&quot;asclab/spcg-working&quot;
+    %&gt;
+    ngsutilsj bam-stats input.bam &gt; output.stats.txt
+</code></pre><p>This results in the following job script:</p><pre><code>#!/bin/bash
+docker run --rm -i \
+  -v /my/path:/data \
+  -w /data
+  asclab/spcg-working /bin/bash &lt;&lt;HEREDOC
+ngsutilsj bam-stats input.bam &gt; output.stats.txt
+HEREDOC
+</code></pre><p>One thing to look out for is the whitespace surrounding the <code>HEREDOC</code> in <code>__post__</code>. This needs to end up
+as the first thing on a line without any preceding whitespace. If you use consistent indentation, this normally
+isn&rsquo;t a problem, but it&rsquo;s something to look out for.</p></main></div></div></div></div><div class=overlay id=overlay></div><script>(function(){const n=document.getElementById("menu-toggle"),e=document.querySelector(".side-bar"),t=document.getElementById("overlay"),o=document.getElementById("main-content-wrap");function s(){e.classList.remove("open"),t.classList.remove("active"),n.classList.remove("active")}n.addEventListener("click",function(){e.classList.toggle("open"),t.classList.toggle("active"),this.classList.toggle("active")}),t.addEventListener("click",s),e.querySelectorAll("a").forEach(function(e){e.addEventListener("click",function(){window.innerWidth<800&&s()})})})()</script></body></html>

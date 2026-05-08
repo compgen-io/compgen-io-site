@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on compgen.io</title><link>https://compgen.io/projects/</link><description>Recent content in Projects on compgen.io</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://compgen.io/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>ngsutilsj</title><link>https://compgen.io/projects/ngsutilsj/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/ngsutilsj/</guid><description>&lt;h1 id="ngsutilsj"&gt;ngsutilsj&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/compgen-io/ngsutilsj"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ngsutilsj is an updated java port of the NGSUtils toolkit. This new version is largely a Java port of the
+the most commonly used tools from NGSUtils, with some additions thrown in. It is also a library, with utility
+classes for use in other various NGS related software (such as &lt;a href="https://compgen.io/projects/cgsplice/"&gt;cgsplice&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Java was chosen for the ease of installation and relative speed (in comparison to the Python NGSUtils).
+The processing speed for gzipped compressed files was a major reason for the new update. This version has
+also been optimized for working on high-memory HPC clusters and streaming data analysis (to minimize disk IO).&lt;/p&gt;</description></item><item><title>cgsplice</title><link>https://compgen.io/projects/cgsplice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/cgsplice/</guid><description>&lt;h1 id="cgsplice"&gt;cgsplice&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/compgen-io/cgsplice"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;cgsplice is a set of tools to support direct measurement of splice junctions in
+RNA-seq data. cgsplice works by finding and counting reads that span splice junctions.
+It does this by searching for reads with an &amp;ldquo;N&amp;rdquo; gap in their CIGAR alignment string.
+Next, for all junctions, it determines the donor and acceptor sites and tallies how
+many reads span each donor/acceptor pair. Finally, using these counts for multiple
+samples, it will calculate a permuted p-value for how likely it is that a given donor
+or acceptor had differential splicing between two conditions. Reads supporting a
+cassette exon, but that don&amp;rsquo;t cross a junction are not included in this model.&lt;/p&gt;</description></item><item><title>swalign</title><link>https://compgen.io/projects/swalign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/swalign/</guid><description>&lt;h1 id="swalign"&gt;swalign&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/mbreese/swalign"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This package implements a Smith-Waterman style local alignment algorithm. It works by calculating a sequence alignment between a query sequence and a reference. The scoring functions can be based on a matrix, or simple identity. Weights can be adjusted for match/mismatch and gaps, with gap extention penalties. Additionally, the gap penalty can be subject to a decay to prioritize long gaps over minor mismatches.&lt;/p&gt;
+&lt;p&gt;The input files are FASTA format files, or strings.&lt;/p&gt;</description></item><item><title>cgpipe</title><link>https://compgen.io/projects/cgpipe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/cgpipe/</guid><description>&lt;h1 id="cgpipe"&gt;cgpipe&lt;/h1&gt;
+&lt;p&gt;CGpipe is a bioinformatics pipeline development language. It is very similar in spirit (and practice) to
+the venerable Makefile, but geared towards execution in an HPC environment. Like Makefiles, cgpipe
+pipelines establish a series of build targets, their required dependencies, and a recipe (shell script)
+used to build the outputs. Unlike Makefiles, cgpipe pipelines are scripts that can incorporate logic
+and flow control in the setup and execution of the build-graph.&lt;/p&gt;</description></item><item><title>sbs</title><link>https://compgen.io/projects/sbs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/sbs/</guid><description>&lt;h1 id="sbs"&gt;SBS&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/compgen-io/sbs"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SBS is a single-user batch job scheduler for workstations or single servers. SBS is a good stand-in for
+traditional schedulers like PBS, SGE, or SLURM. Not everyone wants to have a complete install of SGE on
+their laptop. In those cases, SBS can be a quick replacement that requires minimal overhead. SBS is a
+single file program written in Python that stores job definitions in a managed folder. All job state is
+stored in this folder. There is no requirement for a constantly running daemon to manage the jobs.
+The user can start running these jobs at anytime and using whatever resource restrictions are necessary (eg if you
+have 4 cores on a laptop, but only want to devote 2 cores to running background jobs, you can do that).&lt;/p&gt;</description></item><item><title>tabl</title><link>https://compgen.io/projects/tabl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/tabl/</guid><description>&lt;h1 id="tabl"&gt;tabl&lt;/h1&gt;
+&lt;p&gt;Tabl is a tool for viewing and manipulating tab-delimited text files.&lt;/p&gt;</description></item><item><title>kdpeaks</title><link>https://compgen.io/projects/kdpeaks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/kdpeaks/</guid><description>&lt;h1 id="kdpeaks"&gt;kdpeaks&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/mbreese/kdpeaks"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;kdpeaks is an R library for finding peaks in KDE density plots. If you pass the function a kernel density estimate matrix, the
+function will find all of the peak values in the 2D matrix.&lt;/p&gt;
+&lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
+&lt;p&gt;This package can be installed directly from the Github repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;library(devtools)
+install_github(&amp;quot;mbreese/kdpeaks&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="method"&gt;Method&lt;/h2&gt;
+&lt;p&gt;kdpeaks works using a variant of an sequencing alignment dynamic programming algorithm.&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;For each point in the matrix, find the highest value in all adjacent cells (including itself).&lt;/p&gt;</description></item><item><title>compgen-common</title><link>https://compgen.io/projects/compgen-common/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/compgen-common/</guid><description>&lt;h1 id="compgen-common"&gt;compgen-common&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/compgen-io/compgen-common"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;compgen-common is a Java library with commonly used functions for String manipulation, progress bars, and general utility classes. These are useful building blocks that can be included in other applications.&lt;/p&gt;</description></item><item><title>compgen-cmdline</title><link>https://compgen.io/projects/compgen-cmdline/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/compgen-cmdline/</guid><description>&lt;h1 id="compgen-cmdline"&gt;compgen-cmdline&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/compgen-io/compgen-cmdline"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;compgen-cmdline is a Java library that makes it easier to setup and run command-line
+(CLI) programs written in Java. All of the Java applications on compgen.io use this
+library to handle the CLI interface.&lt;/p&gt;</description></item><item><title>NGSUtils</title><link>https://compgen.io/projects/ngsutils/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/ngsutils/</guid><description>&lt;h1 id="ngsutils-archived"&gt;NGSUtils &lt;span class="label label-archived"&gt;Archived&lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/ngsutils/ngsutils"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This project is archived.&lt;/strong&gt; An updated version is available: &lt;a href="https://compgen.io/projects/ngsutilsj/"&gt;ngsutilsj&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For more information on the NGSUtils Python toolkit, see here: &lt;a href="http://ngsutils.org"&gt;http://ngsutils.org&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>tabutils</title><link>https://compgen.io/projects/tabutils/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/tabutils/</guid><description>&lt;h1 id="tabutils-archived"&gt;tabutils &lt;span class="label label-archived"&gt;Archived&lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/mbreese/tabutils"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;tabutils is a set of programs for viewing and working with tab-delimited text files. Because of
+its utility, this is usually one of the first programs I end up installing on a new system.&lt;/p&gt;
+&lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
+&lt;p&gt;The easiest way to install tabutils is to clone the Github repository and run &lt;code&gt;make&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="tabutils-filter"&gt;tabutils filter&lt;/h2&gt;
+&lt;p&gt;Allows you to view only lines that meet certain criteria.&lt;/p&gt;
+&lt;p&gt;tabutils filter file.txt {criteria}&lt;/p&gt;
+&lt;p&gt;Eg:&lt;/p&gt;</description></item><item><title>basespace-download</title><link>https://compgen.io/projects/basespace-download/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://compgen.io/projects/basespace-download/</guid><description>&lt;h1 id="basespace-download"&gt;basespace-download&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/compgen-io/basespace-download"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;basespace-download is a tool for downloading FASTQ files from Illumina&amp;rsquo;s BaseSpace
+cloud service. For some instruments, analysis happens (by default) in the cloud. This tool is for downloading that data for local processing and analysis. Thankfully, Illumina provides a good API for interacting with BaseSpace!&lt;/p&gt;
+&lt;h2 id="app-token"&gt;App-token&lt;/h2&gt;
+&lt;p&gt;You must possess a valid app-token from BaseSpace in order to use this application. This
+is your method for authenticating with BaseSpace.&lt;/p&gt;</description></item></channel></rss>
