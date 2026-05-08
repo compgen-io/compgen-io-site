@@ -33,76 +33,132 @@ There are many commands available. For information on an individual command, run
 
     Available commands:
     [bam]
-      bam-basecall     - For a BAM file, output the basecalls (ACGTN) at each genomic position.
-      bam-best         - With reads mapped to two bam references, determine which reads mapped best to each
-      bam-bins         - Quickly count the number of reads that fall into bins (bins assigned based on 5' end of the first read)
-      bam-check        - Checks a BAM file to make sure it is valid
-      bam-concat       - Concatenates BAM files (handles @RG, @PG)
-      bam-count        - Counts the number of reads for genes (GTF), within a BED region, or by bins (--gtf, --bed, or --bins required)
-      bam-coverage*    - Scans an aligned BAM file and calculates the number of reads covering each base
-      bam-discord      - Extract all discordant reads from a BAM file
-      bam-dups         - Flags or removes duplicate reads
-      bam-expressed    - For a BAM file, output all regions with significant coverage in BED format.
-      bam-filter       - Filters out reads based upon various criteria
-      bam-readgroup    - Add a read group ID to each read in a BAM file
-      bam-sample*      - Create a whitelist of read names sampled randomly from a file
-      bam-split        - Split a BAM file into smaller files
-      bam-stats        - Stats about a BAM file and the library orientation
-      bam-tobed*       - Writes read positions to a BED6 file
-      bam-tobedgraph   - Calculate coverave for an aligned BAM file in BedGraph format.
-      bam-tofastq      - Export the read sequences from a BAM file in FASTQ format
+      bam-basecall        - For a BAM file, output the basecalls (ACGTN) at each genomic position.
+      bam-best            - With reads mapped to two bam references, determine which reads mapped best to each
+      bam-bins            - Quickly count the number of reads that fall into bins (bins assigned based on 5' end of the first read)
+      bam-check           - Checks a BAM file to make sure it is valid
+      bam-clean           - Cleans a BAM file from common errors
+      bam-concat          - Concatenates BAM files (handles @RG, @PG)
+      bam-count           - Counts the number of reads for genes (GTF), within a BED region, or by bins (--gtf, --bed, or --bins required)
+      bam-coverage*       - Scans an aligned BAM file and calculates the number of reads covering each base
+      bam-discord         - Extract all discordant reads from a BAM file
+      bam-dups            - Flags or removes duplicate reads
+      bam-expressed       - For a BAM file, output all regions with significant coverage in BED format.
+      bam-extract*        - Extract reads from a BAM file using either VCF or BED file coordinates
+      bam-filter          - Filters out reads based upon various criteria
+      bam-phase*          - Given a BAM and VCF file, split the BAM file into smaller phased files.
+      bam-pir*            - For a BAM file, extract the phase-informative reads
+      bam-readgroup       - Add a read group ID to each read in a BAM file
+      bam-refcount        - Only count the number of reads aligned to each reference (only R1 is counted)
+      bam-removeclipping* - Removes clipped bases (soft) from BAM file reads
+      bam-sample*         - Create a list of read names sampled randomly from a file
+      bam-softclip*       - Calculate the amount of soft-clipping at each position across a genome. Output in bedGraph format.
+      bam-sort            - Sort a BAM file using HTSJDK ordering
+      bam-split           - Split a BAM file into smaller files
+      bam-stats           - Stats about a BAM file and the library orientation
+      bam-tobed*          - Writes read positions to a BED6 file
+      bam-tobedgraph      - Calculate coverage for an aligned BAM file in BedGraph format.
+      bam-tobedpe*        - Writes read positions to a BEDPE file
+      bam-tofasta         - For a BAM file, output the basecalls (ACGTN) at each genomic position.
+      bam-tofastq         - Export the read sequences from a BAM file in FASTQ format
+      bam-varcall*        - For a BAM file, call variants from a reference genome (germline, tumor-only, or tumor/normal).
+      bam-wps*            - For each location in the genome, calculate a window positioning score (WPS)
 
     [bed]
-      bed-clean        - Cleans score entries to be an integer
-      bed-count        - Given reference and query BED files, count the number of query regions that are contained within each reference region
-      bed-nearest      - Given reference and query BED files, for each query region, find the nearest reference region
-      bed-reduce       - Merge overlaping BED regions
-      bed-resize       - Resize BED regions (extend or shrink)
-      bed-tobed3       - Convert a BED3+ file to a strict BED3 file
-      bed-tobed6       - Convert a BED6+ file to a strict BED6 file
-      bed-tofasta      - Extract FASTA sequences based on BED coordinates
+      bed-clean           - Cleans score entries to be an integer
+      bed-count           - Given reference and query BED files, count the number of query regions that are contained within each reference region
+      bed-merge*          - Given two or more (sorted) BED files, combine the BED annotations into one output BED file.
+      bed-nearest         - Given reference and query BED files, for each query region, find the nearest reference region
+      bed-reduce          - Merge overlaping BED regions
+      bed-resize          - Resize BED regions (extend or shrink)
+      bed-sort            - Sort BED file (by coordinate or name)
+      bed-stats           - Summary statistics for a BED file
+      bed-tobed3          - Convert a BED3+ file to a strict BED3 file
+      bed-tobed6          - Convert a BED6+ file to a strict BED6 file
+      bed-tobedgraph      - Convert a BED file to a coverage BedGraph file
+      bed-tobedpe         - Combine two name-sorted BED files to BEDPE format
+      bed-tofasta         - Extract FASTA sequences based on BED coordinates
+      bedpe-tobed         - Convert a BEDPE file to a BED file
 
     [fasta]
-      fasta-filter     - Filter out sequences from a FASTA file
-      fasta-gc         - Determine the GC% for a given region or bins
-      fasta-genreads*  - Generate mock reads from a reference FASTA file
-      fasta-mask       - Mask regions of a FASTA reference
-      fasta-names      - Display sequence names from a FASTA file
-      fasta-split      - Split a FASTA file into a new file for each sequence present
-      fasta-subseq     - Extract subsequences from a FASTA file (optionally, indexed)
-      fasta-tag        - Add prefix/suffix to FASTA sequence names
-      fasta-wrap       - Change the sequence wrapping length of a FASTA file
+      fasta-bins          - For an indexed FASTA file, calculate bins and write them to a BED file
+      fasta-filter        - Filter out sequences from a FASTA file
+      fasta-gc            - Determine the GC% for a given region or bins (DNA)
+      fasta-genreads*     - Generate mock reads from a reference FASTA file (DNA)
+      fasta-grep          - Find subsequences (exact match) in a FASTA file
+      fasta-mask          - Mask regions of a FASTA reference
+      fasta-motif         - Scan a FASTA file for matches to a motif (DNA only)
+      fasta-names         - Display sequence names from a FASTA file
+      fasta-random        - Generate random DNA sequences
+      fasta-revcomp*      - Reverse compliment the sequences in a FASTA file (DNA)
+      fasta-split         - Split a FASTA file into a new file for each sequence or a number of sequences
+      fasta-subseq        - Extract subsequences from a FASTA file (optionally, indexed)
+      fasta-tag           - Add prefix/suffix to FASTA sequence names
+      fasta-tri           - Determine the trinucleotide counts for a genome (DNA)
+      fasta-wrap          - Change the sequence wrapping length of a FASTA file
 
     [fastq]
-      fastq-barcode    - Given Illumina 1.8+ naming, find the lane/barcodes included
-      fastq-check      - Verify a FASTQ single, paired, or interleaved file(s)
-      fastq-demux      - Splits a FASTQ file based on lane/barcode values
-      fastq-filter     - Filters reads from a FASTQ file.
-      fastq-merge      - Merges two FASTQ files (R1/R2) into one interleaved file.
-      fastq-separate   - Splits an interleaved FASTQ file by read number.
-      fastq-sort       - Sorts a FASTQ file
-      fastq-split      - Splits an FASTQ file into smaller files
-      fastq-stats      - Statistics about a FASTQ file
-      fastq-tobam      - Converts a FASTQ file (or two paired files) into an unmapped BAM file
-      fastq-tofasta    - Convert FASTQ sequences to FASTA format
+      fastq-barcode       - Given Illumina 1.8+ naming, find the lane/barcodes included
+      fastq-check         - Verify a FASTQ single, paired, or interleaved file(s)
+      fastq-demux         - Splits a FASTQ file based on lane/barcode values
+      fastq-filter        - Filters reads from a FASTQ file.
+      fastq-merge         - Merges two FASTQ files (R1/R2) into one interleaved file.
+      fastq-overlap       - For paired FASTQ files, attempt to find overlapping reads
+      fastq-remix*        - Remix one or more different FASTQ files in different sampling ratios
+      fastq-separate      - Splits an interleaved FASTQ file by read number.
+      fastq-sort          - Sorts a FASTQ file
+      fastq-split         - Splits an FASTQ file into smaller files
+      fastq-stats         - Statistics about a FASTQ file
+      fastq-tobam         - Converts a FASTQ file (or two paired files) into an unmapped BAM file
+      fastq-tofasta       - Convert FASTQ sequences to FASTA format
 
     [gtf]
-      gtf-export       - Export gene annotations from a GTF file as BED regions
-      gtf-geneinfo*    - Calculate information about genes (based on GTF model)
+      gtf-export          - Export gene annotations from a GTF file as BED regions
+      gtf-geneinfo*       - Calculate information about genes (based on GTF model)
+      gtf-tofasta         - Export transcript/protein sequences as FASTA files
 
     [annotation]
-      annotate-gtf     - Annotate GTF gene regions (for tab-delimited text, BED, or BAM input)
-      annotate-repeat* - Calculates Repeat masker annotations
+      annotate-gtf        - Annotate GTF gene regions (for tab-delimited text, BED, or BAM input)
+      annotate-repeat*    - Calculates Repeat masker annotations
+      tab-annotate        - Annotate a tab-delimited file (Tabix-indexed)
+      tabix               - Query a tabix file
+      tabix-concat        - Re-combine split tabix files (natural sorting by filename)
+      tabix-split         - Splits a tabix file by ref/chrom
+      tdf-join            - Annotate a tab-delimited file (not-tabix indexed)
 
     [vcf]
-      vcf-annotate     - Annotate a VCF file
-      vcf-chrfix       - Changes the reference (chrom) format (Ensembl/UCSC)
-      vcf-export       - Export information from a VCF file
-      vcf-filter       - Filter a VCF file
-      vcf-tobed        - Export allele positions from a VCF file to BED format
+      vcf-annotate        - Annotate a VCF file
+      vcf-bedcount        - For a given BED file, count the number of variants present in the BED region
+      vcf-check           - Validate a VCF file
+      vcf-chrfix          - Changes the reference (chrom) format (Ensembl/UCSC)
+      vcf-clearfilter     - Remove a filter from a VCF file
+      vcf-concat          - Concatenate VCF files that have different variants but the same samples.
+      vcf-concat-n        - Concatenate VCF files that have different variants but the same samples.
+      vcf-consensus*      - For a set of VCF files, extract consensus variants (SNV and SV)
+      vcf-count           - For each variant in a VCF file, count the number of ref and alt alleles in a BAM file
+      vcf-effect*         - For variants, calculate the effect of each variant on it's gene
+      vcf-export          - Export information from a VCF file as a tab-delimited file
+      vcf-filter          - Filter a VCF file
+      vcf-header-info     - Extract annotation/named fields from a VCF file
+      vcf-merge           - Combine multiple VCF files that have different annotations, but the same variants.
+      vcf-peptide*        - For variants, extract new peptides (SNV or indel, in coding regions)
+      vcf-refbuild        - Verify the reference/build for a VCF file
+      vcf-remove-flags    - Replace all INFO flags with a comma separated list
+      vcf-rename          - Change the names of samples
+      vcf-reorder         - Reorders samples in a VCF file
+      vcf-sample-export   - Write sample FORMAT values to a tab-delimited file, with one sample per line
+      vcf-samples         - Output the sample names in a VCF file
+      vcf-stats           - Summary statistics about a VCF file
+      vcf-strip           - Remove all annotation and sample information but keep output in VCF format
+      vcf-svtofasta       - Extract SV flanking sequences and write them to a FASTA file.
+      vcf-tobed           - Export allele positions from a VCF file to BED format
+      vcf-tobedpe         - Convert a SV VCF file to BEDPE format
+      vcf-tocount         - Convert a VCF to a count file using the AD (or RO/AO) format field
+      vcf-tstv            - Calculate a Ts/TV ratio for SNVs
 
     [help]
-      help             - Help for a specific command
-      license          - Show the license
+      help                - Help for a specific command
+      license             - Show the license
+      version             - Show program version
 
     * = experimental command
