@@ -1,0 +1,21 @@
+<aside class="side-bar" id="sidebar">
+  <div class="site-header">
+    <a href="{{ "/" | relURL }}" class="site-title">
+      {{ with site.Params.logo }}
+      <img src="{{ . | relURL }}" alt="{{ site.Title }}" class="site-logo">
+      {{ end }}
+    </a>
+  </div>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    {{ partial "nav.html" . }}
+  </nav>
+
+  <footer class="site-footer">
+    {{ with site.Params.logoSlug }}
+    <a href="{{ "/" | relURL }}" class="footer-logo-link">
+      <img src="{{ . | relURL }}" alt="{{ site.Title }}" class="footer-logo">
+    </a>
+    {{ end }}
+  </footer>
+</aside>

@@ -1,0 +1,14 @@
+{{ define "breadcrumbs" }}
+  {{ if and .Parent (not .Parent.IsHome) }}
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list">
+      <li class="breadcrumb-item"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></li>
+      <li class="breadcrumb-item current">{{ .Title }}</li>
+    </ol>
+  </nav>
+  {{ end }}
+{{ end }}
+
+{{ define "main" }}
+  {{ .Content }}
+{{ end }}

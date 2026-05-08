@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en-US" }}">
+{{ partial "head.html" . }}
+<body>
+  <div class="page-wrap">
+    {{ partial "sidebar.html" . }}
+    <div class="main-content-wrap" id="main-content-wrap">
+      <div class="main-content">
+        <header class="page-header">
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="subtitle">{{ site.Params.subtitle }}</div>
+          {{ with site.Params.github }}
+          <ul class="aux-nav">
+            <li><a href="{{ . }}" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+          {{ end }}
+        </header>
+        <div class="page-content-wrap">
+          {{- block "breadcrumbs" . }}{{ end -}}
+          <main id="main-content" class="page-content" role="main">
+            {{- block "main" . }}{{ end -}}
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <script>
+    (function() {
+      const toggle = document.getElementById('menu-toggle');
+      const sidebar = document.querySelector('.side-bar');
+      const overlay = document.getElementById('overlay');
+      const wrap = document.getElementById('main-content-wrap');
+
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        toggle.classList.remove('active');
+      }
+
+      toggle.addEventListener('click', function() {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+
+      overlay.addEventListener('click', closeSidebar);
+
+      // Close on navigation
+      sidebar.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 800) closeSidebar();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

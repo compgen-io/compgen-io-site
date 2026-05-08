@@ -1,0 +1,32 @@
+baseURL = "https://compgen.io/"
+locale = "en-us"
+title = "compgen.io"
+
+[params]
+  subtitle = "Data wrangling for computational genomics"
+  github = "https://github.com/compgen-io"
+  logo = "/img/compgen.png"
+  logoSlug = "/img/compgen-slug.png"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser.attribute]
+      block = true
+
+[menu]
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 1
+  [[menu.main]]
+    name = "Tutorials"
+    url = "/tutorials/"
+    weight = 3
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 10

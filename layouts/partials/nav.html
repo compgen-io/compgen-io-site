@@ -1,0 +1,25 @@
+<ul class="nav-list">
+  {{- $currentPage := . -}}
+  {{- range site.Menus.main -}}
+    {{- $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) -}}
+    {{- $sectionMatch := false -}}
+    {{- $url := .URL -}}
+    {{- if hasPrefix $currentPage.RelPermalink $url -}}
+      {{- $sectionMatch = true -}}
+    {{- end -}}
+    <li class="nav-item{{ if or $active $sectionMatch }} active{{ end }}">
+      <a href="{{ .URL | relURL }}" class="nav-link{{ if or $active $sectionMatch }} active{{ end }}">{{ .Name }}</a>
+      {{- if and (eq .Name "Projects") -}}
+        <ul class="nav-child-list">
+          {{- range where site.RegularPages "Section" "projects" -}}
+            {{- if not .Params.hide_nav -}}
+            <li class="nav-child-item{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
+              <a href="{{ .RelPermalink }}" class="nav-link{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">{{ .Title }}</a>
+            </li>
+            {{- end -}}
+          {{- end -}}
+        </ul>
+      {{- end -}}
+    </li>
+  {{- end -}}
+</ul>
