@@ -12,7 +12,8 @@ Bugs can be submitted as an issue on the individual project's Github page.
 
 You can also contact me by email here:
 
-**Marcus R. Breese, PhD**
+**Marcus R. Breese, PhD**<br>
+mbreese@iu.edu
 
 Visiting Associate Research Professor<br>
 Dept. of Medical and Molecular Genetics<br>
